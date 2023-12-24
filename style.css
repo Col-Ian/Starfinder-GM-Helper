@@ -52,6 +52,7 @@ body,ul,li,h1,h2,a{
     .mainNav{
         top: 0;
         left: 0;
+        /* On mobile, fixes slight visual bug where the nav will stay the original size while scrolling fast to hide address bar. Now address bar does not hide. Will look into further. */
         bottom: 0;
         width: 175px;
         height: 100%;
