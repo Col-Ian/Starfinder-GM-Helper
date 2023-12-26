@@ -5,12 +5,20 @@ body,ul,li,h1,h2,a{
     font-family: Arial, Helvetica, sans-serif
 }
 
+/* Set main to be below Navb bar */
+main{
+    margin-top: 67px;
+}
+
 /* 
     Nav bar 
     Bar will be on top for smaller devices, and side for larger.
 */
 .mainNav{
-    background-color: #1e0a77;    
+    position: fixed;
+    width: 100%;
+    background-color: #1e0a77;
+    top: 0;
 }
 .mainNavUL{
     /* Remove ul buttons */
@@ -35,6 +43,11 @@ body,ul,li,h1,h2,a{
 
 /* Larger than 350px devices. */
 @media screen and (min-width: 351px) {
+    /* Adjust main for nav bar */
+    main{
+        margin-top: 75px;
+    }
+
     /* Nav bar */
     /* Set nav bar to stay at top */
     .mainNav{
@@ -45,6 +58,15 @@ body,ul,li,h1,h2,a{
         font-size: 1.2em;
     }
 }
+
+/* Larger than 550px devices */
+@media screen and (min-width: 551px) {
+    /* main margin needs to be adjusted for nav bar becoming smaller due to links being in a single row */
+    main{
+        margin-top: 53px;
+    }
+}
+
 /* Devices 800px and larger. */
 @media screen and (min-width: 701px) {
     /* Nav bar */
@@ -66,5 +88,11 @@ body,ul,li,h1,h2,a{
     }
     .navListItem a{
         font-size: 1.5em;
+    }
+
+    /* Move main to be visible beyond Nav and set margin-top back to default */
+    main{
+        margin-top: 0px;
+        margin-left: 175px;
     }
 }
