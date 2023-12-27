@@ -5,6 +5,8 @@ body,ul,li,h1,h2,a{
     font-family: Arial, Helvetica, sans-serif
 }
 
+/* 320px is smallest current screen size (according to a search result) */
+
 /* Set main to be below Navb bar */
 main{
     margin-top: 67px;
@@ -59,8 +61,8 @@ main{
     }
 }
 
-/* Larger than 550px devices */
-@media screen and (min-width: 551px) {
+/* Larger than 445px devices */
+@media screen and (min-width: 446px) {
     /* main margin needs to be adjusted for nav bar becoming smaller due to links being in a single row */
     main{
         margin-top: 53px;
