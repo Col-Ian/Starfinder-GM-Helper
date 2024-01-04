@@ -60,7 +60,7 @@ main{
 .skillsList{
     list-style-type: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 .skillsList li{
     padding: 2px;
@@ -115,7 +115,7 @@ main{
 
 
 */
-/* Devices 800px and larger. */
+/* Devices 700px and larger. */
 @media screen and (min-width: 701px) {
     /* Nav bar */
     /* Move nav bar to the side and change ul back to vertical */
@@ -142,5 +142,12 @@ main{
     main{
         margin-top: 0px;
         margin-left: 175px;
+    }
+
+    /* Grid for viewability */
+    .parentDivNPC{
+        
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
