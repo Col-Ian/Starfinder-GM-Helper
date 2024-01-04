@@ -10,6 +10,7 @@ body,ul,li,h1,h2,a{
 /* Set main to be below Navb bar */
 main{
     margin-top: 67px;
+    text-align: center;
 }
 
 /* 
@@ -43,6 +44,41 @@ main{
     text-decoration: underline rgb(207, 183, 230) 4px;
 }
 
+/* Uniform label sizing */
+.labelDiv{
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 2px;
+}
+
+/* NPC Page*/
+
+.npcSelection{
+    padding: 4px;
+}
+
+.skillsList{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.skillsList li{
+    padding: 2px;
+}
+
+.dropDownNPC{
+    width: 220px;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+
+/* 
+
+
+
+
+*/
 /* Larger than 350px devices. */
 @media screen and (min-width: 351px) {
     /* Adjust main for nav bar */
@@ -60,7 +96,12 @@ main{
         font-size: 1.2em;
     }
 }
+/* 
 
+
+
+
+*/
 /* Larger than 445px devices */
 @media screen and (min-width: 446px) {
     /* main margin needs to be adjusted for nav bar becoming smaller due to links being in a single row */
@@ -68,7 +109,12 @@ main{
         margin-top: 53px;
     }
 }
+/* 
 
+
+
+
+*/
 /* Devices 800px and larger. */
 @media screen and (min-width: 701px) {
     /* Nav bar */
