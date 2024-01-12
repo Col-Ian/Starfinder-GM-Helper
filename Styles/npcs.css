@@ -1,0 +1,75 @@
+/* NPC Page*/
+
+.npcSelection{
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skillsList{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.skillsList li{
+    padding: 2px;
+}
+
+.dropDownDiv{
+
+}
+.dropDownNPC{
+    width: 220px;
+    text-align: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
+.dropdownButton{
+    width: inherit;
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+}
+.dropdownMenu{
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 120px;
+    transition: all 0.3s;
+    background: white;
+    position: absolute;
+    width: inherit;
+}
+
+.dropdownMenu a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdownMenu a:hover{
+    background: lightgray;
+}
+
+.hide{
+    max-height: 0px;
+    opacity: 0;
+}
+
+.singleButtonNPC{
+    margin: 2px;
+    background-color:#1e0a77;
+    border: none;
+    color: rgb(207, 183, 230);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.singleButtonNPC:hover{
+    text-decoration: underline rgb(207, 183, 230) 4px;
+
+}
