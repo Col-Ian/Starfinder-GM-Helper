@@ -2,7 +2,7 @@
 body,ul,li,h1,h2,a{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* 320px is smallest current screen size (according to a search result) */
@@ -55,6 +55,9 @@ main{
 
 .npcSelection{
     padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .skillsList{
@@ -66,11 +69,42 @@ main{
     padding: 2px;
 }
 
+.dropDownDiv{
+    align-content: center;
+}
 .dropDownNPC{
     width: 220px;
     text-align: center;
     padding: 4px 8px;
     border-radius: 8px;
+}
+.dropdownButton{
+    width: inherit;
+    border-radius: 4px;
+}
+.dropdownMenu{
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    width: 120px;
+    transition: all 0.3s;
+    background: white;
+    position: absolute;
+    width: inherit;
+}
+
+.dropdownMenu a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdownMenu a:hover{
+    background: lightgray;
+}
+
+.hide{
+    max-height: 0px;
+    opacity: 0;
 }
 
 .singleButtonNPC{
