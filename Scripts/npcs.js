@@ -40,7 +40,7 @@ let npcPage = {
         // Hiding the dropdown options
         hideDropdownFunction()
 
-        // Show selections for drop down menus.
+        // Show selections for drop down menus.***************
 
         // Challenge Rating
         let altCR = document.querySelectorAll('.selectionCR')
@@ -53,10 +53,14 @@ let npcPage = {
         dropdownListFunction(altArrays, selectArray)
 
         // Skills
-        
         let altSkills = document.querySelectorAll('.selectionSkill')
 
         dropdownListFunction(altSkills, selectSkills)
+        // Set the value input of the Skills list
+        let skillInputs = document.querySelectorAll('.skillInput')
+        skillInputs.forEach(function(e,i){
+            e.value = selectSkills[i]
+        })
     }
 }
 
