@@ -1,7 +1,14 @@
 // Import challenge rating array
 import {challengeRatings} from "./UniversalScripts/challengeRatings.js";
 
+// Import the function to create the drop down list
+import { dropdownListFunction } from "./UniversalScripts/dropdownListFunction.js";
+
+// Import the function to hide the dropdown div
+import { hideDropdownFunction } from "./UniversalScripts/hideDropdownFunction.js";
+
 let selectArray = [
+    '-',
     'Combatant',
     'Expert',
     'Spellcaster'
@@ -31,34 +38,25 @@ let npcPage = {
     startNPC: function(){
 
         // Hiding the dropdown options
-        const dropdownButton = document.querySelector(".dropdownButton")
-        const dropdownMenu = document.querySelector('.dropdownMenuSelection')
-
-        dropdownButton.addEventListener("click", ()=>{
-            dropdownMenu.classList.toggle("hide")
-        })
-
-        window.addEventListener('click', (e)=>{
-            if (e.target !== dropdownButton){
-                dropdownMenu.classList.add('hide');
-            }
-        })
+        hideDropdownFunction()
 
         // Show selections for drop down menus.
-        // Challenge Rating
-        let altsCR = document.querySelectorAll('.selectionCR')
 
-        altsCR.forEach(function(e,i){
-            e.textContent = challengeRatings[i]
-        })
+        // Challenge Rating
+        let altCR = document.querySelectorAll('.selectionCR')
+
+        dropdownListFunction(altCR, challengeRatings)
+
+        // Array
+        let altArrays = document.querySelectorAll('.selectionArray')
+
+        dropdownListFunction(altArrays, selectArray)
 
         // Skills
-        let skills = document.querySelectorAll('.selectionSkill')
+        
+        let altSkills = document.querySelectorAll('.selectionSkill')
 
-        skills.forEach(function(e,i){
-            e.textContent = selectSkills[i]
-        })
-
+        dropdownListFunction(altSkills, selectSkills)
     }
 }
 
