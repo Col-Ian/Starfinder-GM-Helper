@@ -1,38 +1,31 @@
-let selectChallengeRating = [
-    '1/3',
-    '1/2',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    '11',
-    '12',
-    '13',
-    '14',
-    '15',
-    '16',
-    '17',
-    '18',
-    '19',
-    '20',
-    '21',
-    '22',
-    '23',
-    '24',
-    '25'
-];
+// Import challenge rating array
+import {challengeRatings} from "./UniversalScripts/challengeRatings.js";
 
 let selectArray = [
     'Combatant',
     'Expert',
     'Spellcaster'
 ];
+
+let selectSkills = [ 
+    'Acrobatics',
+    'Athletics',
+    'Bluf',
+    'Clture',
+    'Diplomacy',
+    'Disguise',
+    'Intimidate',
+    'Life Science',
+    'Medicine',
+    'Mysticism',
+    'Physical Science',
+    'Piloting',
+    'Profession',
+    'Sense Motive',
+    'Sleight of Hand',
+    'Stealth',
+    'Survival',
+]
 
 let npcPage = {
     startNPC: function(){
@@ -56,7 +49,14 @@ let npcPage = {
         let altsCR = document.querySelectorAll('.selectionCR')
 
         altsCR.forEach(function(e,i){
-            e.textContent = selectChallengeRating[i]
+            e.textContent = challengeRatings[i]
+        })
+
+        // Skills
+        let skills = document.querySelectorAll('.selectionSkill')
+
+        skills.forEach(function(e,i){
+            e.textContent = selectSkills[i]
         })
 
     }

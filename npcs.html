@@ -210,25 +210,26 @@
                         <div class="labelDiv">
                             <label for="skills">Skills</label>
                         </div>
-                        <div class="skillChecboxes">
-                            <ul class="skillsList" id="skills" id="skillNPC">
-                                <li><input type="checkbox" value="acrobatics" name="skill">Acrobatics</li>
-                                <li><input type="checkbox" value="athletics" name="skill">Athletics</li>
-                                <li><input type="checkbox" value="bluff" name="skill">Bluff</li>
-                                <li><input type="checkbox" value="culture" name="skill">Culture</li>
-                                <li><input type="checkbox" value="diplomacy" name="skill">Diplomacy</li>
-                                <li><input type="checkbox" value="disguise" name="skill">Disguise</li>
-                                <li><input type="checkbox" value="intimidate" name="skill">Intimidate</li>
-                                <li><input type="checkbox" value="lifeScience" name="skill">Life Science</li>
-                                <li><input type="checkbox" value="medicine" name="skill">Medicine</li>
-                                <li><input type="checkbox" value="mysticism" name="skill">Mysticism</li>
-                                <li><input type="checkbox" value="physicalScience" name="skill">Physical Science</li>
-                                <li><input type="checkbox" value="piloting" name="skill">Piloting</li>
-                                <li><input type="checkbox" value="profession" name="skill">Profession</li>
-                                <li><input type="checkbox" value="senseMotive" name="skill">Sense Motive</li>
-                                <li><input type="checkbox" value="sleightOfHand" name="skill">Sleight of Hand</li>
-                                <li><input type="checkbox" value="stealth" name="skill">Stealth</li>
-                                <li><input type="checkbox" value="survival" name="skill">Survival</li>
+                        <div class="dropdownMenu">
+                            <ul class="skillsList" id="skills" id="skillNPC" class="dropdownMenuSelection hide">
+                                <!-- edit this later to be inline -->
+                                <div><input type="checkbox" value="acrobatics" name="skill"><li class="selectionSkill"></li></div>
+                                <li class="selectionSkill"><input type="checkbox" value="athletics" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="bluff" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="culture" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="diplomacy" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="disguise" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="intimidate" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="lifeScience" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="medicine" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="mysticism" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="physicalScience" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="piloting" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="profession" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="senseMotive" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="sleightOfHand" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="stealth" name="skill"></li>
+                                <li class="selectionSkill"><input type="checkbox" value="survival" name="skill"></li>
                             </ul>
                         </div>
                     </div>
@@ -257,6 +258,6 @@
 
         <p>Down here is where the stuff will display</p>
     </main>
-<script src="Scripts/npcs.js"></script>
+<script src="Scripts/npcs.js" type="module"></script>
 </body>
 </html>
