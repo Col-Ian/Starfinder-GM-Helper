@@ -57,6 +57,10 @@
     opacity: 0;
 }
 
+.npcSkillInputDiv{
+    display: flex;
+}
+
 .singleButtonNPC{
     margin: 2px;
     background-color:#1e0a77;
