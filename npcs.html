@@ -21,239 +21,275 @@
     </header>
     <main>
         NPCs
-        <!-- <form action="" class="npcForm"> -->
-            <div class="parentDivNPC">
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="challengeRating" class="dropDownLabel">Challenge Rating</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <div class="dropDownNPC">
-                            <button class="dropdownButton">-</button>
-                            <div class="dropdownMenu">
-                                <div class="dropdownMenuSelection hide" id="npcCR">
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                    <a href="" class="selectionCR"></a>
-                                </div>
-                            </div>
+        <div class="parentDivNPC">
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Challenge Rating</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">-</span>
+                            <div class="caret"></div>
                         </div>
+                        <ul class="dropdownList">
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                            <li class="selectionCR"></li>
+                        </ul>
                     </div>
                 </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="array" class="dropDownLabel">Array</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="array" id="arrayDropdownNPC" class="dropDownNPC">
-                            <option value="null" disabled selected hidden class="selectionArray"></option>
-                            <option value="combatant" class="selectionArray"></option>
-                            <option value="expert" class="selectionArray"></option>
-                            <option value="spellcaster" class="selectionArray"></option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="creatureType" class="dropDownLabel">Creature Type</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="creatureType" id="creatureType" class="dropDownNPC">
-                            <option value="null" disabled selected hidden>-</option>
-                            <option value="aberration">Aberration</option>
-                            <option value="animal">Animal</option>
-                            <option value="construct">Construct</option>
-                            <option value="dragon">Dragon</option>
-                            <option value="fey">Fey</option>
-                            <option value="humanoid">Humanoid</option>
-                            <option value="magicalBeast">Magical Beast</option>
-                            <option value="monstrousHumanoid">Monstrous Humanoid</option>
-                            <option value="ooze">Ooze</option>
-                            <option value="outsider">Outsider</option>
-                            <option value="plant">Plant</option>
-                            <option value="undead">Undead</option>
-                            <option value="vermin">Vermin</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="creatureSubtype" class="dropDownLabel">Creature Subtype</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="creatureSubtype" id="creatureSubtype" class="dropDownNPC">
-                            <option value="null" disabled selected hidden>-</option>
-                            <option value="none">None</option>
-                            <option value="aeon">Aeon</option>
-                            <option value="agathion">Agathion</option>
-                            <option value="air">Air</option>
-                            <option value="android">Android</option>
-                            <option value="angel">Angel</option>
-                            <option value="aquatic">Aquatic</option>
-                            <option value="archon">Archon</option>
-                            <option value="azata">Azata</option>
-                            <option value="cold">Cold</option>
-                            <option value="daemon">Daemon</option>
-                            <option value="demon">Demon</option>
-                            <option value="devil">Devil</option>
-                            <option value="dwarf">Dwarf</option>
-                            <option value="earth">Earth</option>
-                            <option value="elemental">Elemental</option>
-                            <option value="elf">Elf</option>
-                            <option value="fire">Fire</option>
-                            <option value="giant">Giant</option>
-                            <option value="goblinoid">Goblinoid</option>
-                            <option value="gray">Gray</option>
-                            <option value="halfling">Halfling</option>
-                            <option value="human">Human</option>
-                            <option value="ikeshti">Ikeshti</option>
-                            <option value="incorporeal">Incorporeal</option>
-                            <option value="inevitable">Inevitable</option>
-                            <option value="kasatha">Kasatha</option>
-                            <option value="lashunta">Lashunta</option>
-                            <option value="maraquoi">Maraquoi</option>
-                            <option value="orc">Orc</option>
-                            <option value="plantlike">Plantlike</option>
-                            <option value="protean">Protean</option>
-                            <option value="reptoid">Reptoid</option>
-                            <option value="ryphorian">Ryphorian</option>
-                            <option value="sarcesian">Sarcesian</option>
-                            <option value="shapechanger">Shapechanger</option>
-                            <option value="shirren">Shirren</option>
-                            <option value="skittermander">Skittermander</option>
-                            <option value="swarm">Swarm</option>
-                            <option value="verthani">Verthani</option>
-                            <option value="vesk">Vesk</option>
-                            <option value="water">Water</option>
-                            <option value="ysoki">Ysoki</option>
-                            <option value="chaotic">Chaotic</option>
-                            <option value="evil">Evil</option>
-                            <option value="extraplanar">Extraplanar</option>
-                            <option value="good">Good</option>
-                            <option value="lawful">Lawful</option>
-                            <option value="magical">Magical</option>
-                            <option value="native">Native</option>
-                            <option value="technological">Technological</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="classGraft" class="dropDownLabel">Class Graft</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="classGraft" id="classGraft" class="dropDownNPC">
-                            <option value="null" disabled selected hidden>-</option>
-                            <option value="none">None</option>
-                            <option value="">Return to grafts later</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="templateGraft" class="dropDownLabel">Template Graft</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="templateGraft" id="templateGraft" class="dropDownNPC">
-                            <option value="null" disabled selected hidden>-</option>
-                            <option value="none">None</option>
-                            <option value="">Return to grafts later</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="specialAbilities" class="dropDownLabel">Special Abilities</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="specialAbilities" id="specialAbilities" class="dropDownNPC">
-                            <option value="null" disabled selected hidden>-</option>
-                            <option value="none">None</option>
-                            <option value="">Return to special Abilities later</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="skillSelectionDiv">
-                        <div class="labelDiv">
-                            <label for="skills">Skills</label>
-                        </div>
-                        <div class="dropdownMenu">
-                            <ul class="skillsList" id="skills" id="skillNPC" class="dropdownMenuSelection hide">
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                                <div class="npcSkillInputDiv"><input type="checkbox" class="skillInput"><li class="selectionSkill"></li></div>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="npcSelection">
-                    <div class="labelDiv">
-                        <label for="spells" class="dropDownLabel">Spells</label>
-                    </div>
-                    <div class="dropDownDiv">
-                        <select name="spells" id="spells" class="dropDownNPC">
-                            <option value="null" disabled selected hidden>-</option>
-                            <option value="">Return to spells later</option>
-                        </select>
-                    </div>
-                </div>
-
             </div>
-            
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Array</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">-</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionArray"></li>
+                            <li class="selectionArray"></li>
+                            <li class="selectionArray"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+ 
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Creature Type</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">-</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                            <li class="selectionCreatureType"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Creature Subtype</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">None</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionCreatureSubtype active"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                            <li class="selectionCreatureSubtype"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Class Graft</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">None</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionClassGraft active"></li>
+                            <li class="selectionClassGraft"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Template Graft</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">None</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionTemplateGraft active"></li>
+                            <li class="selectionTemplateGraft"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <label for="challengeRating" class="dropDownLabel">Special Abilities</label>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">None</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionSpecialAbilities active"></li>
+                            <li class="selectionSpecialAbilities"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Skills</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">-</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                            <li class="selectionSkill"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="npcSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Spells</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdownNPC">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">None</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionSpells active"></li>
+                            <li class="selectionSpells"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
             <div class="buttonsNPC">
                 <input type="button" value="Generate" class="singleButtonNPC">
             </div>
             
-        <!-- </form> -->
-
         <p>Down here is where the stuff will display</p>
     </main>
 <script src="Scripts/npcs.js" type="module"></script>

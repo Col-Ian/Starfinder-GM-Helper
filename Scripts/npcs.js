@@ -2,19 +2,15 @@
 import {challengeRatings} from "./UniversalScripts/challengeRatings.js";
 
 // Import the function to create the drop down list
-import { dropdownListFunction } from "./UniversalScripts/dropdownListFunction.js";
-
-// Import the function to hide the dropdown div
-import { hideDropdownFunction } from "./UniversalScripts/hideDropdownFunction.js";
+import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
 let selectArray = [
-    '-',
     'Combatant',
     'Expert',
     'Spellcaster'
 ];
 
-let selectSkills = [ 
+let selectSkills = [
     'Acrobatics',
     'Athletics',
     'Bluf',
@@ -32,35 +28,149 @@ let selectSkills = [
     'Sleight of Hand',
     'Stealth',
     'Survival',
+];
+
+let selectCreatureType = [
+    'Aberration',
+    'Animal',
+    'Construct',
+    'Dragon',
+    'Fey',
+    'Humanoid',
+    'Magical Beast',
+    'Monstrous Humanoid',
+    'Ooze',
+    'Outsider',
+    'Plant',
+    'Undead',
+    'Vermin',
+];
+
+let selectCreatureSubtype = [
+    'None',
+    'Aeon',
+    'Agathion',
+    'Air',
+    'Android',
+    'Angel',
+    'Aquatic',
+    'Archon',
+    'Azata',
+    'Cold',
+    'Daemon',
+    'Demon',
+    'Devil',
+    'Dwarf',
+    'Earth',
+    'Elemental',
+    'Elf',
+    'Fire',
+    'Giant',
+    'Goblinoid',
+    'Gray',
+    'Halfling',
+    'Human',
+    'Ikeshti',
+    'Incorporeal',
+    'Inevitable',
+    'Kasatha',
+    'Lashunta',
+    'Maraquoi',
+    'Orc',
+    'Plantlike',
+    'Protean',
+    'Reptoid',
+    'Ryphorian',
+    'Sarcesian',
+    'Shapechanger',
+    'Shirren',
+    'Skittermander',
+    'Swarm',
+    'Verthani',
+    'Vesk',
+    'Water',
+    'Ysoki',
+    'Chaotic',
+    'Evil',
+    'Extraplanar',
+    'Good',
+    'Lawful',
+    'Magical',
+    'Native',
+    'Technological'
 ]
+
+let selectClassGraft = [
+    'None',
+    'Return later'
+];
+
+let selectTemplateGraft = [
+    'None',
+    'Return later'
+];
+
+let selectSpecialAbilities = [
+    'None',
+    'Return later'
+];
+
+let selectSpells = [
+    'None',
+    'Return later'
+];
 
 let npcPage = {
     startNPC: function(){
-
-        // Hiding the dropdown options
-        hideDropdownFunction()
-
+        
         // Show selections for drop down menus.***************
 
         // Challenge Rating
         let altCR = document.querySelectorAll('.selectionCR')
 
-        dropdownListFunction(altCR, challengeRatings)
+        listContent(altCR, challengeRatings)
 
         // Array
         let altArrays = document.querySelectorAll('.selectionArray')
 
-        dropdownListFunction(altArrays, selectArray)
+        listContent(altArrays, selectArray)
+
+        // Creature Type
+        let altCreatureType = document.querySelectorAll('.selectionCreatureType')
+
+        listContent(altCreatureType, selectCreatureType)
+
+        // Creature Subtype
+        let altCreatureSubtype = document.querySelectorAll('.selectionCreatureSubtype')
+
+        listContent(altCreatureSubtype, selectCreatureSubtype)
+
+        // Class Graft
+        let altClassGraft = document.querySelectorAll('.selectionClassGraft')
+
+        listContent(altClassGraft, selectClassGraft)
+
+        // Template Graft
+        let altTemplateGraft = document.querySelectorAll('.selectionTemplateGraft')
+
+        listContent(altTemplateGraft, selectTemplateGraft)
+
+        // Special Abilities
+        let altSpecialAbilities = document.querySelectorAll('.selectionSpecialAbilities')
+
+        listContent(altSpecialAbilities, selectSpecialAbilities)
 
         // Skills
         let altSkills = document.querySelectorAll('.selectionSkill')
 
-        dropdownListFunction(altSkills, selectSkills)
-        // Set the value input of the Skills list
-        let skillInputs = document.querySelectorAll('.skillInput')
-        skillInputs.forEach(function(e,i){
-            e.value = selectSkills[i]
-        })
+        listContent(altSkills, selectSkills)
+
+        // Spells
+        let altSpells = document.querySelectorAll('.selectionSpells')
+
+        listContent(altSpells, selectSpells)
+
+        dropdownListFunction('.dropdownNPC')
     }
 }
 
