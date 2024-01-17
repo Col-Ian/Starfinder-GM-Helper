@@ -142,11 +142,11 @@ background: #888;
 }
 
 .dropdownList li:hover{
-    background: #2A2D35;
+    background: #460a77;
 }
 
 .active{
-    background: #23242A;
+    background: #460a77;
 }
 
 .dropdownList-open{
