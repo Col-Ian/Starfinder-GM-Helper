@@ -45,11 +45,11 @@
 }
 
 
+/*
 
+    Dropdown Boxes
 
-
-
-
+*/
 .dropdownNPC{
     min-width: 15em;
     position: relative;
@@ -61,13 +61,13 @@
 }
 
 .dropdownSelect{
-    background: #2A2F3B;
-    color: #FFF;
+    background: #1e0a77;
+    color: rgb(207, 183, 230);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    border: 2px solid #2A2F3B;
+    border: 2px solid #7f1bad;
     border-radius: 0.5em;
     padding: 1em;
     cursor: pointer;
@@ -76,12 +76,12 @@
 
 
 .dropdownSelect-clicked{
-    border: 2px #26489a solid;
-    box-shadow: 0 0 0.8em #26489a;
+    border: 2px #7f1bad solid;
+    box-shadow: 0 0 0.8em #7f1bad;
 }
 
 .dropdownSelect:hover{
-    background: green;
+    background: #460a77;
 }
 
 .caret{
@@ -89,7 +89,7 @@
     height: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 6px solid #FFF;
+    border-top: 6px solid rgb(207, 183, 230);
     transition: 0.3s;
 }
 
@@ -100,8 +100,8 @@
 .dropdownList{
     list-style-type: none;
     padding: 0.2em 0.5em;
-    background: #323741;
-    color: #9FA5B5;
+    background: #1e0a77;
+    color: rgb(207, 183, 230);
     border: 1px #363A43 solid;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
     border-radius: 0.5em;
@@ -155,14 +155,11 @@ background: #888;
 }
 
 
+/* 
 
+    Generate button
 
-
-
-.npcSkillInputDiv{
-    display: flex;
-}
-
+*/
 .singleButtonNPC{
     margin: 2px;
     background-color:#1e0a77;
