@@ -51,6 +51,9 @@ main{
     padding: 2px;
 }
 
+.hide{
+    display: none;
+}
 
 
 /* 

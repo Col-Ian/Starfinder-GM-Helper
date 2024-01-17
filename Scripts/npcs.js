@@ -170,7 +170,7 @@ let npcPage = {
 
         listContent(altSpells, selectSpells)
 
-        dropdownListFunction('.dropdownNPC')
+        dropdownListFunction('.dropdown')
     }
 }
 

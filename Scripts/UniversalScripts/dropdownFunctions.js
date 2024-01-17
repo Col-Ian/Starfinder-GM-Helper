@@ -41,7 +41,7 @@ export function dropdownListFunction(
             })
         });
         window.addEventListener('click', (e)=>{
-            if (e.target !== select && e.target !== menu){
+            if (e.target !== select && e.target !== menu && e.target !== caret && e.target !== selected){
                 // remove the clicked styles from the elements when you click off the element
                 select.classList.remove('dropdownSelect-clicked');
                 caret.classList.remove('caret-rotate')
