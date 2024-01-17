@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Project HTML & CSS</title>
     <link rel="stylesheet" href="Styles/general.css">
+    <link rel="stylesheet" href="Styles/loot.css">
+    <link rel="stylesheet" href="Styles/generateButton.css">
+    <link rel="stylesheet" href="Styles/dropdownMenu.css">
 </head>
 <body>
     <header class="header">
@@ -20,7 +23,119 @@
     </header>
     <main>
         Loot
-    </main>
+        <div class="pareDivLoot">
+            <div class="lootSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Average Party Level</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdown">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">-</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                            <li class="selectionAveragePartyLevel"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
+            <div class="lootSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Challenge Rating</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdown">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">-</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                            <li class="selectionChallengeRating"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lootSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Generate</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdown">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">Random</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionGenerate active"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                            <li class="selectionGenerate"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttonsNPC">
+            <input type="button" value="Generate" class="generateButton">
+        </div>
+            
+        <p>Down here is where the stuff will display</p>
+    </main>
+<script type="module" src="Scripts/loot.js"></script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+//  To use for default Skills
+export let selectSkills = [
+    'Acrobatics',
+    'Athletics',
+    'Bluf',
+    'Clture',
+    'Diplomacy',
+    'Disguise',
+    'Intimidate',
+    'Life Science',
+    'Medicine',
+    'Mysticism',
+    'Physical Science',
+    'Piloting',
+    'Profession',
+    'Sense Motive',
+    'Sleight of Hand',
+    'Stealth',
+    'Survival',
+];

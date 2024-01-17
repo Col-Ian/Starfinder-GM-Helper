@@ -1,134 +1,47 @@
-// Import challenge rating array
-import {challengeRatings} from "./UniversalScripts/challengeRatings.js";
-
 // Import the functions to create the dropdown and to fill the content
 import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
-let selectArray = [
-    'Combatant',
-    'Expert',
-    'Spellcaster'
-];
+/*
 
-let selectSkills = [
-    'Acrobatics',
-    'Athletics',
-    'Bluf',
-    'Clture',
-    'Diplomacy',
-    'Disguise',
-    'Intimidate',
-    'Life Science',
-    'Medicine',
-    'Mysticism',
-    'Physical Science',
-    'Piloting',
-    'Profession',
-    'Sense Motive',
-    'Sleight of Hand',
-    'Stealth',
-    'Survival',
-];
+Import lists
 
-let selectCreatureType = [
-    'Aberration',
-    'Animal',
-    'Construct',
-    'Dragon',
-    'Fey',
-    'Humanoid',
-    'Magical Beast',
-    'Monstrous Humanoid',
-    'Ooze',
-    'Outsider',
-    'Plant',
-    'Undead',
-    'Vermin',
-];
+ */
 
-let selectCreatureSubtype = [
-    'None',
-    'Aeon',
-    'Agathion',
-    'Air',
-    'Android',
-    'Angel',
-    'Aquatic',
-    'Archon',
-    'Azata',
-    'Cold',
-    'Daemon',
-    'Demon',
-    'Devil',
-    'Dwarf',
-    'Earth',
-    'Elemental',
-    'Elf',
-    'Fire',
-    'Giant',
-    'Goblinoid',
-    'Gray',
-    'Halfling',
-    'Human',
-    'Ikeshti',
-    'Incorporeal',
-    'Inevitable',
-    'Kasatha',
-    'Lashunta',
-    'Maraquoi',
-    'Orc',
-    'Plantlike',
-    'Protean',
-    'Reptoid',
-    'Ryphorian',
-    'Sarcesian',
-    'Shapechanger',
-    'Shirren',
-    'Skittermander',
-    'Swarm',
-    'Verthani',
-    'Vesk',
-    'Water',
-    'Ysoki',
-    'Chaotic',
-    'Evil',
-    'Extraplanar',
-    'Good',
-    'Lawful',
-    'Magical',
-    'Native',
-    'Technological'
-]
+// Challenge Rating array
+import { selectChallengeRatings } from "./UniversalScripts/Lists/challengeRatings.js";
 
-let selectClassGraft = [
-    'None',
-    'Return later'
-];
+// Array array
+import{ selectArray } from "./UniversalScripts/Lists/array.js";
 
-let selectTemplateGraft = [
-    'None',
-    'Return later'
-];
+// Creature Type array
+import { selectCreatureType } from "./UniversalScripts/Lists/creatureType.js";
 
-let selectSpecialAbilities = [
-    'None',
-    'Return later'
-];
+// Creature Subtype array
+import { selectCreatureSubtype } from "./UniversalScripts/Lists/creatureSubtype.js";
 
-let selectSpells = [
-    'None',
-    'Return later'
-];
+// Class Graft array
+import { selectClassGraft } from "./UniversalScripts/Lists/classGraft.js";
+
+// Template Graft array
+import { selectTemplateGraft } from "./UniversalScripts/Lists/templateGraft.js";
+
+// Special Abilities array
+import { selectSpecialAbilities } from "./UniversalScripts/Lists/specialAbilities.js";
+
+// Skills array
+import { selectSkills } from "./UniversalScripts/Lists/skills.js";
+
+// Spells array
+import { selectSpells } from "./UniversalScripts/Lists/spells.js";
 
 let npcPage = {
     startNPC: function(){
+        // Fill content of lists
         
-        // Show selections for drop down menus.***************
-
         // Challenge Rating
         let altCR = document.querySelectorAll('.selectionCR')
 
-        listContent(altCR, challengeRatings)
+        listContent(altCR, selectChallengeRatings)
 
         // Array
         let altArrays = document.querySelectorAll('.selectionArray')
@@ -170,6 +83,7 @@ let npcPage = {
 
         listContent(altSpells, selectSpells)
 
+        // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown')
     }
 }
