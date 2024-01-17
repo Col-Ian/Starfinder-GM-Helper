@@ -1,7 +1,7 @@
 // Import challenge rating array
 import {challengeRatings} from "./UniversalScripts/challengeRatings.js";
 
-// Import the function to create the drop down list
+// Import the functions to create the dropdown and to fill the content
 import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
 let selectArray = [
