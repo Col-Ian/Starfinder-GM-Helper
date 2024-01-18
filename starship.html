@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Project HTML & CSS</title>
     <link rel="stylesheet" href="Styles/general.css">
+    <link rel="stylesheet" href="Styles/starship.css">
+    <link rel="stylesheet" href="Styles/generateButton.css">
+    <link rel="stylesheet" href="Styles/dropdownMenu.css">
 </head>
 <body>
     <header class="header">
@@ -20,7 +23,108 @@
     </header>
     <main>
         Starships
-    </main>
+        <div class="parentDivStarship">
 
+            <div class="starshipSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Tier</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdown">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">Random</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionTier active"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                            <li class="selectionTier"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="starshipSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Frame</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdown">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">Random</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionFrame active"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                            <li class="selectionFrame"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="starshipSelection">
+                <div class="labelDiv">
+                    <div class="dropDownLabel">Armament</div>
+                </div>
+                <div class="dropDownDiv">
+                    <div class="dropdown">
+                        <div class="dropdownSelect">
+                            <span class="dropdownSelected">Random</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="dropdownList">
+                            <li class="selectionArmament active"></li>
+                            <li class="selectionArmament"></li>
+                            <li class="selectionArmament"></li>
+                            <li class="selectionArmament"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttonsNPC">
+            <input type="button" value="Generate" class="generateButton">
+        </div>
+            
+        <p>Down here is where the stuff will display</p>
+    </main>
+    <script type="module" src="Scripts/starship.js"></script>
 </body>
 </html>
