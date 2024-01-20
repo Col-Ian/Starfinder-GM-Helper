@@ -3,6 +3,16 @@ import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFu
 
 /*
 
+listContent(
+    the array with the values to fill the li elements,
+    id of the ul in the html file to append to,
+    id of the default selection for the ul
+)
+
+*/
+
+/*
+
 Import lists
 
  */
@@ -20,19 +30,13 @@ let lootPage = {
         // Fill content of lists
 
         // Average Party Level
-        let altAPL = document.querySelectorAll('.selectionAveragePartyLevel')
-
-        listContent(altAPL, selectAveragePartyLevel)
+        listContent(selectAveragePartyLevel, "averagePLLoot", "dropdownSelectedAPLLoot")
 
         // Challenge Rating
-        let altCR = document.querySelectorAll('.selectionChallengeRating')
-
-        listContent(altCR, selectChallengeRatings)
+        listContent(selectChallengeRatings, "challengeRatingLoot", "dropdownSelectedCRLoot")
 
         // Generate
-        let altGen = document.querySelectorAll('.selectionGenerate')
-
-        listContent(altGen, selectGenerate)
+        listContent(selectGenerate, "generateLoot", "dropdownSelectedGenerateLoot")
 
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown')

@@ -1,7 +1,25 @@
-export function listContent(selectionType, selectionList) {
-    // Fill the content of the list (selectionType) with the items from the array (selectionList)
-    selectionType.forEach(function(e,i){
-        e.textContent = selectionList[i]
+export function listContent(
+    theList,
+    ulSelected,
+    defaultSelected
+    ) {
+    // Fill the content of the ul (ulSelected) with the items from the array (theList). If the first item (defaultSelected) is the defualt option selected, add the active class.
+    theList.forEach(function(i){
+        let tag = document.createElement("li");
+
+        // Check if first item is the default option selected
+        let defaultOption = document.getElementById(defaultSelected)
+        if(defaultOption.textContent === i){
+            tag.classList.add('active')
+        }
+
+        // Fill the li with the item from the list.
+        let item = document.createTextNode(i);
+        tag.appendChild(item);
+
+        // Append the new li to our ul.
+        let element = document.getElementById(ulSelected);
+        element.appendChild(tag)
     })
 }
 

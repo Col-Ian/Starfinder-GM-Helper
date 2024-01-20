@@ -3,6 +3,16 @@ import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFu
 
 /*
 
+listContent(
+    the array with the values to fill the li elements,
+    id of the ul in the html file to append to,
+    id of the default selection for the ul
+)
+
+*/
+
+/*
+
 Import lists
 
  */
@@ -34,54 +44,37 @@ import { selectSkills } from "./UniversalScripts/Lists/skills.js";
 // Spells array
 import { selectSpells } from "./UniversalScripts/Lists/spells.js";
 
+
 let npcPage = {
     startNPC: function(){
         // Fill content of lists
         
         // Challenge Rating
-        let altCR = document.querySelectorAll('.selectionCR')
-
-        listContent(altCR, selectChallengeRatings)
+        listContent(selectChallengeRatings, "challengeRatingNPC", "dropdownSelectedCRNPC")
 
         // Array
-        let altArrays = document.querySelectorAll('.selectionArray')
-
-        listContent(altArrays, selectArray)
+        listContent(selectArray, "arrayNPC", "dropdownSelectedArrayNPC")
 
         // Creature Type
-        let altCreatureType = document.querySelectorAll('.selectionCreatureType')
-
-        listContent(altCreatureType, selectCreatureType)
+        listContent(selectCreatureType, "creatureTypeNPC", "dropdownSelectedCTNPC")
 
         // Creature Subtype
-        let altCreatureSubtype = document.querySelectorAll('.selectionCreatureSubtype')
-
-        listContent(altCreatureSubtype, selectCreatureSubtype)
+        listContent(selectCreatureSubtype, "creatureSubtypeNPC", "dropdownSelectedCSNPC")
 
         // Class Graft
-        let altClassGraft = document.querySelectorAll('.selectionClassGraft')
-
-        listContent(altClassGraft, selectClassGraft)
+        listContent(selectClassGraft, "classGraftNPC", "dropdownSelectionCGNPC")
 
         // Template Graft
-        let altTemplateGraft = document.querySelectorAll('.selectionTemplateGraft')
-
-        listContent(altTemplateGraft, selectTemplateGraft)
+        listContent(selectTemplateGraft, "templateGraftNPC", "dropdownSelectedTGNPC")
 
         // Special Abilities
-        let altSpecialAbilities = document.querySelectorAll('.selectionSpecialAbilities')
-
-        listContent(altSpecialAbilities, selectSpecialAbilities)
+        listContent(selectSpecialAbilities, "specialAbilitiesNPC", "dropdownSelectedSANPC")
 
         // Skills
-        let altSkills = document.querySelectorAll('.selectionSkill')
-
-        listContent(altSkills, selectSkills)
+        listContent(selectSkills, "skillsNPC", "dropdownSelectedSkillsNPC")
 
         // Spells
-        let altSpells = document.querySelectorAll('.selectionSpells')
-
-        listContent(altSpells, selectSpells)
+        listContent(selectSpells, "spellsNPC", "dropdownSelectedSpellsNPC")
 
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown')

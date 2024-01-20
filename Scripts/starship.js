@@ -1,6 +1,15 @@
 // Import the functions to create the dropdown and to fill the content
 import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
+/*
+
+listContent(
+    the array with the values to fill the li elements,
+    id of the ul in the html file to append to,
+    id of the default selection for the ul
+)
+
+*/
 
 /*
 
@@ -21,19 +30,13 @@ let starshipPage = {
         // Fill content of lists
 
         // Tier
-        let altTier = document.querySelectorAll('.selectionTier');
-
-        listContent(altTier, selectStarshipTier);
+        listContent(selectStarshipTier, "tierStarship", "dropdownSelectedTierStarship");
 
         // Frame
-        let altFrame = document.querySelectorAll('.selectionFrame');
-
-        listContent(altFrame, selectFrame);
+        listContent(selectFrame, "frameStarship", "dropdownSelectedFrameStarship");
 
         // Armament
-        let altArmament = document.querySelectorAll('.selectionArmament');
-
-        listContent(altArmament, selectArmament)
+        listContent(selectArmament, "armamentStarship", "dropdownSelectedArmamentStarship")
         
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
