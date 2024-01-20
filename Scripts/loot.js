@@ -17,7 +17,7 @@ Import lists
 
  */
 // Average Party Level array
-import { selectAveragePartyLevel } from "./UniversalScripts/Lists/averagePartyLevel.js"
+import { selectAveragePartyLevel } from "./UniversalScripts/Lists/averagePartyLevel.js";
 
 // Challenge Rating array
 import { selectChallengeRatings } from "./UniversalScripts/Lists/challengeRatings.js";
@@ -30,18 +30,18 @@ let lootPage = {
         // Fill content of lists
 
         // Average Party Level
-        listContent(selectAveragePartyLevel, "averagePLLoot", "dropdownSelectedAPLLoot")
+        listContent(selectAveragePartyLevel, "averagePLLoot", "dropdownSelectedAPLLoot");
 
         // Challenge Rating
-        listContent(selectChallengeRatings, "challengeRatingLoot", "dropdownSelectedCRLoot")
+        listContent(selectChallengeRatings, "challengeRatingLoot", "dropdownSelectedCRLoot");
 
         // Generate
-        listContent(selectGenerate, "generateLoot", "dropdownSelectedGenerateLoot")
+        listContent(selectGenerate, "generateLoot", "dropdownSelectedGenerateLoot");
 
         // Show selections for dropdown menus.***************
-        dropdownListFunction('.dropdown')
+        dropdownListFunction('.dropdown');
 
     }
-}
+};
 
-lootPage.startLoot()
+lootPage.startLoot();

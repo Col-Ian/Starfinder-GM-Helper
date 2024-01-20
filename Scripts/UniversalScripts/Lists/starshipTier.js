@@ -24,4 +24,4 @@ export let selectStarshipTier = [
     '18',
     '19',
     '20'
-]
+];

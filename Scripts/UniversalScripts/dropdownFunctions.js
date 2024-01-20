@@ -8,10 +8,10 @@ export function listContent(
         let tag = document.createElement("li");
 
         // Check if first item is the default option selected
-        let defaultOption = document.getElementById(defaultSelected)
+        let defaultOption = document.getElementById(defaultSelected);
         if(defaultOption.textContent === i){
-            tag.classList.add('active')
-        }
+            tag.classList.add('active');
+        };
 
         // Fill the li with the item from the list.
         let item = document.createTextNode(i);
@@ -19,9 +19,9 @@ export function listContent(
 
         // Append the new li to our ul.
         let element = document.getElementById(ulSelected);
-        element.appendChild(tag)
-    })
-}
+        element.appendChild(tag);
+    });
+};
 
 export function dropdownListFunction(
     dropdownParam
@@ -29,19 +29,19 @@ export function dropdownListFunction(
     let dropdowns = document.querySelectorAll(dropdownParam);
 
     dropdowns.forEach(dropdown =>{
-        let select = dropdown.querySelector('.dropdownSelect')
-        let caret = dropdown.querySelector('.caret')
-        let menu = dropdown.querySelector('.dropdownList')
-        let options = dropdown.querySelectorAll('.dropdownList li')
-        let selected = dropdown.querySelector('.dropdownSelected')
+        let select = dropdown.querySelector('.dropdownSelect');
+        let caret = dropdown.querySelector('.caret');
+        let menu = dropdown.querySelector('.dropdownList');
+        let options = dropdown.querySelectorAll('.dropdownList li');
+        let selected = dropdown.querySelector('.dropdownSelected');
                 
         select.addEventListener('click', ()=>{
             // Add/remove style to element
-            select.classList.toggle('dropdownSelect-clicked')
+            select.classList.toggle('dropdownSelect-clicked');
             // Add the rotate styles to caret
-            caret.classList.toggle('caret-rotate')
+            caret.classList.toggle('caret-rotate');
             // Add the open styles to the element
-            menu.classList.toggle('dropdownList-open')
+            menu.classList.toggle('dropdownList-open');
             
         });        
         options.forEach(option => {
@@ -50,22 +50,22 @@ export function dropdownListFunction(
                 selected.innerText = option.innerText;
                 // remove the clicked styles from the element
                 select.classList.remove('dropdownSelect-clicked');
-                caret.classList.remove('caret-rotate')
+                caret.classList.remove('caret-rotate');
                 menu.classList.remove('dropdownList-open');
                 options.forEach(option=>{
-                    option.classList.remove('active')
-                })
+                    option.classList.remove('active');
+                });
                 option.classList.add('active');
-            })
+            });
         });
         window.addEventListener('click', (e)=>{
             if (e.target !== select && e.target !== menu && e.target !== caret && e.target !== selected){
                 // remove the clicked styles from the elements when you click off the element
                 select.classList.remove('dropdownSelect-clicked');
-                caret.classList.remove('caret-rotate')
+                caret.classList.remove('caret-rotate');
                 menu.classList.remove('dropdownList-open');
-            }
+            };
         });
-    })
+    });
     
-}
+};

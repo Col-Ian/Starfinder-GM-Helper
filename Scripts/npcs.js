@@ -50,35 +50,35 @@ let npcPage = {
         // Fill content of lists
         
         // Challenge Rating
-        listContent(selectChallengeRatings, "challengeRatingNPC", "dropdownSelectedCRNPC")
+        listContent(selectChallengeRatings, "challengeRatingNPC", "dropdownSelectedCRNPC");
 
         // Array
-        listContent(selectArray, "arrayNPC", "dropdownSelectedArrayNPC")
+        listContent(selectArray, "arrayNPC", "dropdownSelectedArrayNPC");
 
         // Creature Type
-        listContent(selectCreatureType, "creatureTypeNPC", "dropdownSelectedCTNPC")
+        listContent(selectCreatureType, "creatureTypeNPC", "dropdownSelectedCTNPC");
 
         // Creature Subtype
-        listContent(selectCreatureSubtype, "creatureSubtypeNPC", "dropdownSelectedCSNPC")
+        listContent(selectCreatureSubtype, "creatureSubtypeNPC", "dropdownSelectedCSNPC");
 
         // Class Graft
-        listContent(selectClassGraft, "classGraftNPC", "dropdownSelectionCGNPC")
+        listContent(selectClassGraft, "classGraftNPC", "dropdownSelectionCGNPC");
 
         // Template Graft
-        listContent(selectTemplateGraft, "templateGraftNPC", "dropdownSelectedTGNPC")
+        listContent(selectTemplateGraft, "templateGraftNPC", "dropdownSelectedTGNPC");
 
         // Special Abilities
-        listContent(selectSpecialAbilities, "specialAbilitiesNPC", "dropdownSelectedSANPC")
+        listContent(selectSpecialAbilities, "specialAbilitiesNPC", "dropdownSelectedSANPC");
 
         // Skills
-        listContent(selectSkills, "skillsNPC", "dropdownSelectedSkillsNPC")
+        listContent(selectSkills, "skillsNPC", "dropdownSelectedSkillsNPC");
 
         // Spells
-        listContent(selectSpells, "spellsNPC", "dropdownSelectedSpellsNPC")
+        listContent(selectSpells, "spellsNPC", "dropdownSelectedSpellsNPC");
 
         // Show selections for dropdown menus.***************
-        dropdownListFunction('.dropdown')
+        dropdownListFunction('.dropdown');
     }
-}
+};
 
 npcPage.startNPC();

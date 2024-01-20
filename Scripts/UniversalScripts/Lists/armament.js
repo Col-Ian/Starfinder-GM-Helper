@@ -4,4 +4,4 @@ export let selectArmament = [
     'Not Armed',
     'Lightly Armed',
     'Heavily Armed'
-]
+];

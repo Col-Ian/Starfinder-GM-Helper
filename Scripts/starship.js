@@ -23,7 +23,7 @@ import { selectStarshipTier } from "./UniversalScripts/Lists/starshipTier.js";
 import { selectFrame } from "./UniversalScripts/Lists/frame.js";
 
 // Armament array
-import { selectArmament } from "./UniversalScripts/Lists/armament.js"
+import { selectArmament } from "./UniversalScripts/Lists/armament.js";
 
 let starshipPage = {
     startStarship: function(){
@@ -36,11 +36,11 @@ let starshipPage = {
         listContent(selectFrame, "frameStarship", "dropdownSelectedFrameStarship");
 
         // Armament
-        listContent(selectArmament, "armamentStarship", "dropdownSelectedArmamentStarship")
+        listContent(selectArmament, "armamentStarship", "dropdownSelectedArmamentStarship");
         
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
     }
-}
+};
 
 starshipPage.startStarship();

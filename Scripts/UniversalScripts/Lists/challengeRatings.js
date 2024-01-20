@@ -27,4 +27,4 @@ export let selectChallengeRatings = [
     '23',
     '24',
     '25'
-]
+];

@@ -17,4 +17,4 @@ export let selectFrame = [
     'Dreadnought',
     'Base Ship',
     'Ultranought'
-]
+];

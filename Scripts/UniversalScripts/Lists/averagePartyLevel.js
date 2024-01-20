@@ -20,4 +20,4 @@ export let selectAveragePartyLevel = [
     '18',
     '19',
     '20'
-]
+];

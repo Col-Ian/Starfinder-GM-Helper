@@ -51,4 +51,4 @@ export let selectCreatureSubtype = [
     'Magical',
     'Native',
     'Technological'
-]
+];
