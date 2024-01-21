@@ -1,0 +1,25 @@
+.homeWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeContent{
+    margin: 20px;
+    padding: 40px;
+    background: #1e0a772a;
+    border-radius: 32px;
+}
+
+@media screen and (min-width: 701px) {
+    .homeWrapper{
+        margin: auto;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform:translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        height: 100%;
+    }
+}
