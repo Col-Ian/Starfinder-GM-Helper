@@ -15,7 +15,7 @@ Challenge Rating: {
     }
 */
 
-let combatantArray= {
+let combatantArrayMainStatistics = {
     crThird: {
         eAC: 10,
         kAC: 12,
