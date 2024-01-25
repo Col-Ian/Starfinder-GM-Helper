@@ -1,5 +1,6 @@
 /*
-Challenge Rating: {
+Challenge Rating = {
+        cr: Challenge rating selected,
         Use the high value for the NPC’s best attacks and the low value for the rest. Use one value for all ranged attacks and the other for all melee attacks (you generally don’t need to worry about differences between one weapon and another in the same category).        
         highAttackBonus: ,
         lowAttackBonus: ,
@@ -18,8 +19,9 @@ Challenge Rating: {
     }
 */
 /*
-let combatantArrayAttackStatistics = {
-    crThird: {
+let combatantArrayAttackStatistics = [
+    crThird = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -34,7 +36,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crHalf: {
+    crHalf = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -49,7 +52,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crOne: {
+    crOne = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -64,7 +68,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwo: {
+    crTwo = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -79,7 +84,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crThree: {
+    crThree = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -95,7 +101,8 @@ let combatantArrayAttackStatistics = {
         damageBonus: '',
 
     },
-    crFour: {
+    crFour = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -110,7 +117,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crFive: {
+    crFive = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -125,7 +133,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crSix: {
+    crSix = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -140,7 +149,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crSeven: {
+    crSeven = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -155,7 +165,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crEight: {
+    crEight = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -170,7 +181,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crNine: {
+    crNine = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -185,7 +197,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTen: {
+    crTen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -200,7 +213,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crEleven: {
+    crEleven = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -215,7 +229,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwelve: {
+    crTwelve = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -230,7 +245,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crThirteen: {
+    crThirteen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -245,7 +261,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crFourteen: {
+    crFourteen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -260,7 +277,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crFifteen: {
+    crFifteen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -275,7 +293,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crSixteen: {
+    crSixteen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -290,7 +309,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crSeventeen: {
+    crSeventeen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -305,7 +325,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crEighteen: {
+    crEighteen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -320,7 +341,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crNineteen: {
+    crNineteen = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -335,7 +357,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwenty: {
+    crTwenty = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -350,7 +373,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwentyOne: {
+    crTwentyOne = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -365,7 +389,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwentyTwo: {
+    crTwentyTwo = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -380,7 +405,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwentyThree: {
+    crTwentyThree = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -395,7 +421,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwentyFour: {
+    crTwentyFour = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -410,7 +437,8 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-    crTwentyFive: {
+    crTwentyFive = {
+        cr: '',
         highAttackBonus: ,
         lowAttackBonus: ,
         energyRangedDamageNumberDice: '',
@@ -425,5 +453,5 @@ let combatantArrayAttackStatistics = {
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: '',
     },
-}
+]
 */

@@ -1,5 +1,6 @@
 /*
-Challenge Rating: {
+Challenge Rating = {
+        cr: Challenge rating selected,
         eAC: Energy Armor Class,
         kAC: Kenetic Armor Class,
         fort: Fortitude Saving Throw,
@@ -15,8 +16,9 @@ Challenge Rating: {
     }
 */
 
-let expertArrayMainStatistics= {
-    crThird: {
+let expertArrayMainStatistics= [
+    crThird = {
+        cr: '1/3',
         eAC: 10,
         kAC: 11,
         fort: 0,
@@ -30,7 +32,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 7, 3 ],
         goodSkills: [ 3, 2 ]
     },
-    crHalf: {
+    crHalf = {
+        cr: '1/2',
         eAC: 10,
         kAC: 11,
         fort: 0,
@@ -44,7 +47,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 9, 3 ],
         goodSkills: [ 4, 2 ]
     },
-    crOne: {
+    crOne = {
+        cr: '1',
         eAC: 11,
         kAC: 12,
         fort: 1,
@@ -58,7 +62,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 10, 3 ],
         goodSkills: [ 5, 2 ]
     },
-    crTwo: {
+    crTwo = {
+        cr: '2',
         eAC: 13,
         kAC: 14,
         fort: 1,
@@ -72,7 +77,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 12, 3 ],
         goodSkills: [ 7, 2 ]
     },
-    crThree: {
+    crThree = {
+        cr: '3',
         eAC: 14,
         kAC: 15,
         fort: 2,
@@ -86,7 +92,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 13, 3 ],
         goodSkills: [ 8, 2 ]
     },
-    crFour: {
+    crFour = {
+        cr: '4',
         eAC: 16,
         kAC: 17,
         fort: 3,
@@ -100,7 +107,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 15 , 3 ],
         goodSkills: [ 10 , 2 ]
     },
-    crFive: {
+    crFive = {
+        cr: '5',
         eAC: 17,
         kAC: 18,
         fort: 4,
@@ -114,7 +122,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 16, 3 ],
         goodSkills: [ 11, 2 ]
     },
-    crSix: {
+    crSix = {
+        cr: '6',
         eAC: 18,
         kAC: 19,
         fort: 5,
@@ -128,7 +137,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 18, 3 ],
         goodSkills: [ 13, 2 ]
     },
-    crSeven: {
+    crSeven = {
+        cr: '7',
         eAC: 19,
         kAC: 20,
         fort: 6,
@@ -142,7 +152,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 19, 3 ],
         goodSkills: [ 14, 2 ]
     },
-    crEight: {
+    crEight = {
+        cr: '8',
         eAC: 20,
         kAC: 21,
         fort: 7,
@@ -156,7 +167,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 21, 3 ],
         goodSkills: [ 16, 2 ]
     },
-    crNine: {
+    crNine = {
+        cr: '9',
         eAC: 22,
         kAC: 23,
         fort: 8,
@@ -170,7 +182,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 22, 3 ],
         goodSkills: [ 17, 2 ]
     },
-    crTen: {
+    crTen = {
+        cr: '10',
         eAC: 23,
         kAC: 24,
         fort: 9,
@@ -184,7 +197,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 24, 3 ],
         goodSkills: [ 19, 2 ]
     },
-    crEleven: {
+    crEleven = {
+        cr: '11',
         eAC: 24,
         kAC: 25,
         fort: 10,
@@ -198,7 +212,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 25, 3 ],
         goodSkills: [ 20, 2 ]
     },
-    crTwelve: {
+    crTwelve = {
+        cr: '12',
         eAC: 26,
         kAC: 27,
         fort: 11,
@@ -212,7 +227,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 27, 3 ],
         goodSkills: [ 22, 2 ]
     },
-    crThirteen: {
+    crThirteen = {
+        cr: '13',
         eAC: 27,
         kAC: 28,
         fort: 12,
@@ -226,7 +242,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 28, 3 ],
         goodSkills: [ 23, 2 ]
     },
-    crFourteen: {
+    crFourteen = {
+        cr: '14',
         eAC: 28,
         kAC: 29,
         fort: 12,
@@ -240,7 +257,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 30, 3 ],
         goodSkills: [ 25, 2 ]
     },
-    crFifteen: {
+    crFifteen = {
+        cr: '15',
         eAC: 29,
         kAC: 30,
         fort: 13,
@@ -254,7 +272,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 31, 3 ],
         goodSkills: [ 26, 2 ]
     },
-    crSixteen: {
+    crSixteen = {
+        cr: '16',
         eAC: 30,
         kAC: 31,
         fort: 14,
@@ -268,7 +287,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 33, 3 ],
         goodSkills: [ 28, 2 ]
     },
-    crSeventeen: {
+    crSeventeen = {
+        cr: '17',
         eAC: 31,
         kAC: 32,
         fort: 15,
@@ -282,7 +302,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 34, 3 ],
         goodSkills: [ 29, 2 ]
     },
-    crEighteen: {
+    crEighteen = {
+        cr: '18',
         eAC: 32,
         kAC: 33,
         fort: 16,
@@ -296,7 +317,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 36, 3 ],
         goodSkills: [ 31, 2 ]
     },
-    crNineteen: {
+    crNineteen = {
+        cr: '19',
         eAC: 33,
         kAC: 34,
         fort: 16,
@@ -310,7 +332,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 37, 3 ],
         goodSkills: [ 32, 2 ]
     },
-    crTwenty: {
+    crTwenty = {
+        cr: '20',
         eAC: 35,
         kAC: 36,
         fort: 17,
@@ -324,7 +347,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 39, 3 ],
         goodSkills: [ 34, 2 ]
     },
-    crTwentyOne: {
+    crTwentyOne = {
+        cr: '21',
         eAC: 36,
         kAC: 37,
         fort: 18,
@@ -338,7 +362,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 40, 3 ],
         goodSkills: [ 35, 2 ]
     },
-    crTwentyTwo: {
+    crTwentyTwo = {
+        cr: '22',
         eAC: 38,
         kAC: 39,
         fort: 18,
@@ -352,7 +377,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 42, 3 ],
         goodSkills: [ 37, 2 ]
     },
-    crTwentyThree: {
+    crTwentyThree = {
+        cr: '23',
         eAC: 39,
         kAC: 40,
         fort: 19,
@@ -366,7 +392,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 43, 3 ],
         goodSkills: [ 38, 2 ]
     },
-    crTwentyFour: {
+    crTwentyFour = {
+        cr: '24',
         eAC: 41,
         kAC: 42,
         fort: 20,
@@ -380,7 +407,8 @@ let expertArrayMainStatistics= {
         masterSkills: [ 45, 3 ],
         goodSkills: [ 40, 2 ]
     },
-    crTwentyFive: {
+    crTwentyFive = {
+        cr: '25',
         eAC: 42,
         kAC: 43,
         fort: 21,
@@ -394,4 +422,4 @@ let expertArrayMainStatistics= {
         masterSkills: [ 46, 3 ],
         goodSkills: [ 41, 2 ]
     },
-}
+]
