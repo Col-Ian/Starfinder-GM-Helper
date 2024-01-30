@@ -422,4 +422,6 @@ let expertArrayMainStatistics= [
         masterSkills: [ 46, 3 ],
         goodSkills: [ 41, 2 ]
     },
-]
+];
+
+export {expertArrayMainStatistics};

@@ -422,19 +422,6 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 46, 1 ],
         goodSkills: [ 41, 2 ]
     },
-]
+];
 
-let selection = {}
-
-combatantArrayMainStatistics.forEach(function(i){
-    if(i.cr === '26'){
-        selection = i
-    }
-})
-
-if(Object.keys(selection).length === 0){
-    console.log('No CR found')
-} else {
-    console.log(selection)
-    console.log(selection.abilityScoreModifiers)
-}
+export {combatantArrayMainStatistics};

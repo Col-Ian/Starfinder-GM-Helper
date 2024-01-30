@@ -1,0 +1,5 @@
+A creature type graft opens with a description of the creature type, followed by traits and adjustments entries.
+
+Traits: The listed traits are usually innate to all creatures of the type, so it is recommended that a creature with this type gain them. The traits entry includes special abilities that don’t count against the number of abilities granted by the creature’s array and that might also change the NPC’s ability score modifiers.
+
+Adjustments: Each creature type lists adjustments that alter the NPC’s statistics. You don’t need to make these adjustments if you don’t want to. If you want to give an NPC a class graft (see Step 4), you should use only the adjustments entry for the creature type graft or the adjustments entry for the class graft, not both—decide whether the adjustments from its class or the adjustments from its creature type are more important and apply only those.

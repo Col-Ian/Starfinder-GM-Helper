@@ -453,4 +453,6 @@ let combatantArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '10',
         damageBonus: 25,
     },
-]
+];
+
+export {combatantArrayAttackStatistics};

@@ -423,4 +423,6 @@ let spellcasterArray= [
         masterSkills: [ 46, 2 ],
         goodSkills: [ 41, 1 ]
     },
-]
+];
+
+export{spellcasterArray};

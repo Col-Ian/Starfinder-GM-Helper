@@ -453,4 +453,6 @@ let spellcasterArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '12',
         damageBonus: 25,
     },
-]
+];
+
+export {spellcasterArrayAttackStatistics};

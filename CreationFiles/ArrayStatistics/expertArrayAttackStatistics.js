@@ -453,4 +453,6 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '12',
         damageBonus: 25,
     },
-]
+];
+
+export {expertArrayAttackStatistics};
