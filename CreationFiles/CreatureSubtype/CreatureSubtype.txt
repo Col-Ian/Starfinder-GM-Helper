@@ -1,0 +1,25 @@
+let subtype = {
+    description: '',
+    speeds: [],
+    immunities: [],
+    resistances:[
+        resistance = {
+            resistanceType: '',
+            resistanceDR: 0,
+        }
+    ],
+    vulnerabilities: [],
+    darkvision: 0,
+    lowLightVision: false,
+    traits: '',
+    abilityNames: [],
+    abilityDescriptions: [],
+    otherAbilities: []
+}
+
+export {subtype}
+
+Generally, a subtype graft grants a few traits, but for particularly powerful subtypes (such as devil), you
+might want to monitor how many abilities the subtype gives your NPC and avoid adding extra special abilities
+of the same type that the subtype graft already provides (usually immunities, resistances, and spell-like
+abilities).

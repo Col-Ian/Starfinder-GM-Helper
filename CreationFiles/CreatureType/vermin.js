@@ -1,7 +1,17 @@
+// Notes: set Intelligence modifier to -. (mindless)
+
 let vermin = {
     description: 'This type includes insects, arachnids, other arthropods, worms, and similar invertebrates.',
-    traits: 'Darkvision 60 ft., mindless; set Intelligence modifier to -.',
-    adjustments: '+2 to Fortitude saving throws.'
+    immunities: [],
+    resistances:[],
+    darkvision: 60,
+    lowLightVision: false,
+    traits: [
+        'Darkvision 60 ft.',
+        'mindless'
+    ],
+    adjustments: '+2 to Fortitude saving throws.',
+    otherAbilities:['mindless']
 };
 
 function verminAdjustments(mainStatistics, attackStatistics){
