@@ -25,7 +25,7 @@ function generateEncounter(selectedCR, xpBudget, finalList){
 
     // Fill the placeholder list with possible creatures
     creatureList.forEach((e)=>{
-        if( e.crInt >= (selectedCR - 3)){
+        if( e.crInt <= selectedCR && e.crInt >= (selectedCR -3)){
             placeholderList.push(e);
         }
     })
@@ -44,7 +44,7 @@ function generateEncounter(selectedCR, xpBudget, finalList){
 
         // If the CR is less than or equal to the selected CR, while also being a minimum of 5 ratings lower than selected, add it to the tempList if it can fit in the budget
         creatureList.forEach( (e)=>{
-            if( e.crInt >= (selectedCR - 5) && e.exp <= remainingBudget){
+            if( e.crInt <= selectedCR && e.crInt >= (selectedCR - 5) && e.exp <= remainingBudget){
                 tempList.push(e);
             }
         })
