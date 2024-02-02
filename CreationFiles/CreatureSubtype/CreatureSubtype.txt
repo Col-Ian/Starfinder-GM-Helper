@@ -11,7 +11,7 @@ let subtype = {
     vulnerabilities: [],
     darkvision: 0,
     lowLightVision: false,
-    traits: '',
+    traits: [],
     abilityNames: [],
     abilityDescriptions: [],
     otherAbilities: []
