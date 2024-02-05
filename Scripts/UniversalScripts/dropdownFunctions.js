@@ -9,12 +9,13 @@ export function listContent(
 
         // Check if first item is the default option selected
         let defaultOption = document.getElementById(defaultSelected);
-        if(defaultOption.textContent === i){
+        if(defaultOption.textContent === i.value){
             tag.classList.add('active');
+            tag.setAttribute('id', 'active')
         };
 
         // Fill the li with the item from the list.
-        let item = document.createTextNode(i);
+        let item = document.createTextNode(i.value);
         tag.appendChild(item);
 
         // Append the new li to our ul.
@@ -54,8 +55,10 @@ export function dropdownListFunction(
                 menu.classList.remove('dropdownList-open');
                 options.forEach(option=>{
                     option.classList.remove('active');
+                    option.removeAttribute('id')
                 });
                 option.classList.add('active');
+                option.setAttribute('id', 'active')
             });
         });
         window.addEventListener('click', (e)=>{

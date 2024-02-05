@@ -1,14 +1,5 @@
 import { creatureList } from "../creatureList.js";
-
-// let selectedCR = 6.0;
-
-// let xpBudget = 2400;
-
-let selectedCR = 3.0;
-
-let xpBudget = 800;
-
-let finalList = []
+import { selectAveragePartyLevel } from "../../Scripts/UniversalScripts/Lists/averagePartyLevel.js";
 
 // The idea of the function is to create an encounter that contains a creature close to the CR selected, while potentially adding more creatures to aid in the encounter.
 
@@ -69,15 +60,36 @@ function generateEncounter(selectedCR, xpBudget, finalList){
     })
 };
 
-generateEncounter(selectedCR, xpBudget, finalList)
-console.log(finalList)
 
+
+// Function to display the generated encounter
 export function displayGeneratedEncounter(){
-    // if (finalList.length != 0){
-        // Get the wrapper to append to.
-        let mainWrapperDiv = document.getElementById("encounterResultWrapper")
-        // Clear so it doesn't populate more than once when user clicks again.
-        mainWrapperDiv.innerHTML = ''
+    
+    // Set our list that will be displayed to user.
+    let finalList = [];
+            
+    // Get the main wrapper to append to.
+    let mainWrapperDiv = document.getElementById("encounterResultWrapper")
+    // Clear so it doesn't populate more than once when user clicks again.
+    mainWrapperDiv.innerHTML = ''
+
+    let dropdownSelected = document.getElementById('active')
+    if (dropdownSelected === null){
+        let noOptionDiv = document.createElement('div');
+        noOptionDiv.appendChild(document.createTextNode('No option selected.'))
+        mainWrapperDiv.appendChild(noOptionDiv)
+    } else{
+        let xpBudget = 0;
+
+        selectAveragePartyLevel.forEach(e=>{
+            if (e.value === dropdownSelected.textContent){
+                xpBudget = e.xpBudget
+            };
+        })
+
+        let aplFloat = parseFloat(dropdownSelected.textContent)
+
+        generateEncounter(aplFloat, xpBudget, finalList)
 
         // Create the results divs before adding the class to them
         let resultWrapperDiv = document.createElement("div");
@@ -143,5 +155,5 @@ export function displayGeneratedEncounter(){
             resName.appendChild(a)
             allResultsNameDiv.appendChild(resName)
         })
-    // }
+    }
 }
