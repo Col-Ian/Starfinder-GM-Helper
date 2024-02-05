@@ -76,16 +76,24 @@ export function displayGeneratedEncounter(){
     // if (finalList.length != 0){
         // Get the wrapper to append to.
         let mainWrapperDiv = document.getElementById("encounterResultWrapper")
+        // Clear so it doesn't populate more than once when user clicks again.
+        mainWrapperDiv.innerHTML = ''
 
         // Create the results divs before adding the class to them
+        let resultWrapperDiv = document.createElement("div");
+        resultWrapperDiv.classList.add("resultsWrapper")
+        mainWrapperDiv.appendChild(resultWrapperDiv)
+
+
         let allResultsCRDiv = document.createElement("div");
+        
         allResultsCRDiv.classList.add("allResultsCR");
         let allResultsNameDiv = document.createElement("div");
         allResultsNameDiv.classList.add("allResultsName");
 
         // Append to the wrapper
-        mainWrapperDiv.appendChild(allResultsCRDiv);
-        mainWrapperDiv.appendChild(allResultsNameDiv);
+        resultWrapperDiv.appendChild(allResultsCRDiv);
+        resultWrapperDiv.appendChild(allResultsNameDiv);
 
         // Fill allResultsCR div
         let resultCRDiv = document.createElement("div");

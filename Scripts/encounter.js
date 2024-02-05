@@ -9,10 +9,14 @@ let encounterPage = {
         // Average Party Level
         listContent(selectAveragePartyLevel, "averagePartyLevelEncounter", "dropdownSelectedAPLEncounter")
 
-        displayGeneratedEncounter()
+        // displayGeneratedEncounter()
 
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
+        
+        let btn = document.querySelector(".buttonsNPC")
+
+        btn.addEventListener('click', displayGeneratedEncounter)
     }
 }
 
