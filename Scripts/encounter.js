@@ -1,6 +1,6 @@
 import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
-import { displayGeneratedEncounter } from "../CreationFiles/Generation/generateEncounter.js";
+import { generateEncounter } from "../CreationFiles/Generation/generateEncounter.js";
 import { selectAveragePartyLevel } from "./UniversalScripts/Lists/averagePartyLevel.js";
 
 let encounterPage = {
@@ -16,7 +16,7 @@ let encounterPage = {
 
         // Button functionality to add selection upon click.
         let btn = document.querySelector(".generateButton")
-        btn.addEventListener('click', displayGeneratedEncounter)
+        btn.addEventListener('click', generateEncounter)
     }
 }
 

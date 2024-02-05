@@ -1,69 +1,9 @@
-import { creatureList } from "../creatureList.js";
 import { selectAveragePartyLevel } from "../../Scripts/UniversalScripts/Lists/averagePartyLevel.js";
+import { generateEncounterList } from "./generateEncounterList.js";
 
 // The idea of the function is to create an encounter that contains a creature close to the CR selected, while potentially adding more creatures to aid in the encounter.
 
-function generateEncounter(selectedCR, xpBudget, finalList){
-
-    // Initialize the list of creatures to be pushed to the outside array.
-    let listOfCreatures = [];
-    
-    // set a value for the remaining CR
-    let remainingBudget = xpBudget;
-
-
-    // Start with a creature that is close to the CR selected (minimum of 3 ratings lower)
-    // Initialize a list to use for a placeholder
-    let placeholderList = []
-
-    // Fill the placeholder list with possible creatures
-    creatureList.forEach((e)=>{
-        if( e.crInt <= selectedCR && e.crInt >= (selectedCR -3)){
-            placeholderList.push(e);
-        }
-    })
-
-    // Select a random creature from the placeholder list to add to listOfCreatures and push it
-    let randomFirstCreature = placeholderList[Math.floor(Math.random() * placeholderList.length)];
-    listOfCreatures.push(randomFirstCreature);
-    // Subtract from the XP Budget
-    remainingBudget -= randomFirstCreature.exp;
-
-    // Fill the list with CR that equals the sum of the selectedCR, while only running as long as there's enough room in remainingBudget to add another creature
-    while ( remainingBudget > 0 ){
-
-        // Temporary list to store the values
-        let tempList = []
-
-        // If the CR is less than or equal to the selected CR, while also being a minimum of 5 ratings lower than selected, add it to the tempList if it can fit in the budget
-        creatureList.forEach( (e)=>{
-            if( e.crInt <= selectedCR && e.crInt >= (selectedCR - 5) && e.exp <= remainingBudget){
-                tempList.push(e);
-            }
-        })
-
-        // If the tempList has no items, break from while loop.
-        if (tempList.length === 0){
-            break;
-        }
-        
-        // Get random position within tempList to add to listOfCreatures
-        let randomCreature = tempList[Math.floor(Math.random() * tempList.length)];
-        // Push the creature to the listOfCreatures
-        listOfCreatures.push(randomCreature);
-        // Subtract the exp of the generated creature from the budget
-        remainingBudget -= randomCreature.exp;
-    }
-
-    listOfCreatures.forEach( (cr) => {
-        finalList.push(cr)
-    })
-};
-
-
-
-// Function to display the generated encounter
-export function displayGeneratedEncounter(){
+export function generateEncounter(){
     
     // Set our list that will be displayed to user.
     let finalList = [];
@@ -73,23 +13,31 @@ export function displayGeneratedEncounter(){
     // Clear so it doesn't populate more than once when user clicks again.
     mainWrapperDiv.innerHTML = ''
 
+    // Get the currently selected item from the dropdown
     let dropdownSelected = document.getElementById('active')
+
+    // If null, it means no option is selected.
     if (dropdownSelected === null){
         let noOptionDiv = document.createElement('div');
         noOptionDiv.appendChild(document.createTextNode('No option selected.'))
         mainWrapperDiv.appendChild(noOptionDiv)
     } else{
+
+        // Initialize xpBudget
         let xpBudget = 0;
 
+        // Find the xpBudget based on the Average Party Level selected.
         selectAveragePartyLevel.forEach(e=>{
             if (e.value === dropdownSelected.textContent){
                 xpBudget = e.xpBudget
             };
         })
 
+        // Parse the string into a float to pass into the next function.
         let aplFloat = parseFloat(dropdownSelected.textContent)
 
-        generateEncounter(aplFloat, xpBudget, finalList)
+        // Function to fill finalList with our generated encounter.
+        generateEncounterList(aplFloat, xpBudget, finalList)
 
         // Create the results divs before adding the class to them
         let resultWrapperDiv = document.createElement("div");
