@@ -11,6 +11,9 @@ body,ul,li,h1,h2,a{
 main{
     margin-top: 67px;
     text-align: center;
+    
+    display: flex;
+    flex-direction: column;
 }
 
 

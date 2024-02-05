@@ -7,3 +7,34 @@
     flex-direction: column;
     align-items: center;
 }
+
+.resultsWrapper{
+    align-self: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    border: 4px solid black;
+    background-color: rgba(0, 0, 0, 0.062);
+}
+
+.resultLabel{
+    font-weight: bold;
+}
+
+.resultCR{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.resultName{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.linkToCreature{
+    text-decoration: underline 3px;
+    color: black;
+}
+
+.linkToCreature:hover{
+    color: purple;
+}

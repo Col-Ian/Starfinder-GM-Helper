@@ -1,4 +1,6 @@
-let creatureList = [
+let creature = {}
+
+export let creatureList = [
     creature ={
         name: 'Drift Leech',
         creatureCR:'1/3',
@@ -82,13 +84,6 @@ let creatureList = [
         crInt: 0.5,
         exp: 200,
         link: 'https://www.aonsrd.com/AlienDisplay.aspx?ItemName=Con%20Artist&Family=Charlatans',
-    },
-    creature ={
-        name: '',
-        creatureCR:'1/2',
-        crInt: 0.5,
-        exp: 200,
-        link: '',
     },
     creature ={
         name: 'Damai',
@@ -344,4 +339,4 @@ let creatureList = [
     },
 ]
 
-module.exports = creatureList;
+// module.exports = creatureList;

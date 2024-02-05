@@ -32,21 +32,21 @@
     </header>
     <main>
         
-        <div class="mainWrapperDiv">
+        <div class="mainWrapperDiv" id="encounterWrapperDiv">
             Encounters
             <div class="parentDivEncounter">
                 
                 <div class="encounterSelection">
                     <div class="labelDiv">
-                        <div class="dropDownLabel">To be filled out later</div>
+                        <div class="dropDownLabel">Average Party Level</div>
                     </div>
                     <div class="dropDownDiv">
                         <div class="dropdown">
                             <div class="dropdownSelect">
-                                <span class="dropdownSelected"></span>
+                                <span class="dropdownSelected" id="dropdownSelectedAPLEncounter">-</span>
                                 <div class="caret"></div>
                             </div>
-                                <ul class="dropdownList">
+                                <ul class="dropdownList" id="averagePartyLevelEncounter">
                                 </ul>
                             </div>
                         </div>
@@ -58,8 +58,10 @@
                 <input type="button" value="Generate" class="generateButton">
             </div>
             <p>Down here is where the stuff will display</p>
+            <div class="resultsWrapper" id="encounterResultWrapper">
+            </div>
         </div>    
-        
+        <script type="module" src="Scripts/encounter.js"></script>
     </main>
 
 </body>
