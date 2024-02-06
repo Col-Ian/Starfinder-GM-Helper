@@ -1,5 +1,11 @@
 //  To use for default Class Graft
+let cg = {};
+
 export let selectClassGraft = [
-    'None',
-    'Return later'
+    cg ={
+        value: 'None'
+    },
+    cg ={
+        value: 'Return later'
+    },
 ];

@@ -1,5 +1,11 @@
 // To be used for default Special Abilities
+let sa = {};
+
 export let selectSpecialAbilities = [
-    'None',
-    'Return later'
+    sa ={
+        value: 'None',
+    },
+    sa ={
+        value: 'Return later'
+    },
 ];

@@ -1,6 +1,14 @@
 // To use for default Arrays
+let arr = {};
+
 export let selectArray = [
-    'Combatant',
-    'Expert',
-    'Spellcaster'
+    arr ={
+        value: 'Combatant'
+    },
+    arr ={
+        value: 'Expert'
+    },
+    arr ={
+        value: 'Spellcaster'
+    }
 ];
