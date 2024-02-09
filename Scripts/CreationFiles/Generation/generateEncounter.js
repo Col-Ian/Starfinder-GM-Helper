@@ -1,4 +1,4 @@
-import { selectAveragePartyLevel } from "../../Scripts/UniversalScripts/Lists/averagePartyLevel.js";
+import { selectAveragePartyLevel } from "../../UniversalScripts/Lists/averagePartyLevel.js";
 import { generateEncounterList } from "./generateEncounterList.js";
 
 // The idea of the function is to create an encounter that contains a creature close to the CR selected, while potentially adding more creatures to aid in the encounter.
