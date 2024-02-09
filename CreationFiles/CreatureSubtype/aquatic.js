@@ -20,11 +20,15 @@ let aquatic = {
         'Athletics as a master or good skill',
         'if it can breathe air, it also gains the amphibious special ability'
     ],
-    abilityNames: [],
-    abilityDescriptions: [],
+    abilityNames: [
+        'Water Breathing (Ex)',
+        'Amphibious (Ex) (if it can breathe air)'
+    ],
+    abilityDescriptions: [
+        'The creature can breathe water. It can\'t breathe air unless it has the amphibious special ability.',
+        'The creature has the aquatic subtype or water breathing, but it can breathe air and survive on land.'
+    ],
     otherAbilities: [
-        'water breathing',
-        'amphibious (if it can breathe air)'
     ]
 }
 

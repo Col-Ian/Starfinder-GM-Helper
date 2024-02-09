@@ -1,23 +1,24 @@
-let cold = {
-    description: 'Creatures with this subtype are usually native to frigid environments.',
+let incorporeal = {
+    description: 'Creatures with this subtype have no physical bodies.',
     speeds: [],
-    immunities: ['cold'],
+    immunities: [],
     resistances:[
         resistance = {
             resistanceType: '',
             resistanceDR: 0,
         }
     ],
-    vulnerabilities: ['fire'],
+    vulnerabilities: [],
     darkvision: 0,
     lowLightVision: false,
     traits: [
-        'immunity to cold',
-        'vulnerable to fire'
+        'incorporeal'
     ],
     abilityNames: [],
     abilityDescriptions: [],
-    otherAbilities: []
+    otherAbilities: [
+        'incorporeal'
+    ]
 }
 
-export {cold}
+export {incorporeal}

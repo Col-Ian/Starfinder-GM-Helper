@@ -24,7 +24,7 @@ let angel = {
     darkvision: 60,
     lowLightVision: true,
     traits: [
-        'Darkvision 60 ft.',
+        'darkvision 60 ft.',
         'low-light vision',
         'protective aura',
         '+4 to saving throws against poison',
@@ -32,11 +32,15 @@ let angel = {
         'resistance 10 to electricity and fire',
         'truespeech'
     ],
-    abilityNames: ['Protective Aura (Su)'],
-    abilityDescriptions:['For angels of CR 3 to CR 15, this ability grants creatures within the aura (usually 20 feet), including the angel, a divine bonus (usually +2) to AC against attacks made by evil creatures and a divine bonus (usually +4) to saving throws against effects created by evil creatures. The protective aura of a more powerful or a weaker angel might grant a larger or smaller bonus and have a larger or smaller radius, respectively.'],
+    abilityNames: [
+        'Protective Aura (Su)',
+        'Truespeech (Su)'
+    ],
+    abilityDescriptions:[
+        'For angels of CR 3 to CR 15, this ability grants creatures within the aura (usually 20 feet), including the angel, a divine bonus (usually +2) to AC against attacks made by evil creatures and a divine bonus (usually +4) to saving throws against effects created by evil creatures. The protective aura of a more powerful or a weaker angel might grant a larger or smaller bonus and have a larger or smaller radius, respectively.',
+        'The creature can speak with any other creature that has a language. This ability is always active.'
+    ],
     otherAbilities: [
-        'protective aura',
-        'truespeech'
     ]
 }
 

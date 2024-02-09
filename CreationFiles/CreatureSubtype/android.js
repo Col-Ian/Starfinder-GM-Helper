@@ -12,7 +12,7 @@ let android = {
     darkvision: 60,
     lowLightVision: true,
     traits: [
-        'Most creatures with this subtype gain darkvision 60 ft. and low-light vision',
+        'most creatures with this subtype gain darkvision 60 ft. and low-light vision',
         'if the NPC is of the android race, it also gains the constructed, flat affect, and upgrade slot racial traits'
     ],
     abilityNames: [],

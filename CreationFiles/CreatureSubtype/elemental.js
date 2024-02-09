@@ -1,23 +1,24 @@
-let cold = {
-    description: 'Creatures with this subtype are usually native to frigid environments.',
+let elemental = {
+    description: 'An elemental is a creature composed entirely of matter from one of the four Elemental Planes.',
     speeds: [],
-    immunities: ['cold'],
+    immunities: [
+        'elemental immunities'
+    ],
     resistances:[
         resistance = {
             resistanceType: '',
             resistanceDR: 0,
         }
     ],
-    vulnerabilities: ['fire'],
+    vulnerabilities: [],
     darkvision: 0,
     lowLightVision: false,
     traits: [
-        'immunity to cold',
-        'vulnerable to fire'
+        'elemental immunities'
     ],
     abilityNames: [],
     abilityDescriptions: [],
     otherAbilities: []
 }
 
-export {cold}
+export {elemental}

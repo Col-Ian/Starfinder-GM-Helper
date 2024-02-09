@@ -19,15 +19,19 @@ let azata = {
     darkvision: 60,
     lowLightVision: true,
     traits: [
-        'Darkvision 60 ft.',
+        'darkvision 60 ft.',
         'low-light vision',
         'immunity to electricity and petrification',
         'resistance 10 to cold and fire',
         'truespeech'
     ],
-    abilityNames: [],
-    abilityDescriptions: [],
-    otherAbilities: ['truespeech']
+    abilityNames: [
+        'Truespeech (Su)'
+    ],
+    abilityDescriptions: [
+        'The creature can speak with any other creature that has a language. This ability is always active.'
+    ],
+    otherAbilities: []
 }
 
 export {azata}
