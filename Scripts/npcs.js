@@ -61,20 +61,20 @@ let npcPage = {
         // Creature Subtype
         listContent(selectCreatureSubtype, "creatureSubtypeNPC", "dropdownSelectedCSNPC");
 
-        // Class Graft
-        listContent(selectClassGraft, "classGraftNPC", "dropdownSelectionCGNPC");
+        // Class Graft (can be added for additional customization later)
+        // listContent(selectClassGraft, "classGraftNPC", "dropdownSelectionCGNPC");
 
-        // Template Graft
-        listContent(selectTemplateGraft, "templateGraftNPC", "dropdownSelectedTGNPC");
+        // Template Graft (can be added for additional customization later)
+        // listContent(selectTemplateGraft, "templateGraftNPC", "dropdownSelectedTGNPC");
 
         // Special Abilities
         listContent(selectSpecialAbilities, "specialAbilitiesNPC", "dropdownSelectedSANPC");
 
-        // Skills
-        listContent(selectSkills, "skillsNPC", "dropdownSelectedSkillsNPC");
+        // Skills (can be added for additional customization later)
+        // listContent(selectSkills, "skillsNPC", "dropdownSelectedSkillsNPC");
 
-        // Spells
-        listContent(selectSpells, "spellsNPC", "dropdownSelectedSpellsNPC");
+        // Spells (can be added for additional customization later)
+        // listContent(selectSpells, "spellsNPC", "dropdownSelectedSpellsNPC");
 
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
