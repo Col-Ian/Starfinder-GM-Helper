@@ -1,6 +1,9 @@
 // Import the functions to create the dropdown and to fill the content
 import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
+// Import function to generate NPCs
+import { generateNPC } from "./CreationFiles/Generation/NPCs/generateNPC.js";
+
 /*
 
 listContent(
@@ -78,6 +81,7 @@ let npcPage = {
 
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
+        generateNPC();
     }
 };
 

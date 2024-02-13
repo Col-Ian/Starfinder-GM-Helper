@@ -1,4 +1,4 @@
-import { creatureList } from "../creatureList.js";
+import { creatureList } from "../../creatureList.js";
 
 // The idea of the function is to create an encounter that contains a creature close to the CR selected, while potentially adding more creatures to aid in the encounter.
 
