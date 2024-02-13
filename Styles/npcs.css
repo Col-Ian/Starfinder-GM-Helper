@@ -37,7 +37,8 @@
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 0px 4px;
+    padding: 0px 12px;
+    text-indent: -8px;
     text-align: start;
 }
 .statXP{
