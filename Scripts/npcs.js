@@ -70,8 +70,8 @@ let npcPage = {
         // Template Graft (can be added for additional customization later)
         // listContent(selectTemplateGraft, "templateGraftNPC", "dropdownSelectedTGNPC");
 
-        // Special Abilities
-        listContent(selectSpecialAbilities, "specialAbilitiesNPC", "dropdownSelectedSANPC");
+        // Special Abilities (can be added for additional customization later)
+        // listContent(selectSpecialAbilities, "specialAbilitiesNPC", "dropdownSelectedSANPC");
 
         // Skills (can be added for additional customization later)
         // listContent(selectSkills, "skillsNPC", "dropdownSelectedSkillsNPC");
@@ -81,7 +81,10 @@ let npcPage = {
 
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
-        generateNPC();
+
+        // Button functionality to add selection upon click.
+        let btn = document.querySelector(".generateButton")
+        btn.addEventListener('click', generateNPC);
     }
 };
 

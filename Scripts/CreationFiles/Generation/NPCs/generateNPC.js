@@ -94,335 +94,345 @@ import { createBoldSpanInDiv } from "../../../UniversalScripts/createBoldSpanInD
 
 export function generateNPC(){
 
-    // Initialize values
-
-    let alienCR = '7'
-
-    let xpValue = numberWithCommas(3200)
-
-    let creatureType = 'Vermin';
-    let creatureSubtype = 'None';
-
-    let initiativeValue = 4;
-    let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
-    let perceptionValue = 14;
-
-    let hpValue = 105;
-
-    let eacValue = 19;
-    let kacValue = 21;
-
-    let fortValue = 11;
-    let refValue = 6;
-    let willValue = 9;
-
-    let immunitiesValue = [
-        'critical hits',
-        'lightning'
-    ];
-    let resistancesValue = [
-        'cold 10',
-        'acid 10'
-    ];
-    let weaknessesValue = ['fire'];
-
-    let speedValue = [
-        '30 ft.',
-        'fly 30 ft.'
-    ];
-
-    let toHitMeleeValue = 17;
-    let meleeDamageValue = '2d6+11';
-    let toHitRangedValue = 14;
-    let rangedDamageValue = '2d8+7';
-
-    let attributeValues = {
-        str: 4,
-        dex: 2,
-        con: 5,
-        int: '-',
-        wis: 0,
-        cha: 0,
-    }
-
-    let otherAbilitiesValue = [
-        'mindless'
-    ]
-
-    let specialAbilityNames = [
-        'Mutable (Ex)',
-        'Another (Su)'
-    ]
-
-    let specialAbilityDescriptions = [
-        'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, earum mollitia in perferendis dolores hic assumenda eveniet sed ipsam, iusto iste vitae delectus ea impedit. Mollitia, iusto. Obcaecati, provident magni!',
-        'This is a test to make sure it will add multiple abilites.'
-    ]
-
+    // Find all selected options. They will have the .active from the dropdownFunctions
+    let selections = document.querySelectorAll('.active')
+    
     // Get the main wrapper to append to.
     let mainWrapperDiv = document.getElementById("statBlockWrapper");
     // Clear so it doesn't populate more than once when user clicks again.
     mainWrapperDiv.innerHTML = '';
 
-    let statBlockDiv = document.createElement("div");
-    statBlockDiv.classList.add("statBlock");
-    mainWrapperDiv.appendChild(statBlockDiv);
-
-    // Create the header that will display the CR
-    let statHeadWrapDiv = document.createElement("div");
-    statHeadWrapDiv.classList.add("statHeadWrap");
-    statBlockDiv.appendChild(statHeadWrapDiv);
-
-    let statHeadDiv = document.createElement('div');
-    statHeadDiv.classList.add('statHead');
-    let statHead = document.createTextNode(`CR ${alienCR}`);
-    statHeadDiv.appendChild(statHead);
-
-    statHeadWrapDiv.appendChild(statHeadDiv);
-
-    // Fill the basic information
-    let basicIndentDiv = document.createElement("div");
-    basicIndentDiv.classList.add('indentWrap');
-    statBlockDiv.appendChild(basicIndentDiv);
-
-    // XP to add to basicIndentDiv
-    let statXPDiv = document.createElement('div');
-    statXPDiv.classList.add('statXP');
-    let statXP = document.createTextNode(`XP ${xpValue}`)
-    statXPDiv.appendChild(statXP)
-    basicIndentDiv.appendChild(statXPDiv)
-
-    // Creature Type/subtype to add to basicIndentDiv
-    let statTypeDiv = document.createElement('div');
-    statTypeDiv.classList.add('statType');
-    // Don't display subtype if None is selected.
-    if (creatureSubtype != 'None'){
-        let typeSubTypeText = document.createTextNode(`${creatureType} (${creatureSubtype})`);
-        statTypeDiv.appendChild(typeSubTypeText);
+    if(selections.length < 4){
+        let noOptionDiv = document.createElement('div');
+        noOptionDiv.appendChild(document.createTextNode('No option selected.'))
+        mainWrapperDiv.appendChild(noOptionDiv)
     } else {
-        let typeSubTypeText = document.createTextNode(creatureType);
-        statTypeDiv.appendChild(typeSubTypeText);
-    };
-    basicIndentDiv.appendChild(statTypeDiv);
+        // Initialize values
 
-    // Initiative, Senses, and Perception to add to basicIndentDiv
-    let statInitSensePercepDiv = document.createElement('div');
-    statInitSensePercepDiv.classList.add('statInitSensePercep');
-    
-    // Initiative
-    createBoldSpanInDiv(statInitSensePercepDiv, 'Init', ` +${initiativeValue}; `);
+        let alienCR = selections[0].innerText;
 
-    // If there are Senses to add
-    if (sensesValue.length != 0){
-        let text = sensesValue.join(', ');
-        createBoldSpanInDiv(statInitSensePercepDiv, 'Senses', ` ${text}; `);
-    };
+        let alienArray = selections[1].innerText;
+        let xpValue = numberWithCommas(3200)
 
-    // Perception
-    createBoldSpanInDiv(statInitSensePercepDiv, 'Perception', ` +${perceptionValue}`);
+        let creatureType = selections[2].innerText;
+        let creatureSubtype = selections[3].innerText;
 
-    basicIndentDiv.appendChild(statInitSensePercepDiv);
+        let initiativeValue = 4;
+        let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
+        let perceptionValue = 14;
 
-    // The Defenses sub heading
-    let statSubHeadWrapDefDiv = document.createElement('div');
-    statSubHeadWrapDefDiv.classList.add('statSubHeadWrap');
-    statBlockDiv.appendChild(statSubHeadWrapDefDiv);
+        let hpValue = 105;
 
-    let statDefenseDiv = document.createElement('div');
-    statDefenseDiv.classList.add('statDefense');
-    let statDefenseText = document.createTextNode('DEFENSE');
-    statDefenseDiv.appendChild(statDefenseText);
-    statSubHeadWrapDefDiv.appendChild(statDefenseDiv)
+        let eacValue = 19;
+        let kacValue = 21;
 
-    let statHPDiv = document.createElement('div');
-    statHPDiv.classList.add('statHP');
-    let statHPSpan = document.createElement('span');
-    statHPSpan.classList.add('spanBold');
-    let statHPText = document.createTextNode('HP ');
-    statHPSpan.appendChild(statHPText);
-    statHPDiv.appendChild(statHPSpan);
-    let statHPValue = document.createTextNode(hpValue);
-    statHPDiv.appendChild(statHPValue);
-    statSubHeadWrapDefDiv.appendChild(statHPDiv);
+        let fortValue = 11;
+        let refValue = 6;
+        let willValue = 9;
 
-    // Fill the Defenses information
-    let defensesIndentDiv = document.createElement('div');
-    defensesIndentDiv.classList.add('indentWrap');
-    statBlockDiv.appendChild(defensesIndentDiv);
+        let immunitiesValue = [
+            'critical hits',
+            'lightning'
+        ];
+        let resistancesValue = [
+            'cold 10',
+            'acid 10'
+        ];
+        let weaknessesValue = ['fire'];
 
-    // Fill the AC line
-    let statACDiv = document.createElement('div');
-    statACDiv.classList.add('statAC');
-    defensesIndentDiv.appendChild(statACDiv);
+        let speedValue = [
+            '30 ft.',
+            'fly 30 ft.'
+        ];
 
-    // EAC
-    createBoldSpanInDiv(statACDiv, 'EAC', ` ${eacValue}; `);
+        let toHitMeleeValue = 17;
+        let meleeDamageValue = '2d6+11';
+        let toHitRangedValue = 14;
+        let rangedDamageValue = '2d8+7';
 
-    // KAC
-    createBoldSpanInDiv(statACDiv, 'kAC', ` ${kacValue}`);
+        let attributeValues = {
+            str: 4,
+            dex: 2,
+            con: 5,
+            int: '-',
+            wis: 0,
+            cha: 0,
+        }
 
-    // Fill the SavingThrows line
-    let statSavingThrowsDiv = document.createElement('div');
-    statSavingThrowsDiv.classList.add('statSavingThrows');
-    defensesIndentDiv.appendChild(statSavingThrowsDiv);
+        let otherAbilitiesValue = [
+            'mindless'
+        ]
 
-    // Fort
-    createBoldSpanInDiv(statSavingThrowsDiv, 'Fort', ` ${fortValue}; `);
+        let specialAbilityNames = [
+            'Mutable (Ex)',
+            'Another (Su)'
+        ]
 
-    // Ref
-    createBoldSpanInDiv(statSavingThrowsDiv, 'Ref', ` ${refValue}; `);
+        let specialAbilityDescriptions = [
+            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, earum mollitia in perferendis dolores hic assumenda eveniet sed ipsam, iusto iste vitae delectus ea impedit. Mollitia, iusto. Obcaecati, provident magni!',
+            'This is a test to make sure it will add multiple abilites.'
+        ]
 
-    // Will
-    createBoldSpanInDiv(statSavingThrowsDiv, 'Will', ` ${willValue}`);
+        let statBlockDiv = document.createElement("div");
+        statBlockDiv.classList.add("statBlock");
+        mainWrapperDiv.appendChild(statBlockDiv);
 
-    // Fill the other defenses line
-    let statDefOtherDiv = document.createElement('div');
-    statDefOtherDiv.classList.add('statDefOther');
-    defensesIndentDiv.appendChild(statDefOtherDiv);
+        // Create the header that will display the CR
+        let statHeadWrapDiv = document.createElement("div");
+        statHeadWrapDiv.classList.add("statHeadWrap");
+        statBlockDiv.appendChild(statHeadWrapDiv);
 
-    // If the creature has immunities and Resistences/Weaknesses
-    if(immunitiesValue.length != 0 && resistancesValue.length != 0 || weaknessesValue.length != 0){
-        let text = immunitiesValue.join(', ');
-        createBoldSpanInDiv(statDefOtherDiv, 'Immunities', ` ${text}; `)
-    } else if (immunitiesValue.length != 0){
-        let text = immunitiesValue.join(', ');
-        createBoldSpanInDiv(statDefOtherDiv, 'Immunities', ` ${text}`)
-    }
+        let statHeadDiv = document.createElement('div');
+        statHeadDiv.classList.add('statHead');
+        let statHead = document.createTextNode(`CR ${alienCR}`);
+        statHeadDiv.appendChild(statHead);
 
-    // If the creature has Resistances and Weaknesses
-    if(resistancesValue.length != 0 && weaknessesValue.length != 0){
-        let text = resistancesValue.join(', ');
-        createBoldSpanInDiv(statDefOtherDiv, 'Resistances', ` ${text}; `)
-    } else if (resistancesValue.length != 0){
-        let text = resistancesValue.join(', ');
-        createBoldSpanInDiv(statDefOtherDiv, 'Resistances', ` ${text}`)
-    }
+        statHeadWrapDiv.appendChild(statHeadDiv);
 
-    // If the creature has Weaknesses
-    if(weaknessesValue.length != 0){
-        let text = weaknessesValue.join(', ');
-        createBoldSpanInDiv(statDefOtherDiv, 'Weaknesses', ` ${text}`)
-    }
+        // Fill the basic information
+        let basicIndentDiv = document.createElement("div");
+        basicIndentDiv.classList.add('indentWrap');
+        statBlockDiv.appendChild(basicIndentDiv);
 
-    // The Offense sub heading
-    let statSubHeadWrapOffDiv = document.createElement('div');
-    statSubHeadWrapOffDiv.classList.add('statSubHeadWrap');
-    statBlockDiv.appendChild(statSubHeadWrapOffDiv);
+        // XP to add to basicIndentDiv
+        let statXPDiv = document.createElement('div');
+        statXPDiv.classList.add('statXP');
+        let statXP = document.createTextNode(`XP ${xpValue}`)
+        statXPDiv.appendChild(statXP)
+        basicIndentDiv.appendChild(statXPDiv)
 
-    let statOffenseDiv = document.createElement('div');
-    statOffenseDiv.classList.add('statSubHead');
-    let statOffenseText = document.createTextNode('OFFENSE');
-    statOffenseDiv.appendChild(statOffenseText);
-    statSubHeadWrapOffDiv.appendChild(statOffenseDiv);
+        // Creature Type/subtype to add to basicIndentDiv
+        let statTypeDiv = document.createElement('div');
+        statTypeDiv.classList.add('statType');
+        // Don't display subtype if None is selected.
+        if (creatureSubtype != 'None'){
+            let typeSubTypeText = document.createTextNode(`${creatureType} (${creatureSubtype})`);
+            statTypeDiv.appendChild(typeSubTypeText);
+        } else {
+            let typeSubTypeText = document.createTextNode(creatureType);
+            statTypeDiv.appendChild(typeSubTypeText);
+        };
+        basicIndentDiv.appendChild(statTypeDiv);
 
-    // Fill the Offense information
-    let offenseIndentDiv = document.createElement('div');
-    offenseIndentDiv.classList.add('indentWrap');
-    statBlockDiv.appendChild(offenseIndentDiv);
+        // Initiative, Senses, and Perception to add to basicIndentDiv
+        let statInitSensePercepDiv = document.createElement('div');
+        statInitSensePercepDiv.classList.add('statInitSensePercep');
+        
+        // Initiative
+        createBoldSpanInDiv(statInitSensePercepDiv, 'Init', ` +${initiativeValue}; `);
 
-    // Fill the Speed line
-    let statSpeedDiv = document.createElement('div');
-    statSpeedDiv.classList.add('statSpeed');
-    offenseIndentDiv.appendChild(statSpeedDiv);
-    
-    if (speedValue.length != 0){
-        let text = speedValue.join(', ');
-        createBoldSpanInDiv(statSpeedDiv, 'Speed', ` ${text}`);
-    } else{
-        createBoldSpanInDiv(statSpeedDiv, 'Speed', ` 30 ft.`);
-    };
+        // If there are Senses to add
+        if (sensesValue.length != 0){
+            let text = sensesValue.join(', ');
+            createBoldSpanInDiv(statInitSensePercepDiv, 'Senses', ` ${text}; `);
+        };
 
-    // Fill the Melee Attack line
-    let statMeleeDiv = document.createElement('div');
-    statMeleeDiv.classList.add('statMelee');
-    offenseIndentDiv.appendChild(statMeleeDiv);
+        // Perception
+        createBoldSpanInDiv(statInitSensePercepDiv, 'Perception', ` +${perceptionValue}`);
 
-    createBoldSpanInDiv(statMeleeDiv, 'Melee', ` +${toHitMeleeValue} (${meleeDamageValue})`);
+        basicIndentDiv.appendChild(statInitSensePercepDiv);
 
-    // Fill the Ranged Attack line
-    let statRangedDiv = document.createElement('div');
-    statRangedDiv.classList.add('statRanged');
-    offenseIndentDiv.appendChild(statRangedDiv);
+        // The Defenses sub heading
+        let statSubHeadWrapDefDiv = document.createElement('div');
+        statSubHeadWrapDefDiv.classList.add('statSubHeadWrap');
+        statBlockDiv.appendChild(statSubHeadWrapDefDiv);
 
-    createBoldSpanInDiv(statRangedDiv, 'Ranged', ` +${toHitRangedValue} (${rangedDamageValue})`);
+        let statDefenseDiv = document.createElement('div');
+        statDefenseDiv.classList.add('statDefense');
+        let statDefenseText = document.createTextNode('DEFENSE');
+        statDefenseDiv.appendChild(statDefenseText);
+        statSubHeadWrapDefDiv.appendChild(statDefenseDiv)
 
-    // The Statistics sub heading
-    let statSubHeadWrapStatisticsDiv = document.createElement('div');
-    statSubHeadWrapStatisticsDiv.classList.add('statSubHeadWrap');
-    statBlockDiv.appendChild(statSubHeadWrapStatisticsDiv);
+        let statHPDiv = document.createElement('div');
+        statHPDiv.classList.add('statHP');
+        let statHPSpan = document.createElement('span');
+        statHPSpan.classList.add('spanBold');
+        let statHPText = document.createTextNode('HP ');
+        statHPSpan.appendChild(statHPText);
+        statHPDiv.appendChild(statHPSpan);
+        let statHPValue = document.createTextNode(hpValue);
+        statHPDiv.appendChild(statHPValue);
+        statSubHeadWrapDefDiv.appendChild(statHPDiv);
 
-    let statStatisticsDiv = document.createElement('div');
-    statStatisticsDiv.classList.add('statSubHead');
-    let statStatisticsText = document.createTextNode('STATISTICS');
-    statStatisticsDiv.appendChild(statStatisticsText);
-    statSubHeadWrapStatisticsDiv.appendChild(statStatisticsDiv);
+        // Fill the Defenses information
+        let defensesIndentDiv = document.createElement('div');
+        defensesIndentDiv.classList.add('indentWrap');
+        statBlockDiv.appendChild(defensesIndentDiv);
 
-    // Fill the Statistics information
-    let statisticsIndentDiv = document.createElement('div');
-    statisticsIndentDiv.classList.add('indentWrap');
-    statBlockDiv.appendChild(statisticsIndentDiv);
+        // Fill the AC line
+        let statACDiv = document.createElement('div');
+        statACDiv.classList.add('statAC');
+        defensesIndentDiv.appendChild(statACDiv);
 
-    // Fill the Attributes line
-    let statAttributesDiv = document.createElement('div');
-    statAttributesDiv.classList.add('statAttributes');
-    statisticsIndentDiv.appendChild(statAttributesDiv);
+        // EAC
+        createBoldSpanInDiv(statACDiv, 'EAC', ` ${eacValue}; `);
 
-    // Str
-    createBoldSpanInDiv(statAttributesDiv, 'Str', ` ${attributeValues.str}; `);
+        // KAC
+        createBoldSpanInDiv(statACDiv, 'kAC', ` ${kacValue}`);
 
-    // Dex
-    createBoldSpanInDiv(statAttributesDiv, 'Dex', ` ${attributeValues.dex}; `);
+        // Fill the SavingThrows line
+        let statSavingThrowsDiv = document.createElement('div');
+        statSavingThrowsDiv.classList.add('statSavingThrows');
+        defensesIndentDiv.appendChild(statSavingThrowsDiv);
 
-    // Con
-    createBoldSpanInDiv(statAttributesDiv, 'Con', ` ${attributeValues.con}; `);
+        // Fort
+        createBoldSpanInDiv(statSavingThrowsDiv, 'Fort', ` ${fortValue}; `);
 
-    // Int
-    createBoldSpanInDiv(statAttributesDiv, 'Int', ` ${attributeValues.int}; `);
+        // Ref
+        createBoldSpanInDiv(statSavingThrowsDiv, 'Ref', ` ${refValue}; `);
 
-    // Wis
-    createBoldSpanInDiv(statAttributesDiv, 'Wis', ` ${attributeValues.wis}; `);
+        // Will
+        createBoldSpanInDiv(statSavingThrowsDiv, 'Will', ` ${willValue}`);
 
-    // Cha
-    createBoldSpanInDiv(statAttributesDiv, 'Cha', ` ${attributeValues.cha}`);
+        // Fill the other defenses line
+        let statDefOtherDiv = document.createElement('div');
+        statDefOtherDiv.classList.add('statDefOther');
+        defensesIndentDiv.appendChild(statDefOtherDiv);
 
-    // Fill the Other Abilities line (Only while other abilities are present)
-    if (otherAbilitiesValue.length != 0){
-        let statOtherAbilitiesDiv = document.createElement('div');
-        statOtherAbilitiesDiv.classList.add('statOtherAbilities');
-        statisticsIndentDiv.appendChild(statOtherAbilitiesDiv);
+        // If the creature has immunities and Resistences/Weaknesses
+        if(immunitiesValue.length != 0 && resistancesValue.length != 0 || weaknessesValue.length != 0){
+            let text = immunitiesValue.join(', ');
+            createBoldSpanInDiv(statDefOtherDiv, 'Immunities', ` ${text}; `)
+        } else if (immunitiesValue.length != 0){
+            let text = immunitiesValue.join(', ');
+            createBoldSpanInDiv(statDefOtherDiv, 'Immunities', ` ${text}`)
+        }
 
-        let text = otherAbilitiesValue.join(", ")
+        // If the creature has Resistances and Weaknesses
+        if(resistancesValue.length != 0 && weaknessesValue.length != 0){
+            let text = resistancesValue.join(', ');
+            createBoldSpanInDiv(statDefOtherDiv, 'Resistances', ` ${text}; `)
+        } else if (resistancesValue.length != 0){
+            let text = resistancesValue.join(', ');
+            createBoldSpanInDiv(statDefOtherDiv, 'Resistances', ` ${text}`)
+        }
 
-        createBoldSpanInDiv(statOtherAbilitiesDiv, 'Other Abilities', ` ${text}`)
-    }
+        // If the creature has Weaknesses
+        if(weaknessesValue.length != 0){
+            let text = weaknessesValue.join(', ');
+            createBoldSpanInDiv(statDefOtherDiv, 'Weaknesses', ` ${text}`)
+        }
 
-    // Special Abilities (Only while present)
-    if (specialAbilityNames.length != 0){
-        // The Special Abilities sub heading
-        let statSubHeadWrapSpecialAbDiv = document.createElement('div');
-        statSubHeadWrapSpecialAbDiv.classList.add('statSubHeadWrap');
-        statBlockDiv.appendChild(statSubHeadWrapSpecialAbDiv);
+        // The Offense sub heading
+        let statSubHeadWrapOffDiv = document.createElement('div');
+        statSubHeadWrapOffDiv.classList.add('statSubHeadWrap');
+        statBlockDiv.appendChild(statSubHeadWrapOffDiv);
 
-        let statSpecialAbDiv = document.createElement('div');
-        statSpecialAbDiv.classList.add('statSubHead');
-        let statSpecialAbText = document.createTextNode('Special Abilities');
-        statSpecialAbDiv.appendChild(statSpecialAbText);
-        statSubHeadWrapSpecialAbDiv.appendChild(statSpecialAbDiv);
+        let statOffenseDiv = document.createElement('div');
+        statOffenseDiv.classList.add('statSubHead');
+        let statOffenseText = document.createTextNode('OFFENSE');
+        statOffenseDiv.appendChild(statOffenseText);
+        statSubHeadWrapOffDiv.appendChild(statOffenseDiv);
 
-        // Fill the Special Abilities information
-        let specialAbilitiesIndentDiv = document.createElement('div');
-        specialAbilitiesIndentDiv.classList.add('indentWrap');
-        statBlockDiv.appendChild(specialAbilitiesIndentDiv);
+        // Fill the Offense information
+        let offenseIndentDiv = document.createElement('div');
+        offenseIndentDiv.classList.add('indentWrap');
+        statBlockDiv.appendChild(offenseIndentDiv);
 
-        // Add the ability for each existing one.
-        specialAbilityNames.forEach(i=>{
-            // Fill the Special Abilites
-            let statAbilitesDiv = document.createElement('div');
-            statAbilitesDiv.classList.add('statAttributes');
-            specialAbilitiesIndentDiv.appendChild(statAbilitesDiv);
+        // Fill the Speed line
+        let statSpeedDiv = document.createElement('div');
+        statSpeedDiv.classList.add('statSpeed');
+        offenseIndentDiv.appendChild(statSpeedDiv);
+        
+        if (speedValue.length != 0){
+            let text = speedValue.join(', ');
+            createBoldSpanInDiv(statSpeedDiv, 'Speed', ` ${text}`);
+        } else{
+            createBoldSpanInDiv(statSpeedDiv, 'Speed', ` 30 ft.`);
+        };
 
-            let p = specialAbilityNames.indexOf(i)
-            createBoldSpanInDiv(statAbilitesDiv, i, ` ${specialAbilityDescriptions[p]}`)
-        })
+        // Fill the Melee Attack line
+        let statMeleeDiv = document.createElement('div');
+        statMeleeDiv.classList.add('statMelee');
+        offenseIndentDiv.appendChild(statMeleeDiv);
+
+        createBoldSpanInDiv(statMeleeDiv, 'Melee', ` +${toHitMeleeValue} (${meleeDamageValue})`);
+
+        // Fill the Ranged Attack line
+        let statRangedDiv = document.createElement('div');
+        statRangedDiv.classList.add('statRanged');
+        offenseIndentDiv.appendChild(statRangedDiv);
+
+        createBoldSpanInDiv(statRangedDiv, 'Ranged', ` +${toHitRangedValue} (${rangedDamageValue})`);
+
+        // The Statistics sub heading
+        let statSubHeadWrapStatisticsDiv = document.createElement('div');
+        statSubHeadWrapStatisticsDiv.classList.add('statSubHeadWrap');
+        statBlockDiv.appendChild(statSubHeadWrapStatisticsDiv);
+
+        let statStatisticsDiv = document.createElement('div');
+        statStatisticsDiv.classList.add('statSubHead');
+        let statStatisticsText = document.createTextNode('STATISTICS');
+        statStatisticsDiv.appendChild(statStatisticsText);
+        statSubHeadWrapStatisticsDiv.appendChild(statStatisticsDiv);
+
+        // Fill the Statistics information
+        let statisticsIndentDiv = document.createElement('div');
+        statisticsIndentDiv.classList.add('indentWrap');
+        statBlockDiv.appendChild(statisticsIndentDiv);
+
+        // Fill the Attributes line
+        let statAttributesDiv = document.createElement('div');
+        statAttributesDiv.classList.add('statAttributes');
+        statisticsIndentDiv.appendChild(statAttributesDiv);
+
+        // Str
+        createBoldSpanInDiv(statAttributesDiv, 'Str', ` ${attributeValues.str}; `);
+
+        // Dex
+        createBoldSpanInDiv(statAttributesDiv, 'Dex', ` ${attributeValues.dex}; `);
+
+        // Con
+        createBoldSpanInDiv(statAttributesDiv, 'Con', ` ${attributeValues.con}; `);
+
+        // Int
+        createBoldSpanInDiv(statAttributesDiv, 'Int', ` ${attributeValues.int}; `);
+
+        // Wis
+        createBoldSpanInDiv(statAttributesDiv, 'Wis', ` ${attributeValues.wis}; `);
+
+        // Cha
+        createBoldSpanInDiv(statAttributesDiv, 'Cha', ` ${attributeValues.cha}`);
+
+        // Fill the Other Abilities line (Only while other abilities are present)
+        if (otherAbilitiesValue.length != 0){
+            let statOtherAbilitiesDiv = document.createElement('div');
+            statOtherAbilitiesDiv.classList.add('statOtherAbilities');
+            statisticsIndentDiv.appendChild(statOtherAbilitiesDiv);
+
+            let text = otherAbilitiesValue.join(", ")
+
+            createBoldSpanInDiv(statOtherAbilitiesDiv, 'Other Abilities', ` ${text}`)
+        }
+
+        // Special Abilities (Only while present)
+        if (specialAbilityNames.length != 0){
+            // The Special Abilities sub heading
+            let statSubHeadWrapSpecialAbDiv = document.createElement('div');
+            statSubHeadWrapSpecialAbDiv.classList.add('statSubHeadWrap');
+            statBlockDiv.appendChild(statSubHeadWrapSpecialAbDiv);
+
+            let statSpecialAbDiv = document.createElement('div');
+            statSpecialAbDiv.classList.add('statSubHead');
+            let statSpecialAbText = document.createTextNode('Special Abilities');
+            statSpecialAbDiv.appendChild(statSpecialAbText);
+            statSubHeadWrapSpecialAbDiv.appendChild(statSpecialAbDiv);
+
+            // Fill the Special Abilities information
+            let specialAbilitiesIndentDiv = document.createElement('div');
+            specialAbilitiesIndentDiv.classList.add('indentWrap');
+            statBlockDiv.appendChild(specialAbilitiesIndentDiv);
+
+            // Add the ability for each existing one.
+            specialAbilityNames.forEach(i=>{
+                // Fill the Special Abilites
+                let statAbilitesDiv = document.createElement('div');
+                statAbilitesDiv.classList.add('statAttributes');
+                specialAbilitiesIndentDiv.appendChild(statAbilitesDiv);
+
+                let p = specialAbilityNames.indexOf(i)
+                createBoldSpanInDiv(statAbilitesDiv, i, ` ${specialAbilityDescriptions[p]}`)
+            })
+        }
     }
 };
