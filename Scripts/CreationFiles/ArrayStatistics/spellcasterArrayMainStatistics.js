@@ -1,6 +1,5 @@
-
 /*
-Challenge Rating = {
+    arr = {
         cr: Challenge rating selected,
         eAC: Energy Armor Class,
         kAC: Kenetic Armor Class,
@@ -17,8 +16,10 @@ Challenge Rating = {
     }
 */
 
-let spellcasterArray= [
-    crThird = {
+let arr = {};
+
+let spellcasterArrayMainStatistics= [
+    arr = {
         cr: '1/3',
         eAC: 9,
         kAC: 10,
@@ -33,7 +34,7 @@ let spellcasterArray= [
         masterSkills: [ 7, 1 ],
         goodSkills: [ 3, 1 ]
     },
-    crHalf = {
+    arr = {
         cr: '1/2',
         eAC: 9,
         kAC: 10,
@@ -48,7 +49,7 @@ let spellcasterArray= [
         masterSkills: [ 9, 2 ],
         goodSkills: [ 4, 1 ]
     },
-    crOne = {
+    arr = {
         cr: '1',
         eAC: 10,
         kAC: 11,
@@ -63,7 +64,7 @@ let spellcasterArray= [
         masterSkills: [ 10, 2 ],
         goodSkills: [ 5, 1 ]
     },
-    crTwo = {
+    arr = {
         cr: '2',
         eAC: 12,
         kAC: 13,
@@ -78,7 +79,7 @@ let spellcasterArray= [
         masterSkills: [ 12, 2 ],
         goodSkills: [ 7, 1 ]
     },
-    crThree = {
+    arr = {
         cr: '3',
         eAC: 13,
         kAC: 14,
@@ -93,7 +94,7 @@ let spellcasterArray= [
         masterSkills: [ 13, 2 ],
         goodSkills: [ 8, 1 ]
     },
-    crFour = {
+    arr = {
         cr: '4',
         eAC: 15,
         kAC: 16,
@@ -108,7 +109,7 @@ let spellcasterArray= [
         masterSkills: [ 15, 2 ],
         goodSkills: [ 10, 1 ]
     },
-    crFive = {
+    arr = {
         cr: '5',
         eAC: 16,
         kAC: 17,
@@ -123,7 +124,7 @@ let spellcasterArray= [
         masterSkills: [ 16, 2 ],
         goodSkills: [ 11, 1 ]
     },
-    crSix = {
+    arr = {
         cr: '6',
         eAC: 17,
         kAC: 18,
@@ -138,7 +139,7 @@ let spellcasterArray= [
         masterSkills: [ 18, 2 ],
         goodSkills: [ 13, 1 ]
     },
-    crSeven = {
+    arr = {
         cr: '7',
         eAC: 18,
         kAC: 19,
@@ -153,7 +154,7 @@ let spellcasterArray= [
         masterSkills: [ 19, 2 ],
         goodSkills: [ 14, 1 ]
     },
-    crEight = {
+    arr = {
         cr: '8',
         eAC: 19,
         kAC: 20,
@@ -168,7 +169,7 @@ let spellcasterArray= [
         masterSkills: [ 21, 2 ],
         goodSkills: [ 16, 1 ]
     },
-    crNine = {
+    arr = {
         cr: '9',
         eAC: 21,
         kAC: 22,
@@ -183,7 +184,7 @@ let spellcasterArray= [
         masterSkills: [ 22, 2 ],
         goodSkills: [ 17, 1 ]
     },
-    crTen = {
+    arr = {
         cr: '10',
         eAC: 22,
         kAC: 23,
@@ -198,7 +199,7 @@ let spellcasterArray= [
         masterSkills: [ 24, 2 ],
         goodSkills: [ 19, 1 ]
     },
-    crEleven = {
+    arr = {
         cr: '11',
         eAC: 23,
         kAC: 24,
@@ -213,7 +214,7 @@ let spellcasterArray= [
         masterSkills: [ 25, 2 ],
         goodSkills: [ 20, 1 ]
     },
-    crTwelve = {
+    arr = {
         cr: '12',
         eAC: 25,
         kAC: 26,
@@ -228,7 +229,7 @@ let spellcasterArray= [
         masterSkills: [ 27, 2 ],
         goodSkills: [ 22, 1 ]
     },
-    crThirteen = {
+    arr = {
         cr: '13',
         eAC: 26,
         kAC: 27,
@@ -243,7 +244,7 @@ let spellcasterArray= [
         masterSkills: [ 28, 2 ],
         goodSkills: [ 23, 1 ]
     },
-    crFourteen = {
+    arr = {
         cr: '14',
         eAC: 27,
         kAC: 28,
@@ -258,7 +259,7 @@ let spellcasterArray= [
         masterSkills: [ 30, 2 ],
         goodSkills: [ 25, 1 ]
     },
-    crFifteen = {
+    arr = {
         cr: '15',
         eAC: 28,
         kAC: 29,
@@ -273,7 +274,7 @@ let spellcasterArray= [
         masterSkills: [ 31, 2 ],
         goodSkills: [ 26, 1 ]
     },
-    crSixteen = {
+    arr = {
         cr: '16',
         eAC: 29,
         kAC: 30,
@@ -288,7 +289,7 @@ let spellcasterArray= [
         masterSkills: [ 33, 2 ],
         goodSkills: [ 28, 1 ]
     },
-    crSeventeen = {
+    arr = {
         cr: '17',
         eAC: 30,
         kAC: 31,
@@ -303,7 +304,7 @@ let spellcasterArray= [
         masterSkills: [ 34, 2 ],
         goodSkills: [ 29, 1 ]
     },
-    crEighteen = {
+    arr = {
         cr: '18',
         eAC: 31,
         kAC: 32,
@@ -318,7 +319,7 @@ let spellcasterArray= [
         masterSkills: [ 36, 2 ],
         goodSkills: [ 31, 1 ]
     },
-    crNineteen = {
+    arr = {
         cr: '19',
         eAC: 32,
         kAC: 33,
@@ -333,7 +334,7 @@ let spellcasterArray= [
         masterSkills: [ 37, 2 ],
         goodSkills: [ 32, 1 ]
     },
-    crTwenty = {
+    arr = {
         cr: '20',
         eAC: 34,
         kAC: 35,
@@ -348,7 +349,7 @@ let spellcasterArray= [
         masterSkills: [ 39, 2 ],
         goodSkills: [ 34, 1 ]
     },
-    crTwentyOne = {
+    arr = {
         cr: '21',
         eAC: 35,
         kAC: 36,
@@ -363,7 +364,7 @@ let spellcasterArray= [
         masterSkills: [ 40, 2 ],
         goodSkills: [ 35, 1 ]
     },
-    crTwentyTwo = {
+    arr = {
         cr: '22',
         eAC: 37,
         kAC: 38,
@@ -378,7 +379,7 @@ let spellcasterArray= [
         masterSkills: [ 42, 2 ],
         goodSkills: [ 37, 1 ]
     },
-    crTwentyThree = {
+    arr = {
         cr: '23',
         eAC: 38,
         kAC: 39,
@@ -393,7 +394,7 @@ let spellcasterArray= [
         masterSkills: [ 43, 2 ],
         goodSkills: [ 38, 1 ]
     },
-    crTwentyFour = {
+    arr = {
         cr: '24',
         eAC: 40,
         kAC: 41,
@@ -408,7 +409,7 @@ let spellcasterArray= [
         masterSkills: [ 45, 2 ],
         goodSkills: [ 40, 1 ]
     },
-    crTwentyFive = {
+    arr = {
         cr: '25',
         eAC: 41,
         kAC: 42,
@@ -425,4 +426,4 @@ let spellcasterArray= [
     },
 ];
 
-export{spellcasterArray};
+export{spellcasterArrayMainStatistics};

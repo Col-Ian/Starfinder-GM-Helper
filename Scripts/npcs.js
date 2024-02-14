@@ -21,31 +21,31 @@ Import lists
  */
 
 // Challenge Rating array
-import { selectChallengeRatings } from "./UniversalScripts/Lists/challengeRatings.js";
+import { selectChallengeRatings } from "./UniversalScripts/DropdownLists/challengeRatings.js";
 
 // Array array
-import{ selectArray } from "./UniversalScripts/Lists/array.js";
+import{ selectArray } from "./UniversalScripts/DropdownLists/array.js";
 
 // Creature Type array
-import { selectCreatureType } from "./UniversalScripts/Lists/creatureType.js";
+import { selectCreatureType } from "./UniversalScripts/DropdownLists/creatureType.js";
 
 // Creature Subtype array
-import { selectCreatureSubtype } from "./UniversalScripts/Lists/creatureSubtype.js";
+import { selectCreatureSubtype } from "./UniversalScripts/DropdownLists/creatureSubtype.js";
 
 // Class Graft array
-import { selectClassGraft } from "./UniversalScripts/Lists/classGraft.js";
+import { selectClassGraft } from "./UniversalScripts/DropdownLists/classGraft.js";
 
 // Template Graft array
-import { selectTemplateGraft } from "./UniversalScripts/Lists/templateGraft.js";
+import { selectTemplateGraft } from "./UniversalScripts/DropdownLists/templateGraft.js";
 
 // Special Abilities array
-import { selectSpecialAbilities } from "./UniversalScripts/Lists/specialAbilities.js";
+import { selectSpecialAbilities } from "./UniversalScripts/DropdownLists/specialAbilities.js";
 
 // Skills array
-import { selectSkills } from "./UniversalScripts/Lists/skills.js";
+import { selectSkills } from "./UniversalScripts/DropdownLists/skills.js";
 
 // Spells array
-import { selectSpells } from "./UniversalScripts/Lists/spells.js";
+import { selectSpells } from "./UniversalScripts/DropdownLists/spells.js";
 
 
 let npcPage = {

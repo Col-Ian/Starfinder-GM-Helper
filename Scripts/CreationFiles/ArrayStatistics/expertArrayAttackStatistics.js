@@ -1,5 +1,5 @@
 /*
-Challenge Rating = {
+    arr = {
         cr: Challenge rating selected,
         Use the high value for the NPC’s best attacks and the low value for the rest. Use one value for all ranged attacks and the other for all melee attacks (you generally don’t need to worry about differences between one weapon and another in the same category).        
         highAttackBonus: ,
@@ -19,8 +19,10 @@ Challenge Rating = {
     }
 */
 
+let arr = {};
+
 let expertArrayAttackStatistics = [
-    crThird = {
+    arr = {
         cr: '1/3',
         highAttackBonus: 2,
         lowAttackBonus: 0,
@@ -36,7 +38,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 0,
     },
-    crHalf = {
+    arr = {
         cr: '1/2',
         highAttackBonus: 4,
         lowAttackBonus: 2,
@@ -52,7 +54,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 0,
     },
-    crOne = {
+    arr = {
         cr: '1',
         highAttackBonus: 6,
         lowAttackBonus: 4,
@@ -68,7 +70,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 1,
     },
-    crTwo = {
+    arr = {
         cr: '2',
         highAttackBonus: 8,
         lowAttackBonus: 6,
@@ -84,7 +86,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 2,
     },
-    crThree = {
+    arr = {
         cr: '3',
         highAttackBonus: 9,
         lowAttackBonus: 7,
@@ -101,7 +103,7 @@ let expertArrayAttackStatistics = [
         damageBonus: 3,
 
     },
-    crFour = {
+    arr = {
         cr: '4',
         highAttackBonus: 10,
         lowAttackBonus: 8,
@@ -117,7 +119,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 4,
     },
-    crFive = {
+    arr = {
         cr: '5',
         highAttackBonus: 12,
         lowAttackBonus: 10,
@@ -133,7 +135,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 5,
     },
-    crSix = {
+    arr = {
         cr: '6',
         highAttackBonus: 14,
         lowAttackBonus: 12,
@@ -149,7 +151,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '',
         damageBonus: 6,
     },
-    crSeven = {
+    arr = {
         cr: '7',
         highAttackBonus: 15,
         lowAttackBonus: 13,
@@ -165,7 +167,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '4',
         damageBonus: 7,
     },
-    crEight = {
+    arr = {
         cr: '8',
         highAttackBonus: 17,
         lowAttackBonus: 15,
@@ -181,7 +183,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '4',
         damageBonus: 8,
     },
-    crNine = {
+    arr = {
         cr: '9',
         highAttackBonus: 19,
         lowAttackBonus: 17,
@@ -197,7 +199,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '6',
         damageBonus: 9,
     },
-    crTen = {
+    arr = {
         cr: '10',
         highAttackBonus: 20,
         lowAttackBonus: 18,
@@ -213,7 +215,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '8',
         damageBonus: 10,
     },
-    crEleven = {
+    arr = {
         cr: '11',
         highAttackBonus: 21,
         lowAttackBonus: 19,
@@ -229,7 +231,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '10',
         damageBonus: 11,
     },
-    crTwelve = {
+    arr = {
         cr: '12',
         highAttackBonus: 23,
         lowAttackBonus: 21,
@@ -245,7 +247,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '12',
         damageBonus: 12,
     },
-    crThirteen = {
+    arr = {
         cr: '13',
         highAttackBonus: 24,
         lowAttackBonus: 22,
@@ -261,7 +263,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '4',
         damageBonus: 13,
     },
-    crFourteen = {
+    arr = {
         cr: '14',
         highAttackBonus: 25,
         lowAttackBonus: 23,
@@ -277,7 +279,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '6',
         damageBonus: 14,
     },
-    crFifteen = {
+    arr = {
         cr: '15',
         highAttackBonus: 26,
         lowAttackBonus: 24,
@@ -293,7 +295,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '10',
         damageBonus: 15,
     },
-    crSixteen = {
+    arr = {
         cr: '16',
         highAttackBonus: 28,
         lowAttackBonus: 26,
@@ -309,7 +311,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '8',
         damageBonus: 16,
     },
-    crSeventeen = {
+    arr = {
         cr: '17',
         highAttackBonus: 29,
         lowAttackBonus: 27,
@@ -325,7 +327,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '4',
         damageBonus: 17,
     },
-    crEighteen = {
+    arr = {
         cr: '18',
         highAttackBonus: 30,
         lowAttackBonus: 28,
@@ -341,7 +343,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '8',
         damageBonus: 18,
     },
-    crNineteen = {
+    arr = {
         cr: '19',
         highAttackBonus: 31,
         lowAttackBonus: 29,
@@ -357,7 +359,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '12',
         damageBonus: 19,
     },
-    crTwenty = {
+    arr = {
         cr: '20',
         highAttackBonus: 32,
         lowAttackBonus: 30,
@@ -373,7 +375,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '8',
         damageBonus: 20,
     },
-    crTwentyOne = {
+    arr = {
         cr: '21',
         highAttackBonus: 33,
         lowAttackBonus: 31,
@@ -389,7 +391,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '12',
         damageBonus: 21,
     },
-    crTwentyTwo = {
+    arr = {
         cr: '22',
         highAttackBonus: 34,
         lowAttackBonus: 32,
@@ -405,7 +407,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '6',
         damageBonus: 22,
     },
-    crTwentyThree = {
+    arr = {
         cr: '23',
         highAttackBonus: 35,
         lowAttackBonus: 33,
@@ -421,7 +423,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '10',
         damageBonus: 23,
     },
-    crTwentyFour = {
+    arr = {
         cr: '24',
         highAttackBonus: 37,
         lowAttackBonus: 35,
@@ -437,7 +439,7 @@ let expertArrayAttackStatistics = [
         fourAttacksMeleeDamageDiceType: '8',
         damageBonus: 24,
     },
-    crTwentyFive = {
+    arr = {
         cr: '25',
         highAttackBonus: 38,
         lowAttackBonus: 36,

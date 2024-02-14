@@ -1,5 +1,6 @@
 import { numberWithCommas } from "../../../UniversalScripts/numberWithCommas.js";
 import { createBoldSpanInDiv } from "../../../UniversalScripts/createBoldSpanInDiv.js";
+import { selectArray } from "../../../UniversalScripts/DropdownLists/array.js";
 
 /*
 <div class="statBlockWrapper">
@@ -111,7 +112,29 @@ export function generateNPC(){
 
         let alienCR = selections[0].innerText;
 
-        let alienArray = selections[1].innerText;
+        let alienArraySelected = selections[1].innerText;
+        let alienArray = {};
+
+        selectArray.forEach(i=>{
+            if(alienArraySelected === i.value){
+                alienArray = i;
+            };
+        });
+
+        let arrayMain = {};
+        alienArray.main.forEach(i=>{
+            if(i.cr === alienCR){
+                arrayMain = i;
+            };
+        });
+
+        let arrayAttack = {};
+        alienArray.attack.forEach(i=>{
+            if(i.cr === alienCR){
+                arrayAttack = i;
+            };
+        });
+
         let xpValue = numberWithCommas(3200)
 
         let creatureType = selections[2].innerText;
@@ -123,12 +146,12 @@ export function generateNPC(){
 
         let hpValue = 105;
 
-        let eacValue = 19;
-        let kacValue = 21;
+        let eacValue = arrayMain.eAC;
+        let kacValue = arrayMain.kAC;
 
-        let fortValue = 11;
-        let refValue = 6;
-        let willValue = 9;
+        let fortValue = arrayMain.fort;
+        let refValue = arrayMain.ref;
+        let willValue = arrayMain.will;
 
         let immunitiesValue = [
             'critical hits',

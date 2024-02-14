@@ -1,5 +1,5 @@
 /*
-Challenge Rating = {
+    arr = {
         cr: Challenge rating selected,
         eAC: Energy Armor Class,
         kAC: Kenetic Armor Class,
@@ -16,8 +16,10 @@ Challenge Rating = {
     }
 */
 
+let arr = {};
+
 let combatantArrayMainStatistics = [
-    crThird = {
+    arr = {
         cr: '1/3',
         eAC: 10,
         kAC: 12,
@@ -32,7 +34,7 @@ let combatantArrayMainStatistics = [
         masterSkills:[ 7, 1 ],
         goodSkills: [ 3, 2 ]
     },
-    crHalf = {
+    arr = {
         cr: '1/2',
         eAC: 10,
         kAC: 12,
@@ -47,7 +49,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 9, 1 ],
         goodSkills: [ 4 ,2 ]
     },
-    crOne = {
+    arr = {
         cr: '1',
         eAC: 11,
         kAC: 13,
@@ -62,7 +64,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 10, 1 ],
         goodSkills: [ 5, 2 ]
     },
-    crTwo = {
+    arr = {
         cr: '2',
         eAC: 13,
         kAC: 15,
@@ -77,7 +79,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 12, 1 ],
         goodSkills: [ 7, 2 ]
     },
-    crThree = {
+    arr = {
         cr: '3',
         eAC: 14,
         kAC: 16,
@@ -92,7 +94,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 13, 1 ],
         goodSkills: [ 8, 2 ]
     },
-    crFour = {
+    arr = {
         cr: '4',
         eAC: 16,
         kAC: 18,
@@ -107,7 +109,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 15, 1 ],
         goodSkills: [ 10, 2 ]
     },
-    crFive = {
+    arr = {
         cr: '5',
         eAC: 17,
         kAC: 19,
@@ -122,7 +124,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 16, 1 ],
         goodSkills: [ 11, 2 ]
     },
-    crSix = {
+    arr = {
         cr: '6',
         eAC: 18,
         kAC: 20,
@@ -137,7 +139,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 18, 1 ],
         goodSkills: [ 13, 2 ]
     },
-    crSeven = {
+    arr = {
         cr: '7',
         eAC: 19,
         kAC: 21,
@@ -152,7 +154,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 19, 1 ],
         goodSkills: [ 14, 2 ]
     },
-    crEight = {
+    arr = {
         cr: '8',
         eAC: 20,
         kAC: 22,
@@ -167,7 +169,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 21, 1 ],
         goodSkills: [ 16, 2 ]
     },
-    crNine = {
+    arr = {
         cr: '9',
         eAC: 22,
         kAC: 24,
@@ -182,7 +184,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 22, 1 ],
         goodSkills: [ 17, 2 ]
     },
-    crTen = {
+    arr = {
         cr: '10',
         eAC: 23,
         kAC: 25,
@@ -197,7 +199,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 24, 1 ],
         goodSkills: [ 19, 2 ]
     },
-    crEleven = {
+    arr = {
         cr: '11',
         eAC: 24,
         kAC: 26,
@@ -212,7 +214,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 25, 1 ],
         goodSkills: [ 20, 2 ]
     },
-    crTwelve = {
+    arr = {
         cr: '12',
         eAC: 26,
         kAC: 28,
@@ -227,7 +229,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 27, 1 ],
         goodSkills: [ 22, 2 ]
     },
-    crThirteen = {
+    arr = {
         cr: '13',
         eAC: 27,
         kAC: 29,
@@ -242,7 +244,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 28, 1 ],
         goodSkills: [ 23, 2 ]
     },
-    crFourteen = {
+    arr = {
         cr: '14',
         eAC: 28,
         kAC: 30,
@@ -257,7 +259,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 30, 1 ],
         goodSkills: [ 25, 2 ]
     },
-    crFifteen = {
+    arr = {
         cr: '15',
         eAC: 29,
         kAC: 31,
@@ -272,7 +274,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 31, 1 ],
         goodSkills: [ 26, 2 ]
     },
-    crSixteen = {
+    arr = {
         cr: '16',
         eAC: 30,
         kAC: 32,
@@ -287,7 +289,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 33, 1 ],
         goodSkills: [ 28, 2 ]
     },
-    crSeventeen = {
+    arr = {
         cr: '17',
         eAC: 31,
         kAC: 33,
@@ -302,7 +304,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 34, 1 ],
         goodSkills: [ 29, 2 ]
     },
-    crEighteen = {
+    arr = {
         cr: '18',
         eAC: 32,
         kAC: 34,
@@ -317,7 +319,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 36, 1 ],
         goodSkills: [ 32, 2 ]
     },
-    crNineteen = {
+    arr = {
         cr: '19',
         eAC: 33,
         kAC: 35,
@@ -332,7 +334,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 37, 1 ],
         goodSkills: [ 32, 2 ]
     },
-    crTwenty = {
+    arr = {
         cr: '20',
         eAC: 35,
         kAC: 37,
@@ -347,7 +349,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 39, 1 ],
         goodSkills: [ 34, 2 ]
     },
-    crTwentyOne = {
+    arr = {
         cr: '21',
         eAC: 36,
         kAC: 38,
@@ -362,7 +364,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 40, 1 ],
         goodSkills: [ 35, 2 ]
     },
-    crTwentyTwo = {
+    arr = {
         cr: '22',
         eAC: 38,
         kAC: 40,
@@ -377,7 +379,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 42, 1 ],
         goodSkills: [ 37 , 2 ]
     },
-    crTwentyThree = {
+    arr = {
         cr: '23',
         eAC: 39,
         kAC: 41,
@@ -392,7 +394,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 43, 1 ],
         goodSkills: [ 38, 2 ]
     },
-    crTwentyFour = {
+    arr = {
         cr: '24',
         eAC: 41,
         kAC: 43,
@@ -407,7 +409,7 @@ let combatantArrayMainStatistics = [
         masterSkills: [ 45, 1 ],
         goodSkills: [ 40, 2 ]
     },
-    crTwentyFive = {
+    arr = {
         cr: '25',
         eAC: 42,
         kAC: 44,
