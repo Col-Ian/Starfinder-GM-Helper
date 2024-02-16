@@ -1,3 +1,5 @@
+let resistance = {};
+
 let halfling = {
     description: 'This subtype is applied to halflings and creatures related to halflings.',
     speeds: [],
@@ -19,4 +21,13 @@ let halfling = {
     otherAbilities: []
 }
 
-export {halfling}
+function halflingAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {halfling, halflingAdjustments}

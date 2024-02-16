@@ -1,3 +1,5 @@
+let resistance = {};
+
 let inevitable = {
     description: 'Inevitables are construct-like outsiders built to enforce the laws of the universe.',
     speeds: [],
@@ -31,4 +33,13 @@ let inevitable = {
     otherAbilities: []
 }
 
-export {inevitable}
+function inevitableAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {inevitable, inevitableAdjustments}

@@ -1,3 +1,5 @@
+let resistance = {};
+
 let reptoid = {
     description: 'This subtype is applied to the shapechanging aliens known as reptoids and creatures related to reptoids.',
     speeds: [],
@@ -20,4 +22,13 @@ let reptoid = {
     otherAbilities: []
 }
 
-export {reptoid}
+function reptoidAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {reptoid, reptoidAdjustments}

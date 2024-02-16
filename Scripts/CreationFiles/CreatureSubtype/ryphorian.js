@@ -1,3 +1,5 @@
+let resistance = {};
+
 let ryphorian = {
     description: 'This subtype is applied to ryphorians and creatures related to ryphorians.',
     speeds: [],
@@ -20,4 +22,13 @@ let ryphorian = {
     otherAbilities: []
 }
 
-export {ryphorian}
+function ryphorianAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {ryphorian, ryphorianAdjustments}

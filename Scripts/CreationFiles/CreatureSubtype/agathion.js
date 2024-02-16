@@ -50,7 +50,8 @@ let agathion = {
 function agathionAdjustments(
     mainStatistics,
     attackStatistics,
-    attributeBase
+    attributeBase,
+    skills
 ){
 
 }

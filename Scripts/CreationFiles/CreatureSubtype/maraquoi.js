@@ -1,3 +1,5 @@
+let resistance = {};
+
 let maraquoi = {
     description: 'This subtype is applied to maraquoi and creatures related to maraquoi.',
     speeds: [],
@@ -20,4 +22,13 @@ let maraquoi = {
     otherAbilities: []
 }
 
-export {maraquoi}
+function maraquoiAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {maraquoi, maraquoiAdjustments}

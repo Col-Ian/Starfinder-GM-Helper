@@ -1,3 +1,5 @@
+let resistance = {};
+
 let angel = {
     description: 'Angels are celestials, or good outsiders, native to the good-aligned Outer Planes.',
     speeds: [],
@@ -44,4 +46,13 @@ let angel = {
     ]
 }
 
-export {angel}
+function angelAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {angel, angelAdjustments}

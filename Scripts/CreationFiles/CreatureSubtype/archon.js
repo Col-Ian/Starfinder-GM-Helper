@@ -1,3 +1,5 @@
+let resistance = {};
+
 let archon = {
     description: 'Archons are celestials, or good outsiders, native to Heaven.',
     speeds: [],
@@ -36,4 +38,13 @@ let archon = {
     ]
 }
 
-export {archon}
+function archonAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {archon, archonAdjustments}

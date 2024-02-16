@@ -1,3 +1,5 @@
+let resistance = {};
+
 let dwarf = {
     description: 'This subtype is applied to dwarves and creatures related to dwarves.',
     speeds: [],
@@ -28,4 +30,13 @@ let dwarf = {
     otherAbilities: []
 }
 
-export {dwarf}
+function dwarfAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {dwarf, dwarfAdjustments}

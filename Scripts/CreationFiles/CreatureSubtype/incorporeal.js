@@ -1,3 +1,5 @@
+let resistance = {};
+
 let incorporeal = {
     description: 'Creatures with this subtype have no physical bodies.',
     speeds: [],
@@ -21,4 +23,13 @@ let incorporeal = {
     ]
 }
 
-export {incorporeal}
+function incorporealAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {incorporeal, incorporealAdjustments}

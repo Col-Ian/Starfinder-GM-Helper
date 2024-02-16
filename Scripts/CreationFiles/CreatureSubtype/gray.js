@@ -1,4 +1,6 @@
-let subtype = {
+let resistance = {};
+
+let gray = {
     description: 'This subtype is applied to the humanoid aliens known as grays and creatures related to grays.',
     speeds: [],
     immunities: [],
@@ -20,4 +22,13 @@ let subtype = {
     otherAbilities: []
 }
 
-export {subtype}
+function grayAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {gray, grayAdjustments}

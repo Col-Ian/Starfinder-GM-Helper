@@ -1,3 +1,5 @@
+let resistance = {};
+
 let human = {
     description: 'This subtype is applied to humans and creatures related to humans.',
     speeds: [],
@@ -17,6 +19,15 @@ let human = {
     abilityNames: [],
     abilityDescriptions: [],
     otherAbilities: []
+}
+
+function Adjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
 }
 
 export {human}

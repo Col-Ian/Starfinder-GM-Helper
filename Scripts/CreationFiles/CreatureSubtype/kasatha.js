@@ -1,3 +1,5 @@
+let resistance = {};
+
 let kasatha = {
     description: 'This subtype is applied to kasathas and creatures related to kasathas.',
     speeds: [],
@@ -19,4 +21,13 @@ let kasatha = {
     otherAbilities: []
 }
 
-export {kasatha}
+function kasathaAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {kasatha, kasathaAdjustments}

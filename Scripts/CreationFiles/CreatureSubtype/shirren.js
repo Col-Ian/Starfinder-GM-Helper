@@ -1,3 +1,5 @@
+let resistance = {};
+
 let shirren = {
     description: 'This subtype is applied to shirrens and creatures related to shirrens.',
     speeds: [],
@@ -22,4 +24,13 @@ let shirren = {
     ]
 }
 
-export {shirren}
+function shirrenAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {shirren, shirrenAdjustments}

@@ -1,3 +1,5 @@
+let resistance = {};
+
 let vesk = {
     description: 'This subtype is applied to vesk and creatures related to vesk.',
     speeds: [],
@@ -20,4 +22,13 @@ let vesk = {
     otherAbilities: []
 }
 
-export {vesk}
+function veskAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {vesk, veskAdjustments}

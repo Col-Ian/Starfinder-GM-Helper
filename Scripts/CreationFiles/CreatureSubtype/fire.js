@@ -1,3 +1,5 @@
+let resistance = {};
+
 let fire = {
     description: 'This subtype is usually applied to outsiders with a connection to the Plane of Fire and creatures with a strong affinity to fire.',
     speeds: [],
@@ -24,4 +26,13 @@ let fire = {
     otherAbilities: []
 }
 
-export {fire}
+function fireAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {fire, fireAdjustments}

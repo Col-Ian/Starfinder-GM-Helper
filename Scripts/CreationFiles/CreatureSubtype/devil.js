@@ -1,3 +1,5 @@
+let resistance = {};
+
 let devil = {
     description: 'Devils are fiends, or evil outsiders, native to Hell.',
     speeds: [],
@@ -38,4 +40,13 @@ let devil = {
     ]
 }
 
-export {devil}
+function devilAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {devil, devilAdjustments}

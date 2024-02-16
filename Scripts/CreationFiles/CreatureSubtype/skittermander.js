@@ -1,3 +1,5 @@
+let resistance = {};
+
 let skittermander = {
     description: 'This subtype is applied to skittermanders and creatures related to skittermanders.',
     speeds: [],
@@ -20,4 +22,13 @@ let skittermander = {
     otherAbilities: []
 }
 
-export {skittermander}
+function skittermanderAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {skittermander, skittermanderAdjustments}

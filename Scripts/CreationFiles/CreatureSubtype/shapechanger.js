@@ -1,3 +1,5 @@
+let resistance = {};
+
 let shapechanger = {
     description: 'This subtype is applied to creatures that can dramatically alter their forms.',
     speeds: [],
@@ -23,4 +25,13 @@ let shapechanger = {
     otherAbilities: []
 }
 
-export {shapechanger}
+function shapechangerAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {shapechanger, shapechangerAdjustments}

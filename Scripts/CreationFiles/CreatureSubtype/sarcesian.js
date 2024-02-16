@@ -1,3 +1,5 @@
+let resistance = {};
+
 let sarcesian = {
     description: 'This subtype is applied to sarcesians and creatures related to sarcesians.',
     speeds: [],
@@ -20,4 +22,13 @@ let sarcesian = {
     otherAbilities: []
 }
 
-export {sarcesian}
+function sarcesianAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {sarcesian, sarcesianAdjustments}

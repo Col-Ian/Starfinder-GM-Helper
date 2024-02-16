@@ -1,3 +1,5 @@
+let resistance = {};
+
 let water = {
     description: 'This subtype is usually applied to outsiders with a connection to the Plane of Water.',
     speeds: [
@@ -23,4 +25,19 @@ let water = {
     otherAbilities: []
 }
 
-export {water}
+function waterAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+    let skillGoodMaster = [
+        mainStatistics.goodSkills[0],
+        mainStatistics.masterSkills[0]
+    ];
+
+    let randomGoodMaster = Math.floor(Math.random()*skillGoodMaster.length);
+    skills[1].skillValue += skillGoodMaster[randomGoodMaster];
+}
+
+export {water, waterAdjustments}

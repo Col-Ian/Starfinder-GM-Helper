@@ -1,3 +1,5 @@
+let resistance = {};
+
 let ysoki = {
     description: 'This subtype is applied to ysoki and creatures related to ysoki.',
     speeds: [],
@@ -20,4 +22,13 @@ let ysoki = {
     otherAbilities: []
 }
 
-export {ysoki}
+function ysokiAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {ysoki, ysokiAdjustments}

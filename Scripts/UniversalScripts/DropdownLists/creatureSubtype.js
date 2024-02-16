@@ -1,5 +1,49 @@
 import { aeon, aeonAdjustments } from "../../CreationFiles/CreatureSubtype/aeon.js";
+import { agathion, agathionAdjustments } from "../../CreationFiles/CreatureSubtype/agathion.js";
+import { air, airAdjustments } from "../../CreationFiles/CreatureSubtype/air.js";
+import { android, androidAdjustments } from "../../CreationFiles/CreatureSubtype/android.js";
+import { angel, angelAdjustments } from "../../CreationFiles/CreatureSubtype/angel.js";
+import { aquatic, aquaticAdjustments } from "../../CreationFiles/CreatureSubtype/aquatic.js";
+import { archon, archonAdjustments } from "../../CreationFiles/CreatureSubtype/archon.js";
+import { azata, azataAdjustments } from "../../CreationFiles/CreatureSubtype/azata.js";
+import { cold, coldAdjustments } from "../../CreationFiles/CreatureSubtype/cold.js";
+import { daemon, daemonAdjustments } from "../../CreationFiles/CreatureSubtype/daemon.js";
+import { demon, demonAdjustments } from "../../CreationFiles/CreatureSubtype/demon.js";
+import { devil, devilAdjustments } from "../../CreationFiles/CreatureSubtype/devil.js";
+import { dwarf, dwarfAdjustments } from "../../CreationFiles/CreatureSubtype/dwarf.js";
+import { earth, earthAdjustments } from "../../CreationFiles/CreatureSubtype/earth.js";
+import { elemental, elementalAdjustments } from "../../CreationFiles/CreatureSubtype/elemental.js";
+import { elf, elfAdjustments } from "../../CreationFiles/CreatureSubtype/elf.js";
+import { fire, fireAdjustments } from "../../CreationFiles/CreatureSubtype/fire.js";
+import { giant, giantAdjustments } from "../../CreationFiles/CreatureSubtype/giant.js";
+import { goblinoid, goblinoidAdjustments } from "../../CreationFiles/CreatureSubtype/goblinoid.js";
+import { gray, grayAdjustments } from "../../CreationFiles/CreatureSubtype/gray.js";
+import { halfling, halflingAdjustments } from "../../CreationFiles/CreatureSubtype/halfling.js";
+import { human } from "../../CreationFiles/CreatureSubtype/human.js";
+import { ikeshti, ikeshtiAdjustments } from "../../CreationFiles/CreatureSubtype/ikeshti.js";
+import { incorporeal, incorporealAdjustments } from "../../CreationFiles/CreatureSubtype/incorporeal.js";
+import { inevitable, inevitableAdjustments } from "../../CreationFiles/CreatureSubtype/inevitable.js";
+import { kasatha, kasathaAdjustments } from "../../CreationFiles/CreatureSubtype/kasatha.js";
+import { lashunta, lashuntaAdjustments } from "../../CreationFiles/CreatureSubtype/lashunta.js";
+import { maraquoi, maraquoiAdjustments } from "../../CreationFiles/CreatureSubtype/maraquoi.js";
 import { none, noneAdjustments } from "../../CreationFiles/CreatureSubtype/none.js";
+import { orc, orcAdjustments } from "../../CreationFiles/CreatureSubtype/orc.js";
+import { otherAdjustments, otherSubtypes } from "../../CreationFiles/CreatureSubtype/otherSubtypes.js";
+import { plantlike } from "../../CreationFiles/CreatureSubtype/plantlike.js";
+import { protean, proteanAdjustments } from "../../CreationFiles/CreatureSubtype/protean.js";
+import { reptoid, reptoidAdjustments } from "../../CreationFiles/CreatureSubtype/reptoid.js";
+import { ryphorian, ryphorianAdjustments } from "../../CreationFiles/CreatureSubtype/ryphorian.js";
+import { sarcesian, sarcesianAdjustments } from "../../CreationFiles/CreatureSubtype/sarcesian.js";
+import { shapechanger, shapechangerAdjustments } from "../../CreationFiles/CreatureSubtype/shapechanger.js";
+import { shirren, shirrenAdjustments } from "../../CreationFiles/CreatureSubtype/shirren.js";
+import { skittermander, skittermanderAdjustments } from "../../CreationFiles/CreatureSubtype/skittermander.js";
+import { swarm, swarmAdjustments } from "../../CreationFiles/CreatureSubtype/swarm.js";
+import { verthani, verthaniAdjustments } from "../../CreationFiles/CreatureSubtype/verthani.js";
+import { vesk, veskAdjustments } from "../../CreationFiles/CreatureSubtype/vesk.js";
+import { water, waterAdjustments } from "../../CreationFiles/CreatureSubtype/water.js";
+import { ysoki, ysokiAdjustments } from "../../CreationFiles/CreatureSubtype/ysoki.js";
+import { humanoidAdjustments } from "../../CreationFiles/CreatureType/humanoid.js";
+import { plantAdjustments } from "../../CreationFiles/CreatureType/plant.js";
 
 // To use for Creature Subtype
 let cs = {};
@@ -17,247 +61,247 @@ export let selectCreatureSubtype = [
     },
     cs ={
         value: 'Agathion',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: agathion,
+        subtypeAdjustments: agathionAdjustments
     },
     cs ={
         value: 'Air',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: air,
+        subtypeAdjustments: airAdjustments
     },
     cs ={
         value: 'Android',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: android,
+        subtypeAdjustments: androidAdjustments
     },
     cs ={
         value: 'Angel',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: angel,
+        subtypeAdjustments: angelAdjustments
     },
     cs ={
         value: 'Aquatic',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: aquatic,
+        subtypeAdjustments: aquaticAdjustments
     },
     cs ={
         value: 'Archon',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: archon,
+        subtypeAdjustments: archonAdjustments
     },
     cs ={
         value: 'Azata',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: azata,
+        subtypeAdjustments: azataAdjustments
     },
     cs ={
         value: 'Cold',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: cold,
+        subtypeAdjustments: coldAdjustments
     },
     cs ={
         value: 'Daemon',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: daemon,
+        subtypeAdjustments: daemonAdjustments
     },
     cs ={
         value: 'Demon',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: demon,
+        subtypeAdjustments: demonAdjustments
     },
     cs ={
         value: 'Devil',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: devil,
+        subtypeAdjustments: devilAdjustments
     },
     cs ={
         value: 'Dwarf',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: dwarf,
+        subtypeAdjustments: dwarfAdjustments
     },
     cs ={
         value: 'Earth',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: earth,
+        subtypeAdjustments: earthAdjustments
     },
     cs ={
         value: 'Elemental',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: elemental,
+        subtypeAdjustments: elementalAdjustments
     },
     cs ={
         value: 'Elf',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: elf,
+        subtypeAdjustments: elfAdjustments
     },
     cs ={
         value: 'Fire',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: fire,
+        subtypeAdjustments: fireAdjustments
     },
     cs ={
         value: 'Giant',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: giant,
+        subtypeAdjustments: giantAdjustments
     },
     cs ={
         value: 'Goblinoid',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: goblinoid,
+        subtypeAdjustments: goblinoidAdjustments
     },
     cs ={
         value: 'Gray',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: gray,
+        subtypeAdjustments: grayAdjustments
     },
     cs ={
         value: 'Halfling',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: halfling,
+        subtypeAdjustments: halflingAdjustments
     },
     cs ={
         value: 'Human',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: human,
+        subtypeAdjustments: humanoidAdjustments
     },
     cs ={
         value: 'Ikeshti',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: ikeshti,
+        subtypeAdjustments: ikeshtiAdjustments
     },
     cs ={
         value: 'Incorporeal',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: incorporeal,
+        subtypeAdjustments: incorporealAdjustments
     },
     cs ={
         value: 'Inevitable',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: inevitable,
+        subtypeAdjustments: inevitableAdjustments
     },
     cs ={
         value: 'Kasatha',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: kasatha,
+        subtypeAdjustments: kasathaAdjustments
     },
     cs ={
         value: 'Lashunta',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: lashunta,
+        subtypeAdjustments: lashuntaAdjustments
     },
     cs ={
         value: 'Maraquoi',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: maraquoi,
+        subtypeAdjustments: maraquoiAdjustments
     },
     cs ={
         value: 'Orc',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: orc,
+        subtypeAdjustments: orcAdjustments
     },
     cs ={
         value: 'Plantlike',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: plantlike,
+        subtypeAdjustments: plantAdjustments
     },
     cs ={
         value: 'Protean',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: protean,
+        subtypeAdjustments: proteanAdjustments
     },
     cs ={
         value: 'Reptoid',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: reptoid,
+        subtypeAdjustments: reptoidAdjustments
     },
     cs ={
         value: 'Ryphorian',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: ryphorian,
+        subtypeAdjustments: ryphorianAdjustments
     },
     cs ={
         value: 'Sarcesian',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: sarcesian,
+        subtypeAdjustments: sarcesianAdjustments
     },
     cs ={
         value: 'Shapechanger',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: shapechanger,
+        subtypeAdjustments: shapechangerAdjustments
     },
     cs ={
         value: 'Shirren',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: shirren,
+        subtypeAdjustments: shirrenAdjustments
     },
     cs ={
         value: 'Skittermander',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: skittermander,
+        subtypeAdjustments: skittermanderAdjustments
     },
     cs ={
         value: 'Swarm',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: swarm,
+        subtypeAdjustments: swarmAdjustments
     },
     cs ={
         value: 'Verthani',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: verthani,
+        subtypeAdjustments: verthaniAdjustments
     },
     cs ={
         value: 'Vesk',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: vesk,
+        subtypeAdjustments: veskAdjustments
     },
     cs ={
         value: 'Water',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: water,
+        subtypeAdjustments: waterAdjustments
     },
     cs ={
         value: 'Ysoki',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: ysoki,
+        subtypeAdjustments: ysokiAdjustments
     },
     cs ={
         value: 'Chaotic',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Evil',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Extraplanar',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Good',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Lawful',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Magical',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Native',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
     cs ={
         value: 'Technological',
-        // subtype: ,
-        // subtypeAdjustments:
+        subtype: otherSubtypes,
+        subtypeAdjustments: otherAdjustments
     },
 ];

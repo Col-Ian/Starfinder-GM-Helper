@@ -1,3 +1,5 @@
+let resistance = {};
+
 let azata = {
     description: 'Azatas are celestials, or good outsiders, native to Elysium.',
     speeds: [],
@@ -34,4 +36,13 @@ let azata = {
     otherAbilities: []
 }
 
-export {azata}
+function azataAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {azata, azataAdjustments}

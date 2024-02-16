@@ -1,3 +1,5 @@
+let resistance = {};
+
 let protean = {
     description: 'Proteans are serpentine outsiders of pure chaos native to the Maelstrom.',
     speeds: [],
@@ -35,4 +37,13 @@ let protean = {
     ]
 }
 
-export {protean}
+function proteanAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {protean, proteanAdjustments}

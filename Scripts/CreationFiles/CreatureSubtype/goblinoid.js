@@ -1,3 +1,5 @@
+let resistance = {};
+
 let goblinoid = {
     description: 'This subtype is applied to humanoids of various goblinoid subspecies, such as space goblins.',
     speeds: [],
@@ -20,4 +22,13 @@ let goblinoid = {
     otherAbilities: []
 }
 
-export {goblinoid}
+function goblinoidAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {goblinoid, goblinoidAdjustments}

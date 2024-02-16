@@ -1,3 +1,5 @@
+let resistance = {};
+
 let elemental = {
     description: 'An elemental is a creature composed entirely of matter from one of the four Elemental Planes.',
     speeds: [],
@@ -21,4 +23,13 @@ let elemental = {
     otherAbilities: []
 }
 
-export {elemental}
+function elementalAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {elemental, elementalAdjustments}

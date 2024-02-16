@@ -1,3 +1,5 @@
+let resistance = {};
+
 let earth = {
     description: 'This earth is usually applied to outsiders with a connection to the Plane of Earth.',
     speeds: [
@@ -25,4 +27,13 @@ let earth = {
     ]
 }
 
-export {earth}
+function earthAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {earth, earthAdjustments}

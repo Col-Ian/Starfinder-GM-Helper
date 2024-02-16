@@ -1,3 +1,5 @@
+let resistance = {};
+
 let daemon = {
     description: 'Daemons are fiends, or evil outsiders, native to Abaddon.',
     speeds: [],
@@ -41,4 +43,13 @@ let daemon = {
     ]
 }
 
-export {daemon}
+function daemonAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {daemon, daemonAdjustments}

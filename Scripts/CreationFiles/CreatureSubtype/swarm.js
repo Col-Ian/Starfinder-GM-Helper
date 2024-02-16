@@ -1,3 +1,5 @@
+let resistance = {};
+
 let swarm = {
     description: 'This subtype is applied to any collection of Fine, Diminutive, or Tiny creatures (usually vermin) that acts as a single creature.',
     speeds: [],
@@ -32,4 +34,13 @@ let swarm = {
     otherAbilities: []
 }
 
-export {swarm}
+function swarmAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {swarm, swarmAdjustments}

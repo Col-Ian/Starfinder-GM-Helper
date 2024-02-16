@@ -1,3 +1,5 @@
+let resistance = {};
+
 let gnome = {
     description: 'This subtype is applied to gnomes and creatures related to gnomes.',
     speeds: [],
@@ -20,4 +22,13 @@ let gnome = {
     otherAbilities: []
 }
 
-export {gnome}
+function gnomeAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {gnome, gnomeAdjustments}

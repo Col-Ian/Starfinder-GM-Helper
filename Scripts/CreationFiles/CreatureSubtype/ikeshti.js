@@ -1,3 +1,5 @@
+let resistance = {};
+
 let ikeshti = {
     description: 'This subtype is applied to ikeshtis and creatures related to ikeshtis.',
     speeds: [
@@ -23,4 +25,13 @@ let ikeshti = {
     otherAbilities: []
 }
 
-export {ikeshti}
+function ikeshtiAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {ikeshti, ikeshtiAdjustments}

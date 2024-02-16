@@ -1,3 +1,5 @@
+let resistance = {};
+
 let orc = {
     description: 'This subtype is applied to orcs and creatures who are related to orcs.',
     speeds: [],
@@ -24,4 +26,13 @@ let orc = {
     otherAbilities: []
 }
 
-export {orc}
+function orcAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {orc, orcAdjustments}

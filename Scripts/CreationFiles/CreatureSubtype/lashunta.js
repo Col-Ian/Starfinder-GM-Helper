@@ -1,3 +1,5 @@
+let resistance = {};
+
 let lashunta = {
     description: 'This subtype is applied to lashuntas and creatures related to lashuntas.',
     speeds: [],
@@ -19,4 +21,13 @@ let lashunta = {
     otherAbilities: []
 }
 
-export {lashunta}
+function lashuntaAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {lashunta, lashuntaAdjustments}

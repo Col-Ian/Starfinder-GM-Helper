@@ -20,15 +20,15 @@ let subtype = {
 function Adjustments(
     mainStatistics,
     attackStatistics,
-    attributes
+    attributeBase,
+    skills
 ){
 
 }
 
 export {
     subtype,
-    Adjustments,
-    attributeBase
+    Adjustments
 }
 
 Generally, a subtype graft grants a few traits, but for particularly powerful subtypes (such as devil), you

@@ -177,6 +177,7 @@ export function generateNPC(
         let allSkills = JSON.parse(JSON.stringify(selectSkills));
 
         creatureTypeObject.typeAdjustments(arrayMain, arrayAttack, attributeBase);
+        creatureSubtypeObject.subtypeAdjustments(arrayMain, arrayAttack, attributeBase, allSkills)
 
 
 
@@ -185,7 +186,12 @@ export function generateNPC(
         let initiativeValue = 0;
         initiativeValue = 4;
         let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
-        let perceptionValue = 14;
+        let perceptionValue = 0
+        if(creatureSubtype === 'Giant'){
+            perceptionValue = arrayMain.masterSkills[0] + Math.trunc((attributeBase.wis - 10)/2);
+        } else {
+            perceptionValue =  arrayMain.goodSkills[0] + Math.trunc((attributeBase.wis - 10)/2);
+        }
 
         let hpValue = 105;
 

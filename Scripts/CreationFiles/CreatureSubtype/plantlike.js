@@ -1,3 +1,5 @@
+let resistance = {};
+
 let plantlike = {
     description: 'Plantlike creatures have many of the characteristics of plants.',
     speeds: [],
@@ -23,4 +25,13 @@ let plantlike = {
     otherAbilities: []
 }
 
-export {plantlike}
+function plantlikeAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {plantlike, plantlikeAdjustments}

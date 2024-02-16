@@ -1,4 +1,6 @@
-let subtype = {
+let resistance = {};
+
+let giant = {
     description: 'This subtype is applied to giants and creatures related to giants.',
     speeds: [],
     immunities: [],
@@ -20,4 +22,14 @@ let subtype = {
     otherAbilities: []
 }
 
-export {subtype}
+function giantAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+    skills[6].skillValue += mainStatistics.masterSkills[0]
+
+}
+
+export {giant, giantAdjustments}

@@ -1,3 +1,5 @@
+let resistance = {};
+
 let android = {
     description: 'This subtype is applied to androids and creatures related to androids.',
     speeds: [],
@@ -20,4 +22,13 @@ let android = {
     otherAbilities: []
 }
 
-export {android}
+function androidAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {android, androidAdjustments}

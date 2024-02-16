@@ -38,7 +38,8 @@ let aeon = {
 function aeonAdjustments(
     mainStatistics,
     attackStatistics,
-    attributeBase
+    attributeBase,
+    skills
 ){
 
 }

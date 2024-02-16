@@ -1,3 +1,5 @@
+let resistance = {};
+
 let aquatic = {
     description: 'These creatures are often native to environments that are mostly or entirely underwater.',
     speeds: [
@@ -32,4 +34,19 @@ let aquatic = {
     ]
 }
 
-export {aquatic}
+function aquaticAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+    let skillGoodMaster = [
+        mainStatistics.goodSkills[0],
+        mainStatistics.masterSkills[0]
+    ];
+
+    let randomGoodMaster = Math.floor(Math.random()*skillGoodMaster.length);
+    skills[1].skillValue += skillGoodMaster[randomGoodMaster];
+}
+
+export {aquatic, aquaticAdjustments}

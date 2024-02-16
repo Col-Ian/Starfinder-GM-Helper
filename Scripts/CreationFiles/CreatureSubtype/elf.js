@@ -1,3 +1,5 @@
+let resistance = {};
+
 let elf = {
     description: 'This subtype is applied to elves and creatures related to elves.',
     speeds: [],
@@ -22,6 +24,16 @@ let elf = {
     otherAbilities: []
 };
 
+function elfAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+// implemented as a choice later
 function elfSubtype(subtypeStats, selection){
     if(selection === 'drow'){
         elf.darkvision = 60;
@@ -58,5 +70,6 @@ function elfSubtype(subtypeStats, selection){
 };
 export {
     elf,
+    elfAdjustments,
     elfSubtype
 };

@@ -1,3 +1,5 @@
+let resistance = {};
+
 let cold = {
     description: 'Creatures with this subtype are usually native to frigid environments.',
     speeds: [],
@@ -20,4 +22,12 @@ let cold = {
     otherAbilities: []
 }
 
-export {cold}
+function coldAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+export {cold, coldAdjustments}

@@ -1,3 +1,5 @@
+let resistance = {};
+
 let verthani = {
     description: 'This subtype is applied to verthani and creatures related to verthani.',
     speeds: [],
@@ -20,4 +22,13 @@ let verthani = {
     otherAbilities: []
 }
 
-export {verthani}
+function verthaniAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase,
+    skills
+){
+
+}
+
+export {verthani, verthaniAdjustments}
