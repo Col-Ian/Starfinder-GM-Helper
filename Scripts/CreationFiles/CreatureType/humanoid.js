@@ -11,7 +11,7 @@ let humanoid = {
     otherAbilities:[]
 };
 
-function humanoidAdjustments(mainStatistics, attackStatistics){
+function humanoidAdjustments(mainStatistics, attackStatistics, attributeBase){
     let savingThrows = [
         mainStatistics.fort,
         mainStatistics.ref,

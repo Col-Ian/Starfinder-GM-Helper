@@ -12,7 +12,7 @@ let magicalBeast = {
     otherAbilities:[]
 };
 
-function magicalBeastAdjustments(mainStatistics, attackStatistics){
+function magicalBeastAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
     mainStatistics.ref += 2;
     attackStatistics.highAttackBonus += 1;

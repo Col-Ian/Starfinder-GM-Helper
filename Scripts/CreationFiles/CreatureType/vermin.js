@@ -1,5 +1,3 @@
-// Notes: set Intelligence modifier to -. (mindless)
-
 let vermin = {
     description: 'This type includes insects, arachnids, other arthropods, worms, and similar invertebrates.',
     immunities: [],
@@ -14,8 +12,10 @@ let vermin = {
     otherAbilities:['mindless']
 };
 
-function verminAdjustments(mainStatistics, attackStatistics){
+function verminAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
+    // set Intelligence modifier to -. (mindless)
+    attributeBase.int = '-'
 };
 
 export {

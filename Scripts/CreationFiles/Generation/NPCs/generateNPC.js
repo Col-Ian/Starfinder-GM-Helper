@@ -1,6 +1,9 @@
 import { numberWithCommas } from "../../../UniversalScripts/numberWithCommas.js";
 import { createBoldSpanInDiv } from "../../../UniversalScripts/createBoldSpanInDiv.js";
 import { selectArray } from "../../../UniversalScripts/DropdownLists/array.js";
+import { selectCreatureType } from "../../../UniversalScripts/DropdownLists/creatureType.js";
+import { selectCreatureSubtype } from "../../../UniversalScripts/DropdownLists/creatureSubtype.js";
+import { selectSkills } from "../../../UniversalScripts/DropdownLists/skills.js";
 
 /*
 <div class="statBlockWrapper">
@@ -91,10 +94,9 @@ import { selectArray } from "../../../UniversalScripts/DropdownLists/array.js";
 </div>
 */
 
-
-
-export function generateNPC(){
-
+export function generateNPC(
+){
+    
     // Find all selected options. They will have the .active from the dropdownFunctions
     let selections = document.querySelectorAll('.active')
     
@@ -103,44 +105,85 @@ export function generateNPC(){
     // Clear so it doesn't populate more than once when user clicks again.
     mainWrapperDiv.innerHTML = '';
 
+    let alienCR = '';
+
+    let alienArraySelected = '';
+    let creatureTypeSelected = '';
+    let creatureType = '';
+    let creatureSubtypeSelected ='';
+    let creatureSubtype = '';
+    
     if(selections.length < 4){
         let noOptionDiv = document.createElement('div');
         noOptionDiv.appendChild(document.createTextNode('No option selected.'))
         mainWrapperDiv.appendChild(noOptionDiv)
     } else {
-        // Initialize values
 
-        let alienCR = selections[0].innerText;
+        alienCR = selections[0].innerText;
 
-        let alienArraySelected = selections[1].innerText;
+        alienArraySelected = selections[1].innerText;
+
         let alienArray = {};
-
         selectArray.forEach(i=>{
             if(alienArraySelected === i.value){
-                alienArray = i;
+                alienArray = JSON.parse(JSON.stringify(i));
             };
         });
 
         let arrayMain = {};
         alienArray.main.forEach(i=>{
             if(i.cr === alienCR){
-                arrayMain = i;
+                arrayMain = JSON.parse(JSON.stringify(i));
             };
         });
 
         let arrayAttack = {};
         alienArray.attack.forEach(i=>{
             if(i.cr === alienCR){
-                arrayAttack = i;
+                arrayAttack = JSON.parse(JSON.stringify(i));
             };
         });
 
-        let xpValue = numberWithCommas(3200)
+        creatureTypeSelected = selections[2].innerText;
+        let creatureTypeObject = {};
+        selectCreatureType.forEach(i=>{
+            if(i.value === creatureTypeSelected){
+                creatureTypeObject = Object.assign(i);
+            };
+        });
+        
+        creatureType = creatureTypeObject.value
 
-        let creatureType = selections[2].innerText;
-        let creatureSubtype = selections[3].innerText;
+        creatureSubtypeSelected = selections[3].innerText;
+        let creatureSubtypeObject = {};
+        selectCreatureSubtype.forEach(i=>{
+            if(i.value === creatureSubtypeSelected){
+                creatureSubtypeObject = Object.assign(i)
+            };
+        });
+        
+        creatureSubtype = creatureSubtypeObject.value
 
-        let initiativeValue = 4;
+        let attributeBase = {
+            str: 10,
+            dex: 10,
+            con: 10,
+            int: 10,
+            wis: 10,
+            cha: 10,
+        };
+
+        // Clone Skills list
+        let allSkills = JSON.parse(JSON.stringify(selectSkills));
+
+        creatureTypeObject.typeAdjustments(arrayMain, arrayAttack, attributeBase);
+
+
+
+        let xpValue = numberWithCommas(arrayMain.xp)
+
+        let initiativeValue = 0;
+        initiativeValue = 4;
         let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
         let perceptionValue = 14;
 
@@ -173,13 +216,15 @@ export function generateNPC(){
         let toHitRangedValue = 14;
         let rangedDamageValue = '2d8+7';
 
+        
+        
         let attributeValues = {
-            str: 4,
-            dex: 2,
-            con: 5,
-            int: '-',
-            wis: 0,
-            cha: 0,
+            str: (attributeBase.str != "-") ? Math.trunc((attributeBase.str - 10)/2) : "-",
+            dex: (attributeBase.dex != "-") ? Math.trunc((attributeBase.dex - 10)/2) : "-",
+            con: (attributeBase.con != "-") ? Math.trunc((attributeBase.con - 10)/2) : "-",
+            int: (attributeBase.int != "-") ? Math.trunc((attributeBase.int - 10)/2) : "-",
+            wis: (attributeBase.wis != "-") ? Math.trunc((attributeBase.wis - 10)/2) : "-",
+            cha: (attributeBase.cha != "-") ? Math.trunc((attributeBase.cha - 10)/2) : "-",
         }
 
         let otherAbilitiesValue = [

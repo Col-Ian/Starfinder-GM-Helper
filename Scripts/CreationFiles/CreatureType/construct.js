@@ -22,12 +22,13 @@ let construct = {
     ]
 };
 
-function constructAdjustments(mainStatistics, attackStatistics){
+function constructAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort -= 2;
     mainStatistics.ref -= 2;
     mainStatistics.will -= 2;
     attackStatistics.highAttackBonus += 1;
     attackStatistics.lowAttackBonus += 1;
+    attributeBase.con = '-';
 };
 
 export {

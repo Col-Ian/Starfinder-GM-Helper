@@ -1,3 +1,5 @@
+let resistance = {};
+
 let agathion = {
     description: 'Agathions are celestials, or good outsiders, native to Nirvana.',
     speeds: [],
@@ -45,4 +47,11 @@ let agathion = {
     otherAbilities: []
 }
 
-export {agathion}
+function agathionAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase
+){
+
+}
+export {agathion,agathionAdjustments}

@@ -14,7 +14,7 @@ let outsider = {
     otherAbilities:[]
 };
 
-function outsiderAdjustments(mainStatistics, attackStatistics){
+function outsiderAdjustments(mainStatistics, attackStatistics, attributeBase){
     let savingThrows = [
         mainStatistics.fort,
         mainStatistics.ref,

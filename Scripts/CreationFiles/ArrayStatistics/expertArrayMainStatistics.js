@@ -1,6 +1,7 @@
 /*
     arr = {
         cr: Challenge rating selected,
+        xp: Experience awarded,
         eAC: Energy Armor Class,
         kAC: Kenetic Armor Class,
         fort: Fortitude Saving Throw,
@@ -21,6 +22,7 @@ let arr = {}
 let expertArrayMainStatistics= [
     arr = {
         cr: '1/3',
+        xp: 135,
         eAC: 10,
         kAC: 11,
         fort: 0,
@@ -36,6 +38,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '1/2',
+        xp: 200,
         eAC: 10,
         kAC: 11,
         fort: 0,
@@ -51,6 +54,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '1',
+        xp: 400,
         eAC: 11,
         kAC: 12,
         fort: 1,
@@ -66,6 +70,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '2',
+        xp: 600,
         eAC: 13,
         kAC: 14,
         fort: 1,
@@ -81,6 +86,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '3',
+        xp: 800,
         eAC: 14,
         kAC: 15,
         fort: 2,
@@ -96,6 +102,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '4',
+        xp: 1200,
         eAC: 16,
         kAC: 17,
         fort: 3,
@@ -111,6 +118,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '5',
+        xp: 1600,
         eAC: 17,
         kAC: 18,
         fort: 4,
@@ -126,6 +134,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '6',
+        xp: 2400,
         eAC: 18,
         kAC: 19,
         fort: 5,
@@ -141,6 +150,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '7',
+        xp: 3200,
         eAC: 19,
         kAC: 20,
         fort: 6,
@@ -156,6 +166,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '8',
+        xp: 4800,
         eAC: 20,
         kAC: 21,
         fort: 7,
@@ -171,6 +182,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '9',
+        xp: 6400,
         eAC: 22,
         kAC: 23,
         fort: 8,
@@ -186,6 +198,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '10',
+        xp: 9600,
         eAC: 23,
         kAC: 24,
         fort: 9,
@@ -201,6 +214,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '11',
+        xp: 12800,
         eAC: 24,
         kAC: 25,
         fort: 10,
@@ -216,6 +230,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '12',
+        xp: 19200,
         eAC: 26,
         kAC: 27,
         fort: 11,
@@ -231,6 +246,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '13',
+        xp: 25600,
         eAC: 27,
         kAC: 28,
         fort: 12,
@@ -246,6 +262,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '14',
+        xp: 38400,
         eAC: 28,
         kAC: 29,
         fort: 12,
@@ -261,6 +278,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '15',
+        xp: 51200,
         eAC: 29,
         kAC: 30,
         fort: 13,
@@ -276,6 +294,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '16',
+        xp: 76800,
         eAC: 30,
         kAC: 31,
         fort: 14,
@@ -291,6 +310,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '17',
+        xp: 102400,
         eAC: 31,
         kAC: 32,
         fort: 15,
@@ -306,6 +326,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '18',
+        xp: 153600,
         eAC: 32,
         kAC: 33,
         fort: 16,
@@ -321,6 +342,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '19',
+        xp: 204800,
         eAC: 33,
         kAC: 34,
         fort: 16,
@@ -336,6 +358,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '20',
+        xp: 307200,
         eAC: 35,
         kAC: 36,
         fort: 17,
@@ -351,6 +374,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '21',
+        xp: 409600,
         eAC: 36,
         kAC: 37,
         fort: 18,
@@ -366,6 +390,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '22',
+        xp: 614400,
         eAC: 38,
         kAC: 39,
         fort: 18,
@@ -381,6 +406,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '23',
+        xp: 819200,
         eAC: 39,
         kAC: 40,
         fort: 19,
@@ -396,6 +422,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '24',
+        xp: 1228800,
         eAC: 41,
         kAC: 42,
         fort: 20,
@@ -411,6 +438,7 @@ let expertArrayMainStatistics= [
     },
     arr = {
         cr: '25',
+        xp: 1638400,
         eAC: 42,
         kAC: 43,
         fort: 21,

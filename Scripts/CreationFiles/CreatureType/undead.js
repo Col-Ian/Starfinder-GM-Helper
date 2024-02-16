@@ -1,5 +1,3 @@
-// Notes: set Constitution modifier to —. (unliving)
-
 let undead = {
     description: 'Undead are once-living creatures animated by magic or advanced technological forces.',
     immunities: ['undead immunities'],
@@ -18,8 +16,11 @@ let undead = {
     ]
 };
 
-function undeadAdjustments(mainStatistics, attackStatistics){
+function undeadAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.will += 2;
+    // set Constitution modifier to —. (unliving)
+    attributeBase.con = '-';
+
 };
 
 export {

@@ -12,7 +12,7 @@ let aberration = {
 };
 
 // Function to adjust will saving throw
-function aberrationAdjustments(mainStatistics, attackStatistics){
+function aberrationAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.will += 2
 };
 

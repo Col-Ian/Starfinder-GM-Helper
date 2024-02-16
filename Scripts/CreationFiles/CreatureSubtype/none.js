@@ -1,7 +1,8 @@
-// Use for Chaotic, Evil, Extraplanar, Good, Lawful, Magical, Native, Technological
+let resistance = {};
 
-let otherSubtypes = {
-    description: 'This otherSubtypes does not grant additional abilities to creatures.',
+// Blank for defaults.
+let none = {
+    description: '',
     speeds: [],
     immunities: [],
     resistances:[
@@ -19,5 +20,9 @@ let otherSubtypes = {
     otherAbilities: []
 }
 
-function otherAdjustments(){}
-export {otherSubtypes, otherAdjustments}
+function noneAdjustments(){}
+
+export {
+    none,
+    noneAdjustments
+}

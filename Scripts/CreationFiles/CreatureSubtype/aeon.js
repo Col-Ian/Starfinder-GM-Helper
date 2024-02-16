@@ -1,3 +1,5 @@
+let resistance = {};
+
 let aeon = {
     discription: 'Aeons are a race of neutral outsiders who maintain the balance of reality.',
     speeds: [],
@@ -33,15 +35,12 @@ let aeon = {
     ]
 }
 
-export {aeon}
+function aeonAdjustments(
+    mainStatistics,
+    attackStatistics,
+    attributeBase
+){
 
-// let testArray = [];
+}
 
-// function testFunction(subtype){
-//     subtype.resistances.forEach(element => {
-//         testArray.push(element.resistanceType)
-//     });
-// }
-
-// testFunction(aeon)
-// console.log(testArray)
+export {aeon, aeonAdjustments}

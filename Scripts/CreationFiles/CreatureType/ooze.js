@@ -1,5 +1,3 @@
-// Notes: set Intelligence modifier to —. (mindless)
-
 let ooze = {
     description: 'An ooze is an amorphous or mutable creature.',
     immunities: [],
@@ -20,11 +18,13 @@ let ooze = {
     ]
 };
 
-function oozeAdjustments(mainStatistics, attackStatistics){
+function oozeAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
     mainStatistics.ref -= 2;
     mainStatistics.will -= 2;
     mainStatistics.abilityScoreModifiers = [];
+    // set Intelligence modifier to —. (mindless)
+    attributeBase.int = '-';
 };
 
 export {

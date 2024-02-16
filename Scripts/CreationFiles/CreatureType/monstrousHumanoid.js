@@ -9,7 +9,7 @@ let monstrousHumanoid = {
     otherAbilities:[]
 }
 
-function monstrousHumanoidAdjustments(){
+function monstrousHumanoidAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.ref += 2;
     mainStatistics.will += 2;
     attackStatistics.highAttackBonus += 1;

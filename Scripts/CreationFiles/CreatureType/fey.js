@@ -9,7 +9,7 @@ let fey = {
     otherAbilities:[]
 };
 
-function feyAdjustments(mainStatistics, attackStatistics){
+function feyAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
     mainStatistics.ref += 2;
     attackStatistics.highAttackBonus -= 1;

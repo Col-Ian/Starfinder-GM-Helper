@@ -14,7 +14,7 @@ let plant = {
     ]
 };
 
-function plantAdjustments(mainStatistics, attackStatistics){
+function plantAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
 };
 

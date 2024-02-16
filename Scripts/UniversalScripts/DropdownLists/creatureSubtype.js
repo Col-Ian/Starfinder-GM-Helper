@@ -1,158 +1,263 @@
+import { aeon, aeonAdjustments } from "../../CreationFiles/CreatureSubtype/aeon.js";
+import { none, noneAdjustments } from "../../CreationFiles/CreatureSubtype/none.js";
+
 // To use for Creature Subtype
 let cs = {};
 
 export let selectCreatureSubtype = [
     cs ={
-        value: 'None'
+        value: 'None',
+        subtype: none,
+        subtypeAdjustments: noneAdjustments
     },
     cs ={
-        value: 'Aeon'
+        value: 'Aeon',
+        subtype: aeon,
+        subtypeAdjustments: aeonAdjustments
     },
     cs ={
-        value: 'Agathion'
+        value: 'Agathion',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Air'
+        value: 'Air',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Android'
+        value: 'Android',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Angel'
+        value: 'Angel',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Aquatic'
+        value: 'Aquatic',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Archon'
+        value: 'Archon',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Azata'
+        value: 'Azata',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Cold'
+        value: 'Cold',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Daemon'
+        value: 'Daemon',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Demon'
+        value: 'Demon',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Devil'
+        value: 'Devil',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Dwarf'
+        value: 'Dwarf',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Earth'
+        value: 'Earth',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Elemental'
+        value: 'Elemental',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Elf'
+        value: 'Elf',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Fire'
+        value: 'Fire',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Giant'
+        value: 'Giant',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Goblinoid'
+        value: 'Goblinoid',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Gray'
+        value: 'Gray',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Halfling'
+        value: 'Halfling',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Human'
+        value: 'Human',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Ikeshti'
+        value: 'Ikeshti',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Incorporeal'
+        value: 'Incorporeal',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Inevitable'
+        value: 'Inevitable',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Kasatha'
+        value: 'Kasatha',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Lashunta'
+        value: 'Lashunta',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Maraquoi'
+        value: 'Maraquoi',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Orc'
+        value: 'Orc',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Plantlike'
+        value: 'Plantlike',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Protean'
+        value: 'Protean',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Reptoid'
+        value: 'Reptoid',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Ryphorian'
+        value: 'Ryphorian',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Sarcesian'
+        value: 'Sarcesian',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Shapechanger'
+        value: 'Shapechanger',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Shirren'
+        value: 'Shirren',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Skittermander'
+        value: 'Skittermander',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Swarm'
+        value: 'Swarm',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Verthani'
+        value: 'Verthani',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Vesk'
+        value: 'Vesk',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Water'
+        value: 'Water',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Ysoki'
+        value: 'Ysoki',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Chaotic'
+        value: 'Chaotic',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Evil'
+        value: 'Evil',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Extraplanar'
+        value: 'Extraplanar',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Good'
+        value: 'Good',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Lawful'
+        value: 'Lawful',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Magical'
+        value: 'Magical',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Native'
+        value: 'Native',
+        // subtype: ,
+        // subtypeAdjustments:
     },
     cs ={
-        value: 'Technological'
+        value: 'Technological',
+        // subtype: ,
+        // subtypeAdjustments:
     },
 ];

@@ -13,7 +13,7 @@ let dragon = {
     otherAbilities:[]
 };
 
-function dragonAdjustments(mainStatistics, attackStatistics){
+function dragonAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
     mainStatistics.ref += 2;
     mainStatistics.will += 2;
