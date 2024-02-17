@@ -4,6 +4,7 @@ import { selectArray } from "../../../UniversalScripts/DropdownLists/array.js";
 import { selectCreatureType } from "../../../UniversalScripts/DropdownLists/creatureType.js";
 import { selectCreatureSubtype } from "../../../UniversalScripts/DropdownLists/creatureSubtype.js";
 import { selectSkills } from "../../../UniversalScripts/DropdownLists/skills.js";
+import { selectChallengeRatings } from "../../../UniversalScripts/DropdownLists/challengeRatings.js";
 
 /*
 <div class="statBlockWrapper">
@@ -104,25 +105,28 @@ export function generateNPC(
     let mainWrapperDiv = document.getElementById("statBlockWrapper");
     // Clear so it doesn't populate more than once when user clicks again.
     mainWrapperDiv.innerHTML = '';
-
-    let alienCR = '';
-
-    let alienArraySelected = '';
-    let creatureTypeSelected = '';
-    let creatureType = '';
-    let creatureSubtypeSelected ='';
-    let creatureSubtype = '';
     
+    // Confirm all options are selected
     if(selections.length < 4){
         let noOptionDiv = document.createElement('div');
         noOptionDiv.appendChild(document.createTextNode('All options must be selected.'))
         mainWrapperDiv.appendChild(noOptionDiv)
     } else {
 
-        alienCR = selections[0].innerText;
+        // Get the CR selected by user.
+        let alienCRSelected = selections[0].innerText;
+        let alienCRObject = {};
+        selectChallengeRatings.forEach(i=>{
+            if(alienCRSelected === i.value){
+                alienCRObject = Object.assign(i)
+            }
+        })
+        let alienCR = alienCRObject.value;
 
-        alienArraySelected = selections[1].innerText;
+        // Get the array selected by user.
+        let alienArraySelected = selections[1].innerText;
 
+        // Get the matching array from array.js, and create a deep copy.
         let alienArray = {};
         selectArray.forEach(i=>{
             if(alienArraySelected === i.value){
@@ -130,6 +134,7 @@ export function generateNPC(
             };
         });
 
+        // Get a deep copy of the Main Statistics based on array.
         let arrayMain = {};
         alienArray.main.forEach(i=>{
             if(i.cr === alienCR){
@@ -137,6 +142,7 @@ export function generateNPC(
             };
         });
 
+        // Get a deep copy of the Attack Statistics based on array.
         let arrayAttack = {};
         alienArray.attack.forEach(i=>{
             if(i.cr === alienCR){
@@ -144,7 +150,10 @@ export function generateNPC(
             };
         });
 
-        creatureTypeSelected = selections[2].innerText;
+        // Get the Creature Type selected by user.
+        let creatureTypeSelected = selections[2].innerText;
+
+        // Get a copy of the Creature Type from creatureType.js.
         let creatureTypeObject = {};
         selectCreatureType.forEach(i=>{
             if(i.value === creatureTypeSelected){
@@ -152,9 +161,13 @@ export function generateNPC(
             };
         });
         
-        creatureType = creatureTypeObject.value
+        // Set the Creature Type to display in the stat block.
+        let creatureType = creatureTypeObject.value
 
-        creatureSubtypeSelected = selections[3].innerText;
+        // Get the Creature Subtype selected by user.
+        let creatureSubtypeSelected = selections[3].innerText;
+
+        // Get a copy of the Creature Subtype from creatureSubtype.js.
         let creatureSubtypeObject = {};
         selectCreatureSubtype.forEach(i=>{
             if(i.value === creatureSubtypeSelected){
@@ -162,9 +175,10 @@ export function generateNPC(
             };
         });
         
-        creatureSubtype = creatureSubtypeObject.value
+        // Set the Creature Subtype to display in the stat block.
+        let creatureSubtype = creatureSubtypeObject.value
 
-        // Getting base attributes. All start at 10
+        // Set the base attribute values to 10. These will be changed to a modifier further down.
         let attributeBase = {
             str: 10,
             dex: 10,
@@ -174,7 +188,7 @@ export function generateNPC(
             cha: 10,
         };
 
-        // Clone Skills list
+        // Get a deep copy of the Skills from skills.js
         let allSkills = JSON.parse(JSON.stringify(selectSkills));
 
         creatureTypeObject.typeAdjustments(arrayMain, arrayAttack, attributeBase);
@@ -224,27 +238,34 @@ export function generateNPC(
             cha: (attributeBase.cha != "-") ? Math.trunc((attributeBase.cha - 10)/2) : "-",
         }
 
+        // Get the Experience Points awarded and convert it to a ###,###,### format.
         let xpValue = numberWithCommas(arrayMain.xp)
 
+        // Initiative is equal to the dexterity modifier.
         let initiativeValue = attributeModifier.dex;
-        // let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
-        // Add senses
+
+        // Senses
         let sensesValue = [];
-        // Darkvision
+
+        // If there is a darkvision value over 0, add to the stat block.
         if(creatureTypeObject.type.darkvision > 0 || creatureSubtypeObject.subtype.darkvision > 0){
+            // Get the largest darkvision value to add.
             if(creatureTypeObject.type.darkvision >= creatureSubtypeObject.subtype.darkvision){
                 sensesValue.push(`darkvision ${creatureTypeObject.type.darkvision} ft.`)
             } else{
                 sensesValue.push(`darkvision ${creatureSubtypeObject.type.darkvision} ft.`)
             }
         };
+
         // Low-Light vision
+        // If lowLightVision = true, add it to the stat block.
         if(creatureTypeObject.type.lowLightVision || creatureSubtypeObject.subtype.lowLightVision){
             sensesValue.push('low-light vision')
         }
 
-        // Initialize perceptionValue
+        // Perception
         let perceptionValue = 0
+
         // All creatures get perception as a Good skill, except Giants that get it as a master skill.
         if(creatureSubtype === 'Giant'){
             perceptionValue = arrayMain.masterSkills[0] + attributeModifier.wis;
@@ -252,20 +273,27 @@ export function generateNPC(
             perceptionValue =  arrayMain.goodSkills[0] + attributeModifier.wis;
         }
 
+        // HP
+        // Will add ability to choose Brute later.
         let hpValue = arrayMain.hitPoints;
 
+        // Armor Class values
         let eacValue = arrayMain.eAC;
         let kacValue = arrayMain.kAC;
 
+        // Saving Throw values
         let fortValue = arrayMain.fort;
         let refValue = arrayMain.ref;
         let willValue = arrayMain.will;
 
+        // Immunities
         let immunitiesValue = [];
+
         // Add Immunities given through Type
         creatureTypeObject.type.immunities.forEach(i=>{
             immunitiesValue.push(i);
         });
+
         // Add Immunities given through Subtype
         creatureSubtypeObject.subtype.immunities.forEach(i=>{
             // Check to be sure it's not already in the list
@@ -277,40 +305,165 @@ export function generateNPC(
             });
             if(!isIn){
                 immunitiesValue.push(i)
-            }
+            };
         });
 
+        // Resistances
         let resistancesValue = [];
-        // Add Resistances given by type
+        // Add Resistances given by subtype
         creatureSubtypeObject.subtype.resistances.forEach(i=>{
             if (i.resistanceType != ''){
                 resistancesValue.push(`${i.resistanceType}${i.resistanceDR}`)
-            }
-        })
+            };
+        });
+
+        // Weaknesses
         let weaknessesValue = creatureSubtypeObject.subtype.vulnerabilities;
-        let speedValue = [
-            '30 ft.',
-            'fly 30 ft.'
-        ];
 
-        let toHitMeleeValue = 17;
-        let meleeDamageValue = '2d6+11';
-        let toHitRangedValue = 14;
-        let rangedDamageValue = '2d8+7';
+        // Speed
+        let speedValue = [];
 
-        let otherAbilitiesValue = [
-            'mindless'
+        // Any additional speeds give by subtype.
+        creatureSubtypeObject.subtype.speeds.forEach(i=>{
+            speedValue.push(i)
+        });
+
+        // To Hit values
+
+        // Randomly assign to hit values.
+        let toHitBonus= [];
+        let tempToHit = [
+            arrayAttack.highAttackBonus,
+            arrayAttack.lowAttackBonus
         ]
 
-        let specialAbilityNames = [
-            'Mutable (Ex)',
-            'Another (Su)'
+        // Get a random bonus
+        let randomBonus = Math.floor(Math.random()*tempToHit.length);
+        toHitBonus.push(tempToHit[randomBonus])
+        tempToHit.splice(randomBonus, 1)
+        toHitBonus.push(tempToHit[0])
+        
+        // To Hit values to display
+        let toHitMeleeValue = toHitBonus[0];
+        let toHitRangedValue = toHitBonus[1];
+
+        // Damage values
+        // Ranged damage. Bonus will be equal to the CR, if 1 or above.
+        let energyRangedDamage = '';
+        let keneticRangedDamage = '';
+        if(alienCRObject.numberValue >= 1){
+            let rangedDamageBonus = alienCRObject.numberValue
+            energyRangedDamage = `(${arrayAttack.energyRangedDamageNumberDice}d${arrayAttack.energyRangedDamageDiceType} +${rangedDamageBonus} E)`;
+            keneticRangedDamage = `(${arrayAttack.kineticRangedDamageNumberDice}d${arrayAttack.kineticRangedDamageDiceType} +${rangedDamageBonus} K)`;
+        } else{
+            energyRangedDamage = `(${arrayAttack.energyRangedDamageNumberDice}d${arrayAttack.energyRangedDamageDiceType} E)`;
+            keneticRangedDamage = `(${arrayAttack.kineticRangedDamageNumberDice}d${arrayAttack.kineticRangedDamageDiceType} K)`;
+        };
+        
+
+        /*
+        energyRangedDamageNumberDice: '1',
+        energyRangedDamageDiceType: '4',
+        kineticRangedDamageNumberDice: '1',
+        kineticRangedDamageDiceType: '4',
+        standardMeleeDamageNumberDice: '1',
+        standardMeleeDamageDiceType: '6',
+        threeAttacksMeleeDamageNumberDice: '',
+        threeAttacksMeleeDamageDiceType: '',
+        fourAttacksMeleeDamageNumberDice: '',
+        fourAttacksMeleeDamageDiceType: '',
+        */
+
+        // Ranged values array
+        let rangedDamageArray = [
+            energyRangedDamage,
+            keneticRangedDamage
         ]
 
-        let specialAbilityDescriptions = [
-            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, earum mollitia in perferendis dolores hic assumenda eveniet sed ipsam, iusto iste vitae delectus ea impedit. Mollitia, iusto. Obcaecati, provident magni!',
-            'This is a test to make sure it will add multiple abilites.'
-        ]
+        // Melee damage. Bonus will be equal to CR, if 1 or above, plus Str.
+        let standardMeleeDamage = '';
+        let threeAttacksMeleeDamage = '';
+        let fourAttacksMeleeDamage = '';
+        let meleeDamageBonus = attributeModifier.str;
+
+        // Melee values array. Empty as it will be filled depending on CR.
+        let meleeDamageArray = [];
+        // Fill array based on possibly having more attacks.
+        if(alienCRObject.numberValue >= 1){
+            meleeDamageBonus += alienCRObject.numberValue;
+            standardMeleeDamage = `(${arrayAttack.standardMeleeDamageNumberDice}d${arrayAttack.standardMeleeDamageDiceType} +${meleeDamageBonus})`;
+            meleeDamageArray.push(standardMeleeDamage);
+            // If three attacks possible, add to the list
+            if(arrayAttack.threeAttacksMeleeDamageNumberDice != ''){
+                if(meleeDamageBonus > 0){
+                    threeAttacksMeleeDamage = `(${arrayAttack.threeAttacksMeleeDamageNumberDice}d${arrayAttack.threeAttacksMeleeDamageDiceType} +${meleeDamageBonus}) x3`;
+                    meleeDamageArray.push(threeAttacksMeleeDamage);
+                } else {
+                    threeAttacksMeleeDamage = `(${arrayAttack.threeAttacksMeleeDamageNumberDice}d${arrayAttack.threeAttacksMeleeDamageDiceType}) x3`;
+                    meleeDamageArray.push(threeAttacksMeleeDamage);
+                };
+            };
+            // If four attacks possible, add to the list
+            if(arrayAttack.fourAttacksMeleeDamageNumberDice != ''){
+                if(meleeDamageBonus > 0){
+                    fourAttacksMeleeDamage = `(${arrayAttack.fourAttacksMeleeDamageNumberDice}d${arrayAttack.fourAttacksMeleeDamageDiceType} +${meleeDamageBonus}) x4`;
+                    meleeDamageArray.push(fourAttacksMeleeDamage);
+                } else {
+                    fourAttacksMeleeDamage = `(${arrayAttack.fourAttacksMeleeDamageNumberDice}d${arrayAttack.fourAttacksMeleeDamageDiceType}) x4`;
+                    meleeDamageArray.push(fourAttacksMeleeDamage);
+                };
+            };
+        } else{
+            if(meleeDamageBonus > 0){
+                standardMeleeDamage = `(${arrayAttack.standardMeleeDamageNumberDice}d${arrayAttack.standardMeleeDamageDiceType} +${meleeDamageBonus})`;
+            } else {
+                standardMeleeDamage = `(${arrayAttack.standardMeleeDamageNumberDice}d${arrayAttack.standardMeleeDamageDiceType})`;
+            };
+            meleeDamageArray.push(standardMeleeDamage);
+        };
+
+        // Get the random positions in damage arrays.
+        let randomRanged = Math.floor(Math.random()*rangedDamageArray.length);
+        let randomMelee = Math.floor(Math.random()*meleeDamageArray.length);
+
+        // Damage values to display in stat block
+        let meleeDamageValue = meleeDamageArray[randomMelee];
+        let rangedDamageValue = rangedDamageArray[randomRanged];
+
+        // Our Other Abilities to be added to the stat block.
+        let otherAbilitiesValue = []
+
+        // Add Other Abilities added from Creature Type
+        creatureTypeObject.type.otherAbilities.forEach(i=>{
+            otherAbilitiesValue.push(i);
+        });
+
+        // Add Other Abilities added from Creature Subtype if they don't already exist
+        creatureSubtypeObject.subtype.otherAbilities.forEach(i=>{
+            let inList = false;
+            otherAbilitiesValue.forEach(a=>{
+                if(a === i){
+                    inList = true;
+                }
+            });
+            if (!inList){
+                otherAbilitiesValue.push(i);
+            }
+        });
+
+        // Special Abilities
+        // Separate Names and Descriptions for display in stat block.
+        // Only Subtypes offer special abilities.
+        let specialAbilityNames = creatureSubtypeObject.subtype.abilityNames;
+        let specialAbilityDescriptions = creatureSubtypeObject.subtype.abilityDescriptions;
+
+        
+
+        /*
+        *********************************************
+        Add Stat Block to HTML
+        *********************************************
+        */ 
 
         let statBlockDiv = document.createElement("div");
         statBlockDiv.classList.add("statBlock");
@@ -485,14 +638,14 @@ export function generateNPC(
         statMeleeDiv.classList.add('statMelee');
         offenseIndentDiv.appendChild(statMeleeDiv);
 
-        createBoldSpanInDiv(statMeleeDiv, 'Melee', ` +${toHitMeleeValue} (${meleeDamageValue})`);
+        createBoldSpanInDiv(statMeleeDiv, 'Melee', ` +${toHitMeleeValue} ${meleeDamageValue}`);
 
         // Fill the Ranged Attack line
         let statRangedDiv = document.createElement('div');
         statRangedDiv.classList.add('statRanged');
         offenseIndentDiv.appendChild(statRangedDiv);
 
-        createBoldSpanInDiv(statRangedDiv, 'Ranged', ` +${toHitRangedValue} (${rangedDamageValue})`);
+        createBoldSpanInDiv(statRangedDiv, 'Ranged', ` +${toHitRangedValue} ${rangedDamageValue}`);
 
         // The Statistics sub heading
         let statSubHeadWrapStatisticsDiv = document.createElement('div');
