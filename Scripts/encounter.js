@@ -1,7 +1,7 @@
 import { listContent, dropdownListFunction } from "./UniversalScripts/dropdownFunctions.js";
 
 import { generateEncounter } from "./CreationFiles/Generation/Encounter/generateEncounter.js";
-import { selectAveragePartyLevel } from "./UniversalScripts/Lists/averagePartyLevel.js";
+import { selectAveragePartyLevel } from "./UniversalScripts/DropdownLists/averagePartyLevel.js";
 
 let encounterPage = {
     startEncounter: function (){

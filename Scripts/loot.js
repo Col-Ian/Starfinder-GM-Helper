@@ -17,13 +17,13 @@ Import lists
 
  */
 // Average Party Level array
-import { selectAveragePartyLevel } from "./UniversalScripts/Lists/averagePartyLevel.js";
+import { selectAveragePartyLevel } from "./UniversalScripts/DropdownLists/averagePartyLevel.js";
 
 // Challenge Rating array
-import { selectChallengeRatings } from "./UniversalScripts/Lists/challengeRatings.js";
+import { selectChallengeRatings } from "./UniversalScripts/DropdownLists/challengeRatings.js";
 
 // Generate array
-import { selectGenerate } from "./UniversalScripts/Lists/generateType.js";
+import { selectGenerate } from "./UniversalScripts/DropdownLists/generateType.js";
 
 let lootPage = {
     startLoot: function(){

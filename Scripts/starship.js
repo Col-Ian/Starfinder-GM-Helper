@@ -17,13 +17,13 @@ Import lists
 
  */
 // Tier array
-import { selectStarshipTier } from "./UniversalScripts/Lists/starshipTier.js";
+import { selectStarshipTier } from "./UniversalScripts/DropdownLists/starshipTier.js";
 
 // Frame array
-import { selectFrame } from "./UniversalScripts/Lists/frame.js";
+import { selectFrame } from "./UniversalScripts/DropdownLists/frame.js";
 
 // Armament array
-import { selectArmament } from "./UniversalScripts/Lists/armament.js";
+import { selectArmament } from "./UniversalScripts/DropdownLists/armament.js";
 
 let starshipPage = {
     startStarship: function(){
