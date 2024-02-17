@@ -10,12 +10,12 @@ let aeon = {
     ],
     resistances:[
         resistance = {
-            resistanceType: 'electricity',
-            resistanceDR: '10'
+            resistanceType: 'electricity ',
+            resistanceDR: 10
         },
         resistance = {
-            resistanceType: 'fire',
-            resistanceDR: '10'
+            resistanceType: 'fire ',
+            resistanceDR: 10
         }
     ],
     vulnerabilities: [],

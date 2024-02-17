@@ -3,8 +3,6 @@ let animal = {
     immunities: [],
     resistances:[],
     darkvision: 0,
-    lowLightVision: false,
-    darkvision: 0,
     lowLightVision: true,
     traits: [
         'Low-light vision',

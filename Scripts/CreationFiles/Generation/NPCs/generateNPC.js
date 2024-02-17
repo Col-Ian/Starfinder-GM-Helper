@@ -115,7 +115,7 @@ export function generateNPC(
     
     if(selections.length < 4){
         let noOptionDiv = document.createElement('div');
-        noOptionDiv.appendChild(document.createTextNode('No option selected.'))
+        noOptionDiv.appendChild(document.createTextNode('All options must be selected.'))
         mainWrapperDiv.appendChild(noOptionDiv)
     } else {
 
@@ -164,6 +164,7 @@ export function generateNPC(
         
         creatureSubtype = creatureSubtypeObject.value
 
+        // Getting base attributes. All start at 10
         let attributeBase = {
             str: 10,
             dex: 10,
@@ -180,20 +181,78 @@ export function generateNPC(
         creatureSubtypeObject.subtypeAdjustments(arrayMain, arrayAttack, attributeBase, allSkills)
 
 
+        
+        // Randomly assign the attribute bonuses given by the arrayMain
+        arrayMain.abilityScoreModifiers.forEach(i=>{
+            let tempAttributes = [
+                attributeBase.str,
+                attributeBase.dex,
+                attributeBase.con,
+                attributeBase.int,
+                attributeBase.wis,
+                attributeBase.cha
+            ];
+            while(true){
+                // Select a random attribute
+                let randomAttribute = Math.floor(Math.random()*tempAttributes.length);
+                // If the bonus has not been applied to the attribute and the attribute isn't null (Animals can have negative values in Int)
+                if(tempAttributes[randomAttribute] <= 10 && tempAttributes[randomAttribute] != "-"){
+                    // Add the bonus to the base value
+                    tempAttributes[randomAttribute] += i;
+
+                    // Make new values represented in attributeBase.
+                    attributeBase.str = tempAttributes[0]
+                    attributeBase.dex = tempAttributes[1]
+                    attributeBase.con = tempAttributes[2]
+                    attributeBase.int = tempAttributes[3]
+                    attributeBase.wis = tempAttributes[4]
+                    attributeBase.cha = tempAttributes[5]
+
+                    // Break from while loop
+                    break;
+                }
+            }
+        })
+        
+        // Create attribute modifier. (10-11 is +0, 12-13 is +1, 14-15 is +2, etc....)
+        let attributeModifier = {
+            str: (attributeBase.str != "-") ? Math.trunc((attributeBase.str - 10)/2) : "-",
+            dex: (attributeBase.dex != "-") ? Math.trunc((attributeBase.dex - 10)/2) : "-",
+            con: (attributeBase.con != "-") ? Math.trunc((attributeBase.con - 10)/2) : "-",
+            int: (attributeBase.int != "-") ? Math.trunc((attributeBase.int - 10)/2) : "-",
+            wis: (attributeBase.wis != "-") ? Math.trunc((attributeBase.wis - 10)/2) : "-",
+            cha: (attributeBase.cha != "-") ? Math.trunc((attributeBase.cha - 10)/2) : "-",
+        }
 
         let xpValue = numberWithCommas(arrayMain.xp)
 
-        let initiativeValue = 0;
-        initiativeValue = 4;
-        let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
-        let perceptionValue = 0
-        if(creatureSubtype === 'Giant'){
-            perceptionValue = arrayMain.masterSkills[0] + Math.trunc((attributeBase.wis - 10)/2);
-        } else {
-            perceptionValue =  arrayMain.goodSkills[0] + Math.trunc((attributeBase.wis - 10)/2);
+        let initiativeValue = attributeModifier.dex;
+        // let sensesValue = ['blindsense 30 ft.','darkvision 60 ft.'];
+        // Add senses
+        let sensesValue = [];
+        // Darkvision
+        if(creatureTypeObject.type.darkvision > 0 || creatureSubtypeObject.subtype.darkvision > 0){
+            if(creatureTypeObject.type.darkvision >= creatureSubtypeObject.subtype.darkvision){
+                sensesValue.push(`darkvision ${creatureTypeObject.type.darkvision} ft.`)
+            } else{
+                sensesValue.push(`darkvision ${creatureSubtypeObject.type.darkvision} ft.`)
+            }
+        };
+        // Low-Light vision
+        if(creatureTypeObject.type.lowLightVision || creatureSubtypeObject.subtype.lowLightVision){
+            sensesValue.push('low-light vision')
         }
 
-        let hpValue = 105;
+        // Initialize perceptionValue
+        let perceptionValue = 0
+        // All creatures get perception as a Good skill, except Giants that get it as a master skill.
+        if(creatureSubtype === 'Giant'){
+            perceptionValue = arrayMain.masterSkills[0] + attributeModifier.wis;
+        } else {
+            perceptionValue =  arrayMain.goodSkills[0] + attributeModifier.wis;
+        }
+
+        let hpValue = arrayMain.hitPoints;
 
         let eacValue = arrayMain.eAC;
         let kacValue = arrayMain.kAC;
@@ -202,16 +261,33 @@ export function generateNPC(
         let refValue = arrayMain.ref;
         let willValue = arrayMain.will;
 
-        let immunitiesValue = [
-            'critical hits',
-            'lightning'
-        ];
-        let resistancesValue = [
-            'cold 10',
-            'acid 10'
-        ];
-        let weaknessesValue = ['fire'];
+        let immunitiesValue = [];
+        // Add Immunities given through Type
+        creatureTypeObject.type.immunities.forEach(i=>{
+            immunitiesValue.push(i);
+        });
+        // Add Immunities given through Subtype
+        creatureSubtypeObject.subtype.immunities.forEach(i=>{
+            // Check to be sure it's not already in the list
+            let isIn = false;
+            immunitiesValue.forEach(a=>{
+                if (i===a){
+                    isIn = true;
+                };
+            });
+            if(!isIn){
+                immunitiesValue.push(i)
+            }
+        });
 
+        let resistancesValue = [];
+        // Add Resistances given by type
+        creatureSubtypeObject.subtype.resistances.forEach(i=>{
+            if (i.resistanceType != ''){
+                resistancesValue.push(`${i.resistanceType}${i.resistanceDR}`)
+            }
+        })
+        let weaknessesValue = creatureSubtypeObject.subtype.vulnerabilities;
         let speedValue = [
             '30 ft.',
             'fly 30 ft.'
@@ -221,17 +297,6 @@ export function generateNPC(
         let meleeDamageValue = '2d6+11';
         let toHitRangedValue = 14;
         let rangedDamageValue = '2d8+7';
-
-        
-        
-        let attributeValues = {
-            str: (attributeBase.str != "-") ? Math.trunc((attributeBase.str - 10)/2) : "-",
-            dex: (attributeBase.dex != "-") ? Math.trunc((attributeBase.dex - 10)/2) : "-",
-            con: (attributeBase.con != "-") ? Math.trunc((attributeBase.con - 10)/2) : "-",
-            int: (attributeBase.int != "-") ? Math.trunc((attributeBase.int - 10)/2) : "-",
-            wis: (attributeBase.wis != "-") ? Math.trunc((attributeBase.wis - 10)/2) : "-",
-            cha: (attributeBase.cha != "-") ? Math.trunc((attributeBase.cha - 10)/2) : "-",
-        }
 
         let otherAbilitiesValue = [
             'mindless'
@@ -364,7 +429,7 @@ export function generateNPC(
         defensesIndentDiv.appendChild(statDefOtherDiv);
 
         // If the creature has immunities and Resistences/Weaknesses
-        if(immunitiesValue.length != 0 && resistancesValue.length != 0 || weaknessesValue.length != 0){
+        if(immunitiesValue.length != 0 && resistancesValue.length != 0 || immunitiesValue.length != 0 && weaknessesValue.length != 0){
             let text = immunitiesValue.join(', ');
             createBoldSpanInDiv(statDefOtherDiv, 'Immunities', ` ${text}; `)
         } else if (immunitiesValue.length != 0){
@@ -451,22 +516,30 @@ export function generateNPC(
         statisticsIndentDiv.appendChild(statAttributesDiv);
 
         // Str
-        createBoldSpanInDiv(statAttributesDiv, 'Str', ` ${attributeValues.str}; `);
+        createBoldSpanInDiv(statAttributesDiv, 'Str', ` +${attributeModifier.str}; `);
 
         // Dex
-        createBoldSpanInDiv(statAttributesDiv, 'Dex', ` ${attributeValues.dex}; `);
+        createBoldSpanInDiv(statAttributesDiv, 'Dex', ` +${attributeModifier.dex}; `);
 
-        // Con
-        createBoldSpanInDiv(statAttributesDiv, 'Con', ` ${attributeValues.con}; `);
+        // Con (can be null)
+        if(attributeModifier.con === "-"){
+            createBoldSpanInDiv(statAttributesDiv, 'Con', ` ${attributeModifier.con}; `);
+        } else{
+            createBoldSpanInDiv(statAttributesDiv, 'Con', ` +${attributeModifier.con}; `);
+        }
 
-        // Int
-        createBoldSpanInDiv(statAttributesDiv, 'Int', ` ${attributeValues.int}; `);
+        // Int (can be null or negative)
+        if(attributeModifier.int === "-" || attributeModifier.int < 0){
+            createBoldSpanInDiv(statAttributesDiv, 'Int', ` ${attributeModifier.int}; `);
+        } else {
+            createBoldSpanInDiv(statAttributesDiv, 'Int', ` +${attributeModifier.int}; `);
+        }
 
         // Wis
-        createBoldSpanInDiv(statAttributesDiv, 'Wis', ` ${attributeValues.wis}; `);
+        createBoldSpanInDiv(statAttributesDiv, 'Wis', ` +${attributeModifier.wis}; `);
 
         // Cha
-        createBoldSpanInDiv(statAttributesDiv, 'Cha', ` ${attributeValues.cha}`);
+        createBoldSpanInDiv(statAttributesDiv, 'Cha', ` +${attributeModifier.cha}`);
 
         // Fill the Other Abilities line (Only while other abilities are present)
         if (otherAbilitiesValue.length != 0){

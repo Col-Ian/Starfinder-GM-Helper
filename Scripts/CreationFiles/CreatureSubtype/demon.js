@@ -9,15 +9,15 @@ let demon = {
     ],
     resistances:[
         resistance = {
-            resistanceType: 'acid',
+            resistanceType: 'acid ',
             resistanceDR: 10,
         },
         resistance = {
-            resistanceType: 'cold',
+            resistanceType: 'cold ',
             resistanceDR: 10,
         },
         resistance = {
-            resistanceType: 'fire',
+            resistanceType: 'fire ',
             resistanceDR: 10,
         }
     ],

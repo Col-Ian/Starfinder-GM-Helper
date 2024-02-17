@@ -22,27 +22,11 @@ function oozeAdjustments(mainStatistics, attackStatistics, attributeBase){
     mainStatistics.fort += 2;
     mainStatistics.ref -= 2;
     mainStatistics.will -= 2;
-    mainStatistics.abilityScoreModifiers = [];
     // set Intelligence modifier to —. (mindless)
-    attributeBase.int = '-';
+    attributeBase.int = "-";
 };
 
 export {
     ooze,
     oozeAdjustments
 };
-
-// let mindless = false;
-
-// console.log(mindless)
-
-// function isMindless(type){
-//     type.traits.forEach(element => {
-//         if(element === 'mindless'){
-//             mindless = true;
-//         };
-//     });
-// };
-
-// isMindless(ooze)
-// console.log(mindless)

@@ -13,11 +13,11 @@ let agathion = {
             resistanceDR: 4,
         },
         resistance = {
-            resistanceType: 'cold',
+            resistanceType: 'cold ',
             resistanceDR: 10,
         },
         resistance = {
-            resistanceType: 'sonic',
+            resistanceType: 'sonic ',
             resistanceDR: 10,
         }
     ],

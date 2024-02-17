@@ -11,15 +11,15 @@ let daemon = {
     ],
     resistances:[
         resistance = {
-            resistanceType: 'cold',
+            resistanceType: 'cold ',
             resistanceDR: 10,
         },
         resistance = {
-            resistanceType: 'electricity',
+            resistanceType: 'electricity ',
             resistanceDR: 10,
         },
         resistance = {
-            resistanceType: 'fire',
+            resistanceType: 'fire ',
             resistanceDR: 10,
         }
     ],

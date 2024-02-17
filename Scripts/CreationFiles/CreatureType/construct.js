@@ -2,8 +2,6 @@ let construct = {
     description: 'A construct is a magically animated object or an artificially created creature.',
     immunities: ['construct immunities'],
     resistances:[],
-    darkvision: 0,
-    lowLightVision: false,
     darkvision: 60,
     lowLightVision: true,
     traits: [

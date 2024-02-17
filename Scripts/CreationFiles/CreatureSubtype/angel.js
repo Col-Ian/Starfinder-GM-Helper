@@ -14,11 +14,11 @@ let angel = {
             resistanceDR: 4,
         },
         resistance = {
-            resistanceType: 'electricity',
+            resistanceType: 'electricity ',
             resistanceDR: 10,
         },
         resistance = {
-            resistanceType: 'fire',
+            resistanceType: 'fire ',
             resistanceDR: 10,
         }
     ],
