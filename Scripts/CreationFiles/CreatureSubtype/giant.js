@@ -28,7 +28,7 @@ function giantAdjustments(
     attributeBase,
     skills
 ){
-    skills[6].skillValue += mainStatistics.masterSkills[0]
+    skills[7].skillValue += mainStatistics.masterSkills[0]
 
 }
 

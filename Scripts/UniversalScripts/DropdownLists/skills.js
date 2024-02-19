@@ -5,86 +5,109 @@ export let selectSkills = [
     ski ={
         // 0
         value: 'Acrobatics',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'dex'
     },
     ski ={
         // 1
         value: 'Athletics',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'str'
     },
     ski ={
         // 2
         value: 'Bluf',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'cha'
     },
     ski ={
         // 3
-        value: 'Clture',
-        skillValue: 0
+        value: 'Computers',
+        skillValue: 0,
+        attribute: 'int'
     },
     ski ={
         // 4
-        value: 'Diplomacy',
-        skillValue: 0
+        value: 'Culture',
+        skillValue: 0,
+        attribute: 'int'
     },
     ski ={
         // 5
-        value: 'Disguise',
-        skillValue: 0
+        value: 'Diplomacy',
+        skillValue: 0,
+        attribute: 'cha'
     },
     ski ={
         // 6
-        value: 'Intimidate',
-        skillValue: 0
+        value: 'Disguise',
+        skillValue: 0,
+        attribute: 'cha'
     },
     ski ={
         // 7
-        value: 'Life Science',
-        skillValue: 0
+        value: 'Intimidate',
+        skillValue: 0,
+        attribute: 'cha'
     },
     ski ={
         // 8
-        value: 'Medicine',
-        skillValue: 0
+        value: 'Life Science',
+        skillValue: 0,
+        attribute: 'int'
     },
     ski ={
         // 9
-        value: 'Mysticism',
-        skillValue: 0
+        value: 'Medicine',
+        skillValue: 0,
+        attribute: 'int'
     },
     ski ={
         // 10
-        value: 'Physical Science',
-        skillValue: 0
+        value: 'Mysticism',
+        skillValue: 0,
+        attribute: 'wis'
     },
     ski ={
         // 11
-        value: 'Piloting',
-        skillValue: 0
+        value: 'Physical Science',
+        skillValue: 0,
+        attribute: 'int'
     },
     ski ={
         // 12
-        value: 'Profession',
-        skillValue: 0
+        value: 'Piloting',
+        skillValue: 0,
+        attribute: 'dex'
     },
+    // ski ={
+    //     // 13
+    //     value: 'Profession',
+    //     skillValue: 0,
+    //     attribute: ''
+    // },
     ski ={
         // 13
         value: 'Sense Motive',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'wis'
     },
     ski ={
         // 14
         value: 'Sleight of Hand',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'dex'
     },
     ski ={
         // 15
         value: 'Stealth',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'dex'
     },
     ski ={
         // 16
         value: 'Survival',
-        skillValue: 0
+        skillValue: 0,
+        attribute: 'wis'
     },
 ];

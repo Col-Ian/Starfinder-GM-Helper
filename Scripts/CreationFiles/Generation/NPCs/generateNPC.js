@@ -361,19 +361,6 @@ export function generateNPC(
         };
         
 
-        /*
-        energyRangedDamageNumberDice: '1',
-        energyRangedDamageDiceType: '4',
-        kineticRangedDamageNumberDice: '1',
-        kineticRangedDamageDiceType: '4',
-        standardMeleeDamageNumberDice: '1',
-        standardMeleeDamageDiceType: '6',
-        threeAttacksMeleeDamageNumberDice: '',
-        threeAttacksMeleeDamageDiceType: '',
-        fourAttacksMeleeDamageNumberDice: '',
-        fourAttacksMeleeDamageDiceType: '',
-        */
-
         // Ranged values array
         let rangedDamageArray = [
             energyRangedDamage,
@@ -430,8 +417,107 @@ export function generateNPC(
         let meleeDamageValue = meleeDamageArray[randomMelee];
         let rangedDamageValue = rangedDamageArray[randomRanged];
 
-        // Our Other Abilities to be added to the stat block.
-        let otherAbilitiesValue = []
+        
+        // The Skills to be added to the stat block
+        let skillsAddedValue = [];
+
+        // Add any existing skills that have bonuses to skillsAddedValue
+        allSkills.forEach(i=>{
+            if(i.skillValue > 0){
+                skillsAddedValue.push(`${i.value} +${i.skillValue}`)
+            };
+        });
+
+        // Add Master Skills
+        while(arrayMain.masterSkills[1] > 0){
+            let tempSkills = [];
+
+            // Get skills that haven't had values added to them yet.
+            allSkills.forEach(i=>{
+                if(i.skillValue === 0){
+                    tempSkills.push(i);
+                };
+            });
+            // Select one randomly.
+            let randomSkill = Math.floor(Math.random()*tempSkills.length);
+
+            // Get the appropriate attribute bonus for the skill.
+            let bonusAdded = 0
+            if (tempSkills[randomSkill].attribute === 'str'){
+                bonusAdded = attributeModifier.str
+            } else if (tempSkills[randomSkill].attribute === 'dex'){
+                bonusAdded = attributeModifier.dex
+            } else if (tempSkills[randomSkill].attribute === 'int'){
+                bonusAdded = attributeModifier.int
+            } else if (tempSkills[randomSkill].attribute === 'wis'){
+                bonusAdded = attributeModifier.wis
+            } else{
+                bonusAdded = attributeModifier.cha
+            }
+
+            // Add the bonuses to the skill.
+            tempSkills[randomSkill].skillValue += (arrayMain.masterSkills[0] + bonusAdded);
+
+            // Add the skill to the Skill list for the stat block.
+            skillsAddedValue.push(`${tempSkills[randomSkill].value} +${tempSkills[randomSkill].skillValue}`);
+
+            // Add to the allSkills so it doesn't get another bonus.
+            allSkills.forEach(i=>{
+                if(i.value === tempSkills[randomSkill].value){
+                    i.skillValue = tempSkills[randomSkill].skillValue;
+                }
+            });
+            arrayMain.masterSkills[1]--
+        };
+
+        // Add Good Skills
+        while(arrayMain.goodSkills[1] > 0){
+            let tempSkills = [];
+
+            // Get skills that haven't had values added to them yet.
+            allSkills.forEach(i=>{
+                if(i.skillValue === 0){
+                    tempSkills.push(i);
+                };
+            });
+            // Select one randomly.
+            let randomSkill = Math.floor(Math.random()*tempSkills.length);
+
+            // Get the appropriate attribute bonus for the skill.
+            let bonusAdded = 0
+            if (tempSkills[randomSkill].attribute === 'str'){
+                bonusAdded = attributeModifier.str
+            } else if (tempSkills[randomSkill].attribute === 'dex'){
+                bonusAdded = attributeModifier.dex
+            } else if (tempSkills[randomSkill].attribute === 'int'){
+                bonusAdded = attributeModifier.int
+            } else if (tempSkills[randomSkill].attribute === 'wis'){
+                bonusAdded = attributeModifier.wis
+            } else{
+                bonusAdded = attributeModifier.cha
+            }
+
+            // Add the bonuses to the skill.
+            tempSkills[randomSkill].skillValue += (arrayMain.goodSkills[0] + bonusAdded);
+
+            // Add the skill to the Skill list for the stat block.
+            skillsAddedValue.push(`${tempSkills[randomSkill].value} +${tempSkills[randomSkill].skillValue}`);
+
+            // Add to the allSkills so it doesn't get another bonus.
+            allSkills.forEach(i=>{
+                if(i.value === tempSkills[randomSkill].value){
+                    i.skillValue = tempSkills[randomSkill].skillValue;
+                }
+            });
+            arrayMain.goodSkills[1]--
+        };
+
+        // Sort the final skills array.
+        skillsAddedValue.sort()
+
+
+        // The Other Abilities to be added to the stat block.
+        let otherAbilitiesValue = [];
 
         // Add Other Abilities added from Creature Type
         creatureTypeObject.type.otherAbilities.forEach(i=>{
@@ -693,6 +779,17 @@ export function generateNPC(
 
         // Cha
         createBoldSpanInDiv(statAttributesDiv, 'Cha', ` +${attributeModifier.cha}`);
+
+        // Fill the Skills line
+        if(skillsAddedValue != 0){
+            let statSkillsDiv = document.createElement('div');
+            statSkillsDiv.classList.add('statSkills');
+            statisticsIndentDiv.appendChild(statSkillsDiv);
+
+            let text = skillsAddedValue.join(", ")
+
+            createBoldSpanInDiv(statSkillsDiv, 'Skills', ` ${text}`)
+        }
 
         // Fill the Other Abilities line (Only while other abilities are present)
         if (otherAbilitiesValue.length != 0){
