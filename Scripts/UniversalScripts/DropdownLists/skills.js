@@ -16,7 +16,7 @@ export let selectSkills = [
     },
     ski ={
         // 2
-        value: 'Bluf',
+        value: 'Bluff',
         skillValue: 0,
         attribute: 'cha'
     },
@@ -80,6 +80,7 @@ export let selectSkills = [
         skillValue: 0,
         attribute: 'dex'
     },
+    // Profession is an optional skill that can be added later
     // ski ={
     //     // 13
     //     value: 'Profession',

@@ -45,3 +45,15 @@
 .linkToCreature:hover{
     color: purple;
 }
+
+.parentDivEncounter p{
+    max-width: 410px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-self: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #1e0a772a;
+    border-radius: 32px;
+    padding: 16px;
+}
