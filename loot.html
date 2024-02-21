@@ -22,61 +22,62 @@
         </nav>
     </header>
     <main>
-        Loot
-        <div class="pareDivLoot">
-            <div class="lootSelection">
-                <div class="labelDiv">
-                    <div class="dropDownLabel">Average Party Level</div>
-                </div>
-                <div class="dropDownDiv">
-                    <div class="dropdown">
-                        <div class="dropdownSelect">
-                            <span class="dropdownSelected" id="dropdownSelectedAPLLoot">-</span>
-                            <div class="caret"></div>
+        <div class="mainWrapperDiv">
+            <p>Generate loot for your encounters with the wealth based on Challenge Rating, and items available based on Average Party Level.</p>
+            <div class="parentDivLoot">
+                <div class="lootSelection">
+                    <div class="labelDiv">
+                        <div class="dropDownLabel">Average Party Level</div>
+                    </div>
+                    <div class="dropDownDiv">
+                        <div class="dropdown">
+                            <div class="dropdownSelect">
+                                <span class="dropdownSelected" id="dropdownSelectedAPLLoot">-</span>
+                                <div class="caret"></div>
+                            </div>
+                            <ul class="dropdownList" id="averagePLLoot">
+                            </ul>
                         </div>
-                        <ul class="dropdownList" id="averagePLLoot">
-                        </ul>
                     </div>
                 </div>
-            </div>
 
-            <div class="lootSelection">
-                <div class="labelDiv">
-                    <div class="dropDownLabel">Challenge Rating</div>
-                </div>
-                <div class="dropDownDiv">
-                    <div class="dropdown">
-                        <div class="dropdownSelect">
-                            <span class="dropdownSelected" id="dropdownSelectedCRLoot">-</span>
-                            <div class="caret"></div>
+                <div class="lootSelection">
+                    <div class="labelDiv">
+                        <div class="dropDownLabel">Challenge Rating</div>
+                    </div>
+                    <div class="dropDownDiv">
+                        <div class="dropdown">
+                            <div class="dropdownSelect">
+                                <span class="dropdownSelected" id="dropdownSelectedCRLoot">-</span>
+                                <div class="caret"></div>
+                            </div>
+                            <ul class="dropdownList" id="challengeRatingLoot">
+                            </ul>
                         </div>
-                        <ul class="dropdownList" id="challengeRatingLoot">
-                        </ul>
                     </div>
                 </div>
-            </div>
 
-            <div class="lootSelection">
-                <div class="labelDiv">
-                    <div class="dropDownLabel">Generate</div>
-                </div>
-                <div class="dropDownDiv">
-                    <div class="dropdown">
-                        <div class="dropdownSelect">
-                            <span class="dropdownSelected" id="dropdownSelectedGenerateLoot">Random</span>
-                            <div class="caret"></div>
+                <div class="lootSelection">
+                    <div class="labelDiv">
+                        <div class="dropDownLabel">Generate</div>
+                    </div>
+                    <div class="dropDownDiv">
+                        <div class="dropdown">
+                            <div class="dropdownSelect">
+                                <span class="dropdownSelected" id="dropdownSelectedGenerateLoot">Random</span>
+                                <div class="caret"></div>
+                            </div>
+                            <ul class="dropdownList" id="generateLoot">
+                            </ul>
                         </div>
-                        <ul class="dropdownList" id="generateLoot">
-                        </ul>
                     </div>
                 </div>
             </div>
+            <div class="buttonsNPC">
+                <input type="button" value="Generate" class="generateButton">
+            </div>
+            <div class="divWidthAdjustment" id="lootResultWrapper"></div>
         </div>
-        <div class="buttonsNPC">
-            <input type="button" value="Generate" class="generateButton">
-        </div>
-            
-        <p>Down here is where the stuff will display</p>
     </main>
 <script type="module" src="Scripts/loot.js"></script>
 </body>
