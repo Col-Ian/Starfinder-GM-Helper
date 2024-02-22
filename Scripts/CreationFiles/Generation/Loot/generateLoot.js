@@ -46,7 +46,16 @@ export function generateLoot(){
         // let generateSelection = selections[2];
 
         // Function to fill finalList with our generated loot.
+        generateLootList(finalItemList, finalCurrency, maxItemLevelInt, encounterWealth)
+        console.log(finalItemList)
+        console.log(finalCurrency)
 
+        /*
+        *********************************************
+        Add Results to HTML
+        *********************************************
+        */ 
+       
         // Create the results wrapper
         let resultWrapperDiv = document.createElement('div');
         appendChildWithClass('resultsWrapper', resultWrapperDiv, mainWrapperDiv);
@@ -63,9 +72,5 @@ export function generateLoot(){
 
         let resultsBulkDiv = document.createElement('div');
         appendChildWithClass('allResultsBulk', resultsBulkDiv, resultWrapperDiv);
-
-        generateLootList(finalItemList, finalCurrency, maxItemLevelInt, encounterWealth)
-        console.log(finalItemList)
-        console.log(finalCurrency)
     // }
 }
