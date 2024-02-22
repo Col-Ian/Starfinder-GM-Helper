@@ -8,6 +8,66 @@
     align-items: center;
 }
 
+.divWidthAdjustment{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 4px;
+}
+
+.creditsGainedWrapper{
+    margin: 8px;
+    font-weight: bold;
+}
+
+.resultsWrapper{
+    align-self: center;
+    display: grid;
+    width: fit-content;
+    grid-template-columns: auto auto auto auto;
+    border: 4px solid black;
+    background-color: rgba(0, 0, 0, 0.062);
+}
+
+.resultLabel{
+    font-weight: bold;
+}
+
+.resultAmount{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.resultItem{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.resultLevel{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.resultBulk{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.resultItem{
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.linkToItem{
+    text-decoration: underline 3px;
+    color: black;
+}
+
+.linkToItem:hover{
+    color: purple;
+}
+
+
 .mainWrapperDiv p{
     max-width: 410px;
     margin-left: auto;

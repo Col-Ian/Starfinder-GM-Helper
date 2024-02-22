@@ -42,7 +42,9 @@ let lootPage = {
         // Show selections for dropdown menus.***************
         dropdownListFunction('.dropdown');
 
-        generateLoot();
+        // Button functionality to add selection upon click.
+        let btn = document.querySelector(".generateButton")
+        btn.addEventListener('click', generateLoot);
 
     }
 };
