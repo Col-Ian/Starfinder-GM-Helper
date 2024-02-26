@@ -1,3 +1,4 @@
+import { selectChallengeRatingsCapped } from "../../../UniversalScripts/DropdownLists/challengeRatingsCap.js";
 import { basicMeleeListOH } from "../../basicMeleeListOH.js";
 import { lightArmorList } from "../../lightArmorList.js";
 
@@ -75,4 +76,26 @@ export function generateLootList(
         // Remove the price of the item from the budget.
         itemBudget -= tempList[randomItem].price;
     };
+    // If no items are in the list, give an item within the CR -1 at 60%, but only when the CR is 1 or higher.
+    if(finalItemList.length === 0 && encounterWealth > 230){
+        let tempCR = 0;
+        selectChallengeRatingsCapped.forEach(i=>{
+            if(i.encounterWealth === encounterWealth){
+                tempCR = i.value;
+            };
+        });
+        let pityItem = [];
+        equipmentList.forEach(i=>{
+            if(parseInt(i.level) <= tempCR && parseInt(i.level) >= (tempCR -1) && (i.price*0.6) <= itemBudget){
+                pityItem.push(i);
+            };
+        });
+        if(pityItem.length != 0){
+            let randomFirstItem = Math.floor(Math.random()*pityItem.length);
+            finalItemList.push(pityItem[randomFirstItem]);
+
+            // Remove 60% of the item's cost from the budget.
+            itemBudget -= Math.floor(pityItem[randomFirstItem].price*0.6);
+        }
+    }
 }
