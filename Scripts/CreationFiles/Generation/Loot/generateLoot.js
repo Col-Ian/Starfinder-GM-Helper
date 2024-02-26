@@ -57,9 +57,9 @@ export function generateLoot(){
 
         // Remove the price of the items in the finalItemList from the encounterWealth
         finalItemList.forEach(i=>{
-            // Remove 80% of the first item's cost from the budget instead of at full value.
+            // Remove 60% of the first item's cost from the budget instead of at full value.
             if(finalItemList.indexOf(i) === 0){
-                encounterWealth -= Math.floor(i.price*0.8);
+                encounterWealth -= Math.floor(i.price*0.6);
 
                 // Any quantity over 1 has full value.
                 encounterWealth -= (i.price*(i.quantity-1))
