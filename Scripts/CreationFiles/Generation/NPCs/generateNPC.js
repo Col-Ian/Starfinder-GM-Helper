@@ -253,7 +253,7 @@ export function generateNPC(
             if(creatureTypeObject.type.darkvision >= creatureSubtypeObject.subtype.darkvision){
                 sensesValue.push(`darkvision ${creatureTypeObject.type.darkvision} ft.`)
             } else{
-                sensesValue.push(`darkvision ${creatureSubtypeObject.type.darkvision} ft.`)
+                sensesValue.push(`darkvision ${creatureSubtypeObject.subtype.darkvision} ft.`)
             }
         };
 
